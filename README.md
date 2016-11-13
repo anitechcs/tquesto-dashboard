@@ -1,4 +1,4 @@
-# TquestoDashboard [![Build Status](https://travis-ci.org/anitechcs/tquesto-dashboard.svg?branch=master)](https://travis-ci.org/anitechcs/tquesto-dashboard)
+# Tquesto Dashboard [![Build Status](https://travis-ci.org/anitechcs/tquesto-dashboard.svg?branch=master)](https://travis-ci.org/anitechcs/tquesto-dashboard)
 
 > TQuesto Dashboard Application
 
