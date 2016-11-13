@@ -1,0 +1,76 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /Users/tapas-pc/Documents/Work/Tools/spring-2.0.0.BUILD-SNAPSHOT/bin:/usr/local/mysql/bin:/Users/tapas-pc/Documents/Work/Tools/mongodb/bin:/Users/tapas-pc/Documents/Work/Tools/android-sdk-macosx/tools:/Users/tapas-pc/Documents/Work/Tools/android-sdk-macosx/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/tapas-pc/Documents/Work/Tools/apache-maven-3.3.9/bin:/Users/tapas-pc/.fabric8/bin
+
+Yarn version: 
+  0.16.1
+
+Node version: 
+  7.1.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "tquesto-dashboard",
+    "version": "0.0.0",
+    "license": "MIT",
+    "angular-cli": {},
+    "scripts": {
+      "start": "ng serve",
+      "lint": "tslint \"src/**/*.ts\"",
+      "test": "ng test",
+      "pree2e": "webdriver-manager update",
+      "e2e": "protractor"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/common": "~2.1.0",
+      "@angular/compiler": "~2.1.0",
+      "@angular/core": "~2.1.0",
+      "@angular/forms": "~2.1.0",
+      "@angular/http": "~2.1.0",
+      "@angular/platform-browser": "~2.1.0",
+      "@angular/platform-browser-dynamic": "~2.1.0",
+      "@angular/router": "~3.1.0",
+      "core-js": "^2.4.1",
+      "rxjs": "5.0.0-beta.12",
+      "ts-helpers": "^1.1.1",
+      "zone.js": "^0.6.23"
+    },
+    "devDependencies": {
+      "@types/jasmine": "^2.2.30",
+      "@types/node": "^6.0.42",
+      "angular-cli": "1.0.0-beta.19-3",
+      "codelyzer": "1.0.0-beta.1",
+      "jasmine-core": "2.4.1",
+      "jasmine-spec-reporter": "2.5.0",
+      "karma": "1.2.0",
+      "karma-chrome-launcher": "^2.0.0",
+      "karma-cli": "^1.0.1",
+      "karma-jasmine": "^1.0.2",
+      "karma-remap-istanbul": "^0.2.1",
+      "protractor": "4.0.9",
+      "ts-node": "1.2.1",
+      "tslint": "3.13.0",
+      "typescript": "~2.0.3",
+      "webdriver-manager": "10.2.5"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+bower manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: read ETIMEDOUT
+      at exports._errnoException (util.js:1022:11)
+      at TLSWrap.onread (net.js:572:26)
