@@ -1,7 +1,9 @@
 {
   "name": "tquesto-dashboard",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
+  "private": true,
+  "author": "Anitech Consulting Services Pvt Ltd.",
   "angular-cli": {},
   "scripts": {
     "start": "ng serve",
@@ -10,27 +12,42 @@
     "pree2e": "webdriver-manager update",
     "e2e": "protractor"
   },
-  "private": true,
+  "engines": {
+    "node": ">4.4 < 5",
+    "npm": ">3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anitechcs/tquesto-dashboard.git"
+  },
+  "contributors": [
+    "Tapas Jena <tapas.friends@gmail.com>"
+  ],
   "dependencies": {
-    "@angular/common": "~2.1.0",
-    "@angular/compiler": "~2.1.0",
-    "@angular/core": "~2.1.0",
-    "@angular/forms": "~2.1.0",
-    "@angular/http": "~2.1.0",
-    "@angular/platform-browser": "~2.1.0",
-    "@angular/platform-browser-dynamic": "~2.1.0",
-    "@angular/router": "~3.1.0",
-    "core-js": "^2.4.1",
-    "rxjs": "5.0.0-beta.12",
-    "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.23"
+    "@covalent/charts": "0.9.1",
+    "@covalent/chips": "0.9.1",
+    "@covalent/core": "0.9.1",
+    "@covalent/data": "0.4.0",
+    "@covalent/data-table": "0.9.1",
+    "@covalent/file-upload": "0.9.1",
+    "@covalent/highlight": "0.9.1",
+    "@covalent/http": "0.9.1",
+    "@covalent/json-formatter": "0.9.1",
+    "@covalent/markdown": "0.9.1",
+    "@covalent/paging": "0.9.0",
+    "@covalent/search": "0.9.0",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/store": "^2.2.1",
+    "@ngrx/store-devtools": "^3.2.2",
+    "ts-helpers": "^1.1.1"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.2.30",
+    "@angular/compiler-cli": "2.2.1",
+    "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.19-3",
-    "codelyzer": "1.0.0-beta.1",
-    "jasmine-core": "2.4.1",
+    "angular-cli": "1.0.0-beta.21",
+    "codelyzer": "1.0.0-beta.3",
+    "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",
     "karma": "1.2.0",
     "karma-chrome-launcher": "^2.0.0",

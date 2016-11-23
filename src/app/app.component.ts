@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'tq-root',
@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tq works!';
+  routes: Object[] = [{
+      title: 'Dashboard',
+      route: '/',
+      icon: 'dashboard',
+    }, {
+      title: 'Product Dashboard',
+      route: '/product',
+      icon: 'view_quilt',
+    }, {
+      title: 'Product Logs',
+      route: '/logs',
+      icon: 'receipt',
+    }, {
+      title: 'Manage Users',
+      route: '/users',
+      icon: 'people',
+    },
+  ];
+  
 }
