@@ -13,7 +13,7 @@
     "e2e": "protractor"
   },
   "engines": {
-    "node": ">4.4 < 5",
+    "node": ">4.4 < 7",
     "npm": ">3"
   },
   "repository": {
@@ -27,7 +27,6 @@
     "@covalent/charts": "0.9.1",
     "@covalent/chips": "0.9.1",
     "@covalent/core": "0.9.1",
-    "@covalent/data": "0.4.0",
     "@covalent/data-table": "0.9.1",
     "@covalent/file-upload": "0.9.1",
     "@covalent/highlight": "0.9.1",
@@ -39,10 +38,17 @@
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
     "@ngrx/store-devtools": "^3.2.2",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.1.1",
+    "particlesjs": "^1.0.2",
+    "smoothscroll": "^0.2.2",
     "ts-helpers": "^1.1.1"
   },
   "devDependencies": {
     "@angular/compiler-cli": "2.2.1",
+    "@types/hammerjs": "^2.0.33",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
     "angular-cli": "1.0.0-beta.21",
@@ -59,5 +65,8 @@
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
     "webdriver-manager": "10.2.5"
+  },
+  "optionalDependencies": {
+    "@covalent/data": "0.4.0"
   }
 }

@@ -20,6 +20,9 @@ import { EventModule } from './event/event.module';
 import { ReportModule } from './report/report.module';
 import { StaticModule } from './static/static.module';
 
+import { AuthService } from './shared/services/auth.service';
+import { SpinnerService } from './shared/services/spinner.service';
+
 import { appRoutes, appRoutingProviders } from './app.routes';
 import { AppComponent } from './app.component';
 
@@ -49,6 +52,8 @@ import { AppComponent } from './app.component';
   providers: [
     appRoutingProviders,
     Title,
+    AuthService,
+    SpinnerService
   ],
   entryComponents: [ ],
   bootstrap: [ AppComponent ]
