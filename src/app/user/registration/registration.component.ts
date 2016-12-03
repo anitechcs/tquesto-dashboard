@@ -7,8 +7,8 @@ import { Component, OnInit, trigger, style, transition, animate } from '@angular
   animations: [
     trigger('flyInFromTopAndScale', [
       transition('void => *', [
-        style({transform: 'translateY(-100%) scale(0)'}),
-        animate('300ms linear')
+        style({transform: 'translateX(-100%) scale(0)'}),
+        animate('500ms linear')
       ])
     ])
   ]
