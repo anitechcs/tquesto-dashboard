@@ -1,3 +1,45 @@
-<p>
-  registration works!
-</p>
+<div class="auth-main">
+  <img class="logo" src="assets/imgs/logo.png" />
+  <div class="auth-block" @flyInFromTopAndScale>
+    <md-card>
+      <form #registrationForm="ngForm" (ngSubmit)="doRegistration(registrationForm.value)">
+        <md-card-title>NEW REGISTERATION</md-card-title>
+        <div class="loginMsg">
+          <br />
+          <!-- Show message here -->
+        </div>
+        <md-card-content>
+            <div>
+              <md-input flex placeholder="Email" type="email" name="userEmail" [(ngModel)]="userName" required (keypress)="hideNotification()">
+                <span md-prefix><md-icon>mail</md-icon></span>
+              </md-input>
+            </div>
+            <div>
+              <md-input flex placeholder="Password" type="text" name="password" [(ngModel)]="password" required (keypress)="hideNotification()">
+                <span md-prefix><md-icon>person</md-icon></span>
+              </md-input>
+            </div>
+            <div>
+              <md-input flex placeholder="Repeat Password" type="password" name="rpassword" [(ngModel)]="rpassword" required>
+                <span md-prefix><md-icon>lock</md-icon></span>
+              </md-input>
+            </div>
+        </md-card-content>
+        <md-card-actions align="end">
+          <md-slide-toggle color="primary" [(ngModel)]="isMale" name="gender">
+            Are you a Male?
+          </md-slide-toggle>
+          <span class="fill-remaining-space"></span>
+          <button align="end" md-raised-button color="accent" type="submit" [disabled]="!registrationForm.form.valid">REGISTER</button>
+        </md-card-actions>
+        <br />
+        <md-card-actions align="center">
+          Already have an account? <a routerLink="/login">Login Now</a>
+        </md-card-actions>
+      </form>
+    </md-card>
+  </div>
+  <footer class="clearfix">
+    <span class="login-copy">Copyright &copy; 2016 Anitech Consulting Services Pvt Ltd.</span>
+  </footer>
+</div>
