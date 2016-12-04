@@ -56,13 +56,13 @@ md-card {
   margin: 3% auto 1% auto;
 }
 
-md-card-actions {
-  margin-bottom: 0px!important;
-  margin-right: 0px;
+md-card-content {
+  padding-bottom: 0px;
 }
 
-md-slide-toggle {
-  margin: 0px 10px 10px 15px;
+md-card-actions {
+  margin: 0px 15px;
+  padding: 0;
 }
 
 .login-copy {
@@ -74,10 +74,10 @@ md-slide-toggle {
 }
 
 .logo {
-    margin-top: 5%;
-    width: 250px;
+  margin-top: 5%;
+  width: 250px;
 }
 
 .fill-remaining-space {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}

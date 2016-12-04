@@ -56,13 +56,13 @@ md-card {
   margin: 3% auto 2% auto;
 }
 
-md-card-actions {
-  margin-bottom: 0px!important;
-  margin-right: 0px;
+md-card-content {
+  padding-bottom: 0px;
 }
 
-md-checkbox {
-  margin: 0px 10px 10px 15px;
+md-card-actions {
+  margin: 0px 15px;
+  padding: 0;
 }
 
 .login-copy {
