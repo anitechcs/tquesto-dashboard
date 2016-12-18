@@ -1,0 +1,25 @@
+.md-fab-bottom-right {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Hack for Bootstrap.css presence*/
+a, a:hover, a:active {
+    text-decoration: none;
+}
+
+.menuHeader {
+    z-index: 1;
+    font-size: 18px;
+    padding: 12px;
+    background: whitesmoke;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 
+                0px 1px 1px -0px rgba(0, 0, 0, 0.14), 
+                0px 1px 3px 0px rgba(0, 0, 0, 0.12); 
+}
+
+.logo {
+    width: 200px;
+    height: 40px;
+}

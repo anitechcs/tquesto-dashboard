@@ -1,5 +1,7 @@
 <div class="auth-main">
-  <img class="logo" src="assets/imgs/logo.png" />
+  <a class="logo-wrapper" routerLink="/">
+    <img class="logo" src="assets/imgs/logo.png" />
+  </a>
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
       <form #registrationForm="ngForm" (ngSubmit)="doRegistration(registrationForm.value)">

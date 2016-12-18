@@ -21,6 +21,7 @@
         "../node_modules/font-awesome/css/font-awesome.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "styles.scss",
+        "preloader.scss",
         "theme.scss",
         "../node_modules/@covalent/core/styles/platform.css"
       ],

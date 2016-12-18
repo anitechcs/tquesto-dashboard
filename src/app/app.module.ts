@@ -22,6 +22,9 @@ import { StaticModule } from './static/static.module';
 
 import { AuthService } from './shared/services/auth.service';
 import { SpinnerService } from './shared/services/spinner.service';
+import { ItemService } from './shared/services/item.service';
+import { UserService } from './shared/services/user.service';
+import { ConfigurationService } from './shared/services/configuration.service';
 
 import { appRoutes, appRoutingProviders } from './app.routes';
 import { AppComponent } from './app.component';
@@ -53,7 +56,10 @@ import { AppComponent } from './app.component';
     appRoutingProviders,
     Title,
     AuthService,
-    SpinnerService
+    SpinnerService,
+    ItemService,
+    UserService,
+    ConfigurationService
   ],
   entryComponents: [ ],
   bootstrap: [ AppComponent ]

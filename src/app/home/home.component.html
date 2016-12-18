@@ -1,0 +1,112 @@
+<td-layout-nav logo="assets/imgs/logo.svg">
+  <div toolbar-content layout="row" layout-align="center center" flex>
+    <img class="logo"  src="assets/imgs/logo.png" />
+    <span></span>
+    <span flex></span>
+    <button md-button class="md-icon-button" md-tooltip="Notifications"><md-icon class="md-24">notifications</md-icon></button>
+    <button md-button class="md-icon-button" md-tooltip="Full Screen"><md-icon class="md-24">fullscreen</md-icon></button>
+    <button md-button class="md-icon-button" md-tooltip="Tapas"><md-icon class="md-24">account_circle</md-icon></button>
+  </div>
+  <td-layout-manage-list #list>
+    <md-toolbar list-items>   
+      <span flex>TestDataGen</span>
+      <button md-button class="md-icon-button" color="accent" [routerLink]="['/home/myapps']">
+          <md-icon class="md-24">apps</md-icon>
+      </button>
+    </md-toolbar>
+    <md-nav-list list-items>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/dashboard']">
+        <md-icon md-list-icon>dashboard</md-icon>
+        Dashboard
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/events/analytics']">
+        <md-icon md-list-icon>insert_chart</md-icon>
+        Analytics
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/reports']">
+        <md-icon md-list-icon>donut_small</md-icon>
+        Reports
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/events/engagement']">
+        <md-icon md-list-icon>broken_image</md-icon>
+        Engagement
+      </a>
+      <span md-subheader class="menuHeader">Administration</span>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/users']">
+        <md-icon md-list-icon>people</md-icon>
+        User Management
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/integration']">
+        <md-icon md-list-icon>receipt</md-icon>
+        Integration
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/configuration']">
+        <md-icon md-list-icon>settings</md-icon>
+        Settings
+      </a>
+    </md-nav-list>
+
+    <div toolbar-buttons layout="row" layout-align="start center" flex>
+      <span>{{title}}</span>
+      <span flex></span>
+      <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">dehaze</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">folder_special</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">style</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
+    </div>
+
+    <router-outlet></router-outlet>   
+
+    <br/>
+    <md-divider></md-divider>
+    <div layout="row" layout-align="start center" layout-padding>
+        <span class="md-caption">Copyright &copy; 2017 Anitech Consulting Services Pvt Ltd.</span>
+        <span flex></span>
+        <span class="md-caption">Version: 1.0.1</span>
+    </div>
+
+  </td-layout-manage-list>
+
+</td-layout-nav>
+ 

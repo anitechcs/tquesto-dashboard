@@ -1,5 +1,7 @@
 <div class="auth-main">
-  <img class="logo" src="assets/imgs/logo.png" />
+  <a class="logo-wrapper" routerLink="/">
+    <img class="logo" src="assets/imgs/logo.png" />
+  </a>
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
       <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm.value)">
@@ -25,7 +27,7 @@
           <span class="fill-remaining-space"></span>
           <button align="end" md-raised-button color="accent" type="submit" [disabled]="!loginForm.form.valid">SIGN IN</button>
         </md-card-actions>
-        <br />
+        <br /><br />
         <md-card-actions align="center">
           Don't have an account? <a routerLink="/registration">Create a New One</a>
         </md-card-actions>

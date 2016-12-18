@@ -2,6 +2,43 @@
 @import "theme";
 // You can add global styles to this file that will cascade like normal CSS
 
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-weight: normal;
+}
+
+.md-content md-toolbar {
+  min-height: 50px!important;
+}
+
+.md-content md-toolbar md-toolbar-row {
+  height: 50px!important;
+
+  .md-icon-button:not(.md-icon-button-mini) {
+    height: 38px;
+    line-height: 38px;
+    width: 38px;
+  }
+
+}
+
+md-toolbar {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 
+        0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+}
+
+/* Temp fix till got SVG */
+.md-icon-logo {
+    width: 0!important;
+    margin-right: 0!important;
+}
+
+
+
 // Active icon color in list nav
 md-nav-list {
     [md-list-item].active {
@@ -14,10 +51,12 @@ md-nav-list {
         }
     }
 }
+
 // Custom style for loading elements without height
 .will-load {
     min-height: 80px;
 }
+
 // Href line height wasn't right for md-icon-button
 a[md-icon-button] {
     line-height: 36px;
@@ -35,86 +74,5 @@ a[md-icon-button] {
 
 // Manage List layout overflow is too short
 td-layout-manage-list .md-sidenav-content > .md-content > .md-content {
-    padding-bottom: 140px;
-}
-
-
-
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-weight: normal;
-}
-
-/*3.3 PRELOADER*/
-
-#preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    background: #1080f2
-}
-//}
-.spinner {
-    opacity: 0.9;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-}
-.spinner:after,
-.spinner:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 30px;
-    height: 30px;
-    border: 5px solid transparent;
-    border-bottom: 5px solid #fff;
-    border-radius: 100%;
-    -webkit-animation: rotate 1s linear infinite;
-    animation: rotate 1s linear infinite;
-}
-.spinner:before {
-    width: 40px;
-    height: 40px;
-    -webkit-animation-direction: reverse;
-    animation-direction: reverse;
-}
-@-webkit-keyframes rotate {
-    from {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-@keyframes rotate {
-    from {
-        -ms-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to {
-        -ms-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+    padding-bottom: 80px;
 }

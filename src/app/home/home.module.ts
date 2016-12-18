@@ -14,8 +14,11 @@ import { CovalentDataTableModule } from '@covalent/data-table';
 import { CovalentSearchModule } from '@covalent/search';
 import { CovalentPagingModule } from '@covalent/paging';
 
+import { HomeComponent } from './home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
+import { IntegrationComponent } from './integration/integration.component';
+import { MyappsComponent } from './myapps/myapps.component';
 
 @NgModule({
   imports: [
@@ -30,10 +33,15 @@ import { ConfigurationComponent } from './configuration/configuration.component'
     CovalentHighlightModule,
     CovalentJsonFormatterModule,
     CovalentMarkdownModule,
+    CovalentSearchModule,
+    CovalentPagingModule
   ],
   declarations: [
+    HomeComponent,
     DashboardComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    IntegrationComponent,
+    MyappsComponent
   ],
   entryComponents: [ TD_LOADING_ENTRY_COMPONENTS ]
 })
