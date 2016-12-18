@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   animations: [
     trigger('flyInFromTopAndScale', [
       transition('void => *', [
-        style({transform: 'translateX(+100%) scale(0)'}),
-        animate('500ms linear')
+        style({transform: 'translateX(+50%) scale(1)'}),
+        animate('700ms linear')
       ])
     ])
   ]

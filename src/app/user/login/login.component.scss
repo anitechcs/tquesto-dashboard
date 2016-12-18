@@ -10,7 +10,7 @@
 }
 
 .auth-block {
-  margin: 2% auto 25px auto;
+  margin: 2% auto 15px auto;
   width: 400px;
   height: 460px;
   border-radius: 5px;
@@ -27,7 +27,7 @@ md-input {
 }
 
 md-radio-button, md-checkbox {
-  margin: 16px 8px;
+  margin: 8px 8px;
 }
 
 .form {
@@ -61,6 +61,7 @@ md-card-content {
 }
 
 md-card-actions {
+  height: 40px;
   margin: 0px 15px;
   padding: 0;
 }
@@ -69,15 +70,17 @@ md-card-actions {
   margin-top: 20px;
   margin-left: auto;
   text-align: center;
-  font-style: italic;
-  color: #fff;
+  color: darkgrey;
 }
 
 .logo {
-    margin-top: 5%;
-    width: 250px;
+  width: 250px;
+}
+
+.logo-wrapper {
+  margin-top: 4%;
 }
 
 .fill-remaining-space {
     flex: 1 1 auto;
-  }
+}
