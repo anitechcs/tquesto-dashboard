@@ -15,6 +15,7 @@ import { ConfigurationComponent } from './home/configuration/configuration.compo
 import { IntegrationComponent } from './home/integration/integration.component';
 import { AnalyticsComponent } from './event/analytics/analytics.component';
 import { EngagementComponent } from './event/engagement/engagement.component';
+import { CompagionComponent } from './event/compagion/compagion.component';
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
     ]},
     {path: 'events', children: [
       {path: 'analytics', component: AnalyticsComponent},
-      {path: 'engagement', component: EngagementComponent}
+      {path: 'engagement', component: EngagementComponent},
+      {path: 'compagion', component: CompagionComponent}
     ]}
   ]}
 ];

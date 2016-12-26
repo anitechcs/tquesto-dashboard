@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 import { TdLoadingService } from '@covalent/core';
 import { TdDialogService } from '@covalent/core';
 import { ConfigurationService, IConfiguration } from '../../shared/services/configuration.service';
