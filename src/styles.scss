@@ -31,12 +31,22 @@ md-toolbar {
     z-index: 1;
 }
 
-/* Temp fix till got SVG */
 .md-icon-logo {
-    width: 0!important;
-    margin-right: 0!important;
+    width: 180px!important;
+    height: 40px!important;
 }
 
+/* Sidenav expand/collapse */
+.collapse {
+    md-sidenav {
+        min-width: 4%;
+        width: 55px!important;
+    }
+
+    .md-list-item {
+        padding: 0 15px!important;
+    }
+}
 
 
 // Active icon color in list nav

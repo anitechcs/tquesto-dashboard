@@ -14,6 +14,7 @@ import { CovalentDataTableModule } from '@covalent/data-table';
 import { CovalentSearchModule } from '@covalent/search';
 import { CovalentPagingModule } from '@covalent/paging';
 
+import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
@@ -22,6 +23,7 @@ import { MyappsComponent } from './myapps/myapps.component';
 
 @NgModule({
   imports: [
+    SharedModule,
     CommonModule,
     RouterModule,
     CovalentCoreModule,

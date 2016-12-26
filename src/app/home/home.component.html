@@ -1,15 +1,14 @@
-<td-layout-nav logo="assets/imgs/logo.svg">
+<td-layout-nav [class.collapse]="!sideNavOpened" logo="assets/imgs/logo.svg" (openMenu)="toggleSidebar()" >
   <div toolbar-content layout="row" layout-align="center center" flex>
-    <img class="logo"  src="assets/imgs/logo.png" />
     <span></span>
     <span flex></span>
     <button md-button class="md-icon-button" md-tooltip="Notifications"><md-icon class="md-24">notifications</md-icon></button>
-    <button md-button class="md-icon-button" md-tooltip="Full Screen"><md-icon class="md-24">fullscreen</md-icon></button>
-    <button md-button class="md-icon-button" md-tooltip="Tapas"><md-icon class="md-24">account_circle</md-icon></button>
+    <button md-button class="md-icon-button" md-tooltip="Full Screen" (click)="toggleFullscreen()" tqFullscreen><md-icon class="md-24">{{(!isFullscreen)?'fullscreen':'fullscreen_exit'}}</md-icon></button>
+    <button md-button class="md-icon-button" md-tooltip="Tapas" [md-menu-trigger-for]="menu" ><md-icon class="md-24">account_circle</md-icon></button>
   </div>
-  <td-layout-manage-list #list>
+  <td-layout-manage-list #list >
     <md-toolbar list-items>   
-      <span flex>TestDataGen</span>
+      <span flex *ngIf="sideNavOpened">TestDataGen</span>
       <button md-button class="md-icon-button" color="accent" [routerLink]="['/home/myapps']">
           <md-icon class="md-24">apps</md-icon>
       </button>
@@ -54,6 +53,16 @@
         <md-icon md-list-icon>broken_image</md-icon>
         Engagement
       </a>
+      <md-divider></md-divider>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="list.toggle()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/events/compagion']">
+        <md-icon md-list-icon>gradient</md-icon>
+        Compagion
+      </a>
       <span md-subheader class="menuHeader">Administration</span>
       <a md-list-item 
         md-ripple class="block relative"
@@ -81,7 +90,7 @@
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/configuration']">
-        <md-icon md-list-icon>settings</md-icon>
+        <md-icon md-list-icon>settings_applications</md-icon>
         Settings
       </a>
     </md-nav-list>
@@ -91,22 +100,28 @@
       <span flex></span>
       <button md-button class="md-icon-button"><md-icon class="md-24">view_module</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">dehaze</md-icon></button>
-      <button md-button class="md-icon-button"><md-icon class="md-24">folder_special</md-icon></button>
+      <button md-button class="md-icon-button"><md-icon class="md-24">refresh</md-icon></button>
       <button md-button class="md-icon-button"><md-icon class="md-24">style</md-icon></button>
-      <button md-button class="md-icon-button"><md-icon class="md-24">more_vert</md-icon></button>
+      <button md-button class="md-icon-button" [md-menu-trigger-for]="posXMenu" ><md-icon class="md-24">more_vert</md-icon></button>
     </div>
 
     <router-outlet></router-outlet>   
 
-    <br/>
-    <md-divider></md-divider>
-    <div layout="row" layout-align="start center" layout-padding>
-        <span class="md-caption">Copyright &copy; 2017 Anitech Consulting Services Pvt Ltd.</span>
-        <span flex></span>
-        <span class="md-caption">Version: 1.0.1</span>
-    </div>
+    <tq-footer></tq-footer>
 
   </td-layout-manage-list>
 
 </td-layout-nav>
- 
+
+<md-menu x-position="before" #menu="mdMenu" class="before">
+    <button md-menu-item><md-icon md-list-icon>person</md-icon> Profile </button>
+    <button md-menu-item><md-icon md-list-icon>settings</md-icon> Preferences </button>
+    <button md-menu-item><md-icon md-list-icon>help</md-icon> Help </button>
+    <button md-menu-item><md-icon md-list-icon>power_settings_new</md-icon> Sign Out </button>
+</md-menu>
+
+<md-menu x-position="before" #posXMenu="mdMenu" class="before">
+    <button md-menu-item> View All </button>
+    <button md-menu-item> Edit </button>
+    <button md-menu-item> Delete </button>
+</md-menu>
