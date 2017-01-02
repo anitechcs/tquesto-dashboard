@@ -1,16 +1,24 @@
-<td-layout-nav [class.collapse]="!sideNavOpened" logo="assets/imgs/logo.svg" (openMenu)="toggleSidebar()" >
+<td-layout-nav [class.collapse]="!sideNavOpened" logo="assets:logo" (openMenu)="toggleSidebar()" >
   <div toolbar-content layout="row" layout-align="center center" flex>
     <span></span>
     <span flex></span>
-    <button md-button class="md-icon-button" md-tooltip="Notifications"><md-icon class="md-24">notifications</md-icon></button>
-    <button md-button class="md-icon-button" md-tooltip="Full Screen" (click)="toggleFullscreen()" tqFullscreen><md-icon class="md-24">{{(!isFullscreen)?'fullscreen':'fullscreen_exit'}}</md-icon></button>
-    <button md-button class="md-icon-button" md-tooltip="Tapas" [md-menu-trigger-for]="menu" ><md-icon class="md-24">account_circle</md-icon></button>
+    <button md-button class="md-icon-button" md-tooltip="Notifications" [mdMenuTriggerFor]="notificationsMenu">
+      <td-notification-count color="accent" [notifications]="6">
+         <md-icon>notifications</md-icon>
+      </td-notification-count>
+    </button>
+    <button md-button class="md-icon-button" md-tooltip="Full Screen" (click)="toggleFullscreen()" tqFullscreen>
+      <md-icon>{{(!isFullscreen)?'fullscreen':'fullscreen_exit'}}</md-icon>
+    </button>
+    <button md-button class="md-icon-button" md-tooltip="Tapas" [md-menu-trigger-for]="menu">
+      <img src="assets/imgs/avtar.jpg" class="avatar"/>
+    </button>
   </div>
   <td-layout-manage-list #list >
     <md-toolbar list-items>   
       <span flex *ngIf="sideNavOpened">TestDataGen</span>
       <button md-button class="md-icon-button" color="accent" [routerLink]="['/home/myapps']">
-          <md-icon class="md-24">apps</md-icon>
+          <md-icon>apps</md-icon>
       </button>
     </md-toolbar>
     <md-nav-list list-items>
@@ -63,7 +71,7 @@
         <md-icon md-list-icon>gradient</md-icon>
         Compagion
       </a>
-      <span md-subheader class="menuHeader">Administration</span>
+      <span md-subheader class="menuHeader">{{(sideNavOpened)?"Administration":"Adm"}}</span>
       <a md-list-item 
         md-ripple class="block relative"
         (click)="list.toggle()"
@@ -105,23 +113,69 @@
       <button md-button class="md-icon-button" [md-menu-trigger-for]="posXMenu" ><md-icon class="md-24">more_vert</md-icon></button>
     </div>
 
-    <router-outlet></router-outlet>   
+    <router-outlet></router-outlet>  
 
-    <tq-footer></tq-footer>
+    <tq-footer></tq-footer> 
 
   </td-layout-manage-list>
 
 </td-layout-nav>
 
-<md-menu x-position="before" #menu="mdMenu" class="before">
-    <button md-menu-item><md-icon md-list-icon>person</md-icon> Profile </button>
-    <button md-menu-item><md-icon md-list-icon>settings</md-icon> Preferences </button>
-    <button md-menu-item><md-icon md-list-icon>help</md-icon> Help </button>
-    <button md-menu-item><md-icon md-list-icon>power_settings_new</md-icon> Sign Out </button>
+<md-menu x-position="before" y-position="below" #menu="mdMenu">
+  <a md-menu-item><md-icon md-list-icon>person</md-icon>Profile</a>
+  <a md-menu-item><md-icon md-list-icon>settings</md-icon>Preferences</a>
+  <a md-menu-item><md-icon md-list-icon>help</md-icon>Help</a>
+  <a md-menu-item (click)="doLogout()"><md-icon md-list-icon>power_settings_new</md-icon>Sign Out</a>
 </md-menu>
 
-<md-menu x-position="before" #posXMenu="mdMenu" class="before">
-    <button md-menu-item> View All </button>
-    <button md-menu-item> Edit </button>
-    <button md-menu-item> Delete </button>
+<md-menu x-position="before" #posXMenu="mdMenu">
+  <button md-menu-item> View All </button>
+  <button md-menu-item> Edit </button>
+  <button md-menu-item> Delete </button>
+</md-menu>
+
+<md-menu x-position="before" y-position="below" #notificationsMenu="mdMenu">
+  <td-menu>
+    <div td-menu-header class="md-subhead">Recent Notifications</div>
+    <md-nav-list dense>
+      <a md-list-item [routerLink]="['/components/notifications']">
+        <md-icon md-list-avatar>notifications</md-icon>
+        <h4 md-line><span class="text-wrap">Notifications component added</span></h4>
+        <p md-line>New component</p>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item [routerLink]="['/components/dynamic-forms']">
+        <md-icon md-list-avatar>format_align_center</md-icon>
+        <h4 md-line><span class="text-wrap">JSON driven dynamic forms</span></h4>
+        <p md-line>New component</p>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item [routerLink]="['/layouts']">
+        <md-icon md-list-avatar>call_to_action</md-icon>
+        <h4 md-line><span class="text-wrap">Sticky footer added to layouts</span></h4>
+        <p md-line>Component updated</p>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item [routerLink]="['/components/data-table']">
+        <md-icon md-list-avatar>grid_on</md-icon>
+        <h4 md-line><span class="text-wrap">Nested object support for data-table</span></h4>
+        <p md-line>Component updated</p>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item [routerLink]="['/components/http']">
+        <md-icon md-list-avatar>http</md-icon>
+        <h4 md-line><span class="text-wrap">HTTP path interceptors &amp; transform support</span></h4>
+        <p md-line>Service updated</p>
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L53-L58" target="_blank">
+        <md-icon md-list-avatar>notifications</md-icon>
+        <h4 md-line><span class="text-wrap">Angular 2.4.1 &amp; Material2 Beta1</span></h4>
+        <p md-line>Dependencies updated</p>
+      </a>
+    </md-nav-list>
+    <button md-button color="accent" td-menu-footer>
+      View More
+    </button>
+  </td-menu>
 </md-menu>
