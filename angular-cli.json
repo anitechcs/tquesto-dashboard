@@ -1,6 +1,6 @@
 {
   "project": {
-    "version": "1.0.0-beta.21",
+    "version": "1.0.0-beta.24",
     "name": "tquesto-dashboard"
   },
   "apps": [
@@ -24,7 +24,7 @@
         "styles.scss",
         "preloader.scss",
         "theme.scss",
-        "../node_modules/@covalent/core/styles/platform.css"
+        "../node_modules/@covalent/core/common/platform.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",

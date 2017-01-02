@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { CovalentCoreModule } from '@covalent/core';
-import { CovalentChipsModule } from '@covalent/chips';
-import { CovalentFileModule } from '@covalent/file-upload';
+import { CovalentChipsModule } from '@covalent/core';
+import { CovalentFileModule } from '@covalent/core';
 import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentJsonFormatterModule } from '@covalent/json-formatter';
+import { CovalentJsonFormatterModule } from '@covalent/core';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentChartsModule } from '@covalent/charts';
-import { CovalentDataTableModule } from '@covalent/data-table';
-import { CovalentSearchModule } from '@covalent/search';
-import { CovalentPagingModule } from '@covalent/paging';
+import { CovalentDataTableModule } from '@covalent/core';
+import { CovalentSearchModule } from '@covalent/core';
+import { CovalentPagingModule } from '@covalent/core';
 
 import { UserModule } from './user/user.module';
 import { HomeModule } from './home/home.module';

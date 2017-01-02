@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { MdIconRegistry } from '@angular/material';
+import { Title, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'tq-home',
@@ -11,7 +13,9 @@ export class HomeComponent implements OnInit {
   sideNavOpened: boolean = true;
   isFullscreen: boolean = false;
   title: string;
-  constructor(private _titleService: Title) { }
+  constructor(private _titleService: Title, private router: Router, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer) { 
+    iconRegistry.addSvgIconInNamespace('assets', 'logo', domSanitizer.bypassSecurityTrustResourceUrl('/assets/imgs/logo.svg'));
+  }
 
   ngOnInit() {
   }
@@ -27,6 +31,10 @@ export class HomeComponent implements OnInit {
 
   toggleFullscreen() {
     this.isFullscreen = !this.isFullscreen;
+  }
+
+  doLogout() {
+    this.router.navigate(['/']);
   }
 
 }
