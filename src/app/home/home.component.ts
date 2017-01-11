@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   
   sideNavOpened: boolean = true;
   isFullscreen: boolean = false;
+  fadeDiv: boolean = false;
   title: string;
   constructor(private _titleService: Title, private router: Router, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer) { 
     iconRegistry.addSvgIconInNamespace('assets', 'logo', domSanitizer.bypassSecurityTrustResourceUrl('/assets/imgs/logo.svg'));
@@ -34,6 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   doLogout() {
+    this.fadeDiv = true;
     this.router.navigate(['/']);
   }
 

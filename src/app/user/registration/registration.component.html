@@ -6,9 +6,7 @@
     <md-card>
       <form #registrationForm="ngForm" (ngSubmit)="doRegistration(registrationForm.value)">
         <md-card-title>NEW REGISTERATION</md-card-title>
-        <div class="registrationMsg">
-          <!-- Show message here -->
-        </div>
+        <md-card-subtitle>Create a new account to unleash the power of tQuesto!</md-card-subtitle>
         <md-card-content>
             <div>
               <md-input flex placeholder="Email" type="email" name="userEmail" [(ngModel)]="userName" required (keypress)="hideNotification()">
@@ -17,7 +15,7 @@
             </div>
             <div>
               <md-input flex placeholder="Password" type="text" name="password" [(ngModel)]="password" required (keypress)="hideNotification()">
-                <span md-prefix><md-icon>person</md-icon></span>
+                <span md-prefix><md-icon>vpn_key</md-icon></span>
               </md-input>
             </div>
             <div>
@@ -27,7 +25,7 @@
             </div>
         </md-card-content>
         <md-card-actions align="end">
-          <md-slide-toggle color="primary" [(ngModel)]="isMale" name="gender">
+          <md-slide-toggle color="accent" [(ngModel)]="isMale" name="gender">
             Are you a Male?
           </md-slide-toggle>
           <span class="fill-remaining-space"></span>

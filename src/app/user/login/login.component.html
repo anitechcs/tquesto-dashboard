@@ -7,9 +7,6 @@
       <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm.value)">
         <md-card-title>LOGIN HERE</md-card-title>
         <md-card-subtitle>Sign In via your username and password!</md-card-subtitle>
-        <div class="loginMsg">
-          <!-- Show message here -->
-        </div>
         <md-card-content>
             <div>
               <md-input flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (keypress)="hideNotification()">
@@ -27,9 +24,11 @@
           <span class="fill-remaining-space"></span>
           <button align="end" md-raised-button color="accent" type="submit" [disabled]="!loginForm.form.valid">SIGN IN</button>
         </md-card-actions>
-        <br /><br />
+        <br />
         <md-card-actions align="center">
-          Don't have an account? <a routerLink="/registration">Create a New One</a>
+          <div>Don't have an account? <a routerLink="/registration">Create a New One</a></div>
+          <br/>
+          <div><a routerLink="/resetpassword">Forgot Password?</a></div>
         </md-card-actions>
       </form>
     </md-card>
