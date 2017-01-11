@@ -21,6 +21,8 @@ import { CovalentDataTableModule } from '@covalent/core';
 import { CovalentSearchModule } from '@covalent/core';
 import { CovalentPagingModule } from '@covalent/core';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { CovalentPagingModule } from '@covalent/core';
     CovalentJsonFormatterModule,
     CovalentMarkdownModule,
     CovalentSearchModule,
-    CovalentPagingModule
+    CovalentPagingModule,
+    FlexLayoutModule.forRoot()
   ],
   declarations: [
     LoginComponent,

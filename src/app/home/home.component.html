@@ -1,6 +1,5 @@
-<td-layout-nav [class.collapse]="!sideNavOpened" logo="assets:logo" (openMenu)="toggleSidebar()" >
+<td-layout-nav [class.collapse]="!sideNavOpened" logo="assets:logo" (openMenu)="toggleSidebar()" [tdFade]="fadeDiv">
   <div toolbar-content layout="row" layout-align="center center" flex>
-    <span></span>
     <span flex></span>
     <button md-button class="md-icon-button" md-tooltip="Notifications" [mdMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="6">

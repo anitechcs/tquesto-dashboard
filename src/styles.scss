@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "theme";
 // You can add global styles to this file that will cascade like normal CSS
 
 body {
@@ -45,20 +44,6 @@ md-toolbar {
 
     .md-list-item {
         padding: 0 15px!important;
-    }
-}
-
-
-// Active icon color in list nav
-md-nav-list {
-    [md-list-item].active {
-        md-icon[md-list-avatar] {
-            background-color: md-color($accent);
-            color: md-color($accent, default-contrast)
-        }
-        md-icon[md-list-icon] {
-            color: md-color($accent);
-        }
     }
 }
 
