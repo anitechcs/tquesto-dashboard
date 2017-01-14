@@ -16,31 +16,37 @@ import { IntegrationComponent } from './home/integration/integration.component';
 import { AnalyticsComponent } from './event/analytics/analytics.component';
 import { EngagementComponent } from './event/engagement/engagement.component';
 import { CompagionComponent } from './event/compagion/compagion.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+
+import { AuthGuardService } from './shared/services/auth-guard.service';
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'resetpassword', component: RegistrationComponent},
-  {path: 'home', component: HomeComponent, children: [
-    {path: '', component: DashboardComponent},
-    {path: 'dashboard', component: DashboardComponent},
-    {path: 'configuration', component: ConfigurationComponent},
-    {path: 'integration', component: IntegrationComponent},
-    {path: 'reports', component: ReportViewComponent},
-    {path: 'myapps', component: MyappsComponent},
-    {path: 'users', children: [
-      {path: '', component: UserListComponent},
-      {path: 'list', component: UserListComponent},
-      {path: 'detail', component: UserDetailComponent},
-      {path: 'create', component: CreateUserComponent},
-    ]},
-    {path: 'events', children: [
-      {path: 'analytics', component: AnalyticsComponent},
-      {path: 'engagement', component: EngagementComponent},
-      {path: 'compagion', component: CompagionComponent}
-    ]}
-  ]}
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuardService], 
+    children: [
+      {path: '', component: DashboardComponent},
+      {path: 'dashboard', component: DashboardComponent},
+      {path: 'configuration', component: ConfigurationComponent},
+      {path: 'integration', component: IntegrationComponent},
+      {path: 'reports', component: ReportViewComponent},
+      {path: 'myapps', component: MyappsComponent},
+      {path: 'users', children: [
+        {path: '', component: UserListComponent},
+        {path: 'list', component: UserListComponent},
+        {path: 'detail', component: UserDetailComponent},
+        {path: 'create', component: CreateUserComponent},
+      ]},
+      {path: 'events', children: [
+        {path: 'analytics', component: AnalyticsComponent},
+        {path: 'engagement', component: EngagementComponent},
+        {path: 'compagion', component: CompagionComponent}
+      ]}
+    ]
+  },
+  {path: '**', component: NotFoundComponent}
 ];
 
 export const appRoutingProviders: any[] = [

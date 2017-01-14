@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FullscreenDirective } from './directives/fullscreen.directive';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { NotificationsComponent } from './components/notifications/notifications
     FooterComponent,
     SidebarComponent,
     FullscreenDirective,
-    NotificationsComponent
+    NotificationsComponent,
+    NotFoundComponent
   ],
   exports: [
     HeaderComponent,

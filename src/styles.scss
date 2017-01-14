@@ -52,6 +52,12 @@ md-toolbar {
     min-height: 80px;
 }
 
+// Login loading
+.td-loading {
+  min-height: 5px!important;
+  padding: 0!important;
+}
+
 // Href line height wasn't right for md-icon-button
 a[md-icon-button] {
     line-height: 36px;

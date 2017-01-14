@@ -4,6 +4,7 @@
   </a>
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
+      <template tdLoading="login" loadingType="linear" loadingMode="linear"></template>
       <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm.value)">
         <md-card-title>LOGIN HERE</md-card-title>
         <md-card-subtitle>Sign In via your username and password!</md-card-subtitle>
@@ -20,9 +21,9 @@
             </div>
         </md-card-content>
         <md-card-actions align="end">
-          <md-checkbox indeterminate="true">Remember Me</md-checkbox>
+          <md-checkbox indeterminate="true" name="rememberMe" [(ngModel)]="rememberMe">Remember Me</md-checkbox>
           <span class="fill-remaining-space"></span>
-          <button align="end" md-raised-button color="accent" type="submit" [disabled]="!loginForm.form.valid">SIGN IN</button>
+          <button align="end" md-raised-button color="accent" type="submit" [disabled]="loginForm.form.invalid">SIGN IN</button>
         </md-card-actions>
         <br />
         <md-card-actions align="center">
