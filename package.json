@@ -55,7 +55,8 @@
     "screenfull": "^3.0.2",
     "smoothscroll": "^0.2.2",
     "ts-helpers": "^1.1.1",
-    "web-animations-js": "^2.2.2"
+    "web-animations-js": "^2.2.2",
+    "zone.js": "^0.7.4"
   },
   "devDependencies": {
     "@angular/compiler-cli": "2.4.1",

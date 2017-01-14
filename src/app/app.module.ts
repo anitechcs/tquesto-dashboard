@@ -21,6 +21,7 @@ import { ReportModule } from './report/report.module';
 import { StaticModule } from './static/static.module';
 
 import { AuthService } from './shared/services/auth.service';
+import { AuthGuardService } from './shared/services/auth-guard.service';
 import { SpinnerService } from './shared/services/spinner.service';
 import { ItemService } from './shared/services/item.service';
 import { UserService } from './shared/services/user.service';
@@ -56,6 +57,7 @@ import { AppComponent } from './app.component';
     appRoutingProviders,
     Title,
     AuthService,
+    AuthGuardService,
     SpinnerService,
     ItemService,
     UserService,

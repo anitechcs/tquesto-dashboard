@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MdIconRegistry } from '@angular/material';
 import { Title, DomSanitizer } from '@angular/platform-browser';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'tq-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   isFullscreen: boolean = false;
   fadeDiv: boolean = false;
   title: string;
-  constructor(private _titleService: Title, private router: Router, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer) { 
+  constructor(private titleService: Title, private router: Router, private authService: AuthService, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer) { 
     iconRegistry.addSvgIconInNamespace('assets', 'logo', domSanitizer.bypassSecurityTrustResourceUrl('/assets/imgs/logo.svg'));
   }
 
@@ -22,8 +23,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this._titleService.setTitle('Dashboard');
-    this.title = this._titleService.getTitle();
+    this.titleService.setTitle('Dashboard');
+    this.title = this.titleService.getTitle();
   }
 
   toggleSidebar() {
@@ -36,6 +37,7 @@ export class HomeComponent implements OnInit {
 
   doLogout() {
     this.fadeDiv = true;
+    this.authService.logout();
     this.router.navigate(['/']);
   }
 
