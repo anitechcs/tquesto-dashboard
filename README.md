@@ -2,7 +2,7 @@
 
 > TQuesto Dashboard Application
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
@@ -15,8 +15,9 @@ You can also use `ng generate directive/pipe/service/class`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. 
-Use the `-prod` flag for a production build.
+Run `ng build --prod --aot --no-sourcemap` to build the production build. 
+The build artifacts will be stored in the `dist/` directory. 
+
 
 ## Running unit tests
 
