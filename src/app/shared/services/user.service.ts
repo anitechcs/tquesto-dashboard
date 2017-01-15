@@ -3,6 +3,7 @@ import { Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { HttpInterceptorService, RESTService } from '@covalent/http';
+import { environment } from '../../../environments/environment';
 import { MOCK_API } from '../utils/constants';
 
 export interface IUser {
@@ -19,16 +20,15 @@ export class UserService extends RESTService<IUser> {
 
   constructor(private _http: HttpInterceptorService) {
     super(_http, {
-      baseUrl: MOCK_API,
-      path: '/users',
+      baseUrl: environment.baseServiceURL,
+      path: '/api/users',
+      //headers: new Headers({'Content-Type': 'application/json', 'Authorization': `Bearer ${sessionStorage.getItem('auth_token')}`})
     });
   }
 
   staticQuery(): Observable<IUser[]> {
     return this._http.get('data/users.json')
-    .map((res: Response) => {
-      return res.json();
-    });
+    .map((res: Response) =>  res.json());
   }
 
 }

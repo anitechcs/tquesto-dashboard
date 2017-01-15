@@ -24,11 +24,11 @@ export class UserListComponent implements AfterViewInit {
   }
 
   goBack(route: string): void {
-    this._router.navigate(['/']);
+    this._router.navigate(['/home/users']);
   }
 
   ngAfterViewInit(): void {
-    this._titleService.setTitle( 'Covalent Users' );
+    this._titleService.setTitle( 'TQuesto Users' );
     this.loadUsers();
   }
 
