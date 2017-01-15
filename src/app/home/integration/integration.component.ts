@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'tq-integration',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntegrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
+    this.titleService.setTitle('Integration');
   }
 
 }

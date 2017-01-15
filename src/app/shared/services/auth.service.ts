@@ -27,7 +27,12 @@ export class AuthService {
   }
 
   register(userParams) {
+    let serviceURL = environment.baseServiceURL+'/api/register';
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
 
+    return this.http.post(serviceURL, userParams, options)
+                    .map(res => res.json());
   }
 
 }

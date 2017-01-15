@@ -27,13 +27,25 @@ export class LoginComponent implements OnInit {
     this.notificationMsg = [];
   }
 
-  ngOnInit() {
+  ngOnInit() { 
     let isLoginRequired = this.route.snapshot.params['loginRequired'];
     if(isLoginRequired) {
       this.notificationMsg.push(
         {severity:'info', summary:'No Session!', detail:'Please Login', sticky:'false'}
       );
+    }
+    let isAccountCreated = this.route.snapshot.params['isAccountCreated'];
+    if(isAccountCreated) {
+      this.notificationMsg.push(
+        {severity:'info', summary:'Account created! Please check mail to activate', detail:'Please Login', sticky:'false'}
+      );
     } 
+    let isAccountActivated = this.route.snapshot.params['isAccountActivated'];
+    if(isAccountActivated) {
+      this.notificationMsg.push(
+        {severity:'info', summary:'Account activated successfully! Please Login', detail:'Please Login', sticky:'false'}
+      );
+    }
   }
 
   doLogin(userParams){

@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { CovalentCoreModule } from '@covalent/core';
 import { CovalentChipsModule } from '@covalent/core';
 import { CovalentFileModule } from '@covalent/core';
-import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHttpModule, IHttpInterceptor,HttpConfig } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentJsonFormatterModule } from '@covalent/core';
 import { CovalentMarkdownModule } from '@covalent/markdown';
@@ -28,7 +28,12 @@ import { UserService } from './shared/services/user.service';
 import { ConfigurationService } from './shared/services/configuration.service';
 
 import { appRoutes, appRoutingProviders } from './app.routes';
+import { RequestInterceptor } from './shared/utils/request.interceptor';
 import { AppComponent } from './app.component';
+
+const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
+  RequestInterceptor,
+];
 
 @NgModule({
   declarations: [
@@ -41,7 +46,11 @@ import { AppComponent } from './app.component';
     CovalentChipsModule.forRoot(),
     CovalentDataTableModule.forRoot(),
     CovalentFileModule.forRoot(),
-    CovalentHttpModule.forRoot(),
+    CovalentHttpModule.forRoot(/*{
+      inteceptors: [{
+        interceptor: RequestInterceptor, paths: ['**']
+      }]
+    }*/),
     CovalentHighlightModule.forRoot(),
     CovalentJsonFormatterModule.forRoot(),
     CovalentMarkdownModule.forRoot(),
@@ -55,6 +64,7 @@ import { AppComponent } from './app.component';
   ],
   providers: [
     appRoutingProviders,
+    httpInterceptorProviders,
     Title,
     AuthService,
     AuthGuardService,

@@ -4,10 +4,11 @@
   </a>
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
-      <template tdLoading="login" loadingType="linear" loadingMode="linear"></template>
+      <template tdLoading="login" loadingType="linear" loadingMode="indeterminate"></template>
       <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm.value)">
         <md-card-title>LOGIN HERE</md-card-title>
         <md-card-subtitle>Sign In via your username and password!</md-card-subtitle>
+        <div class="notif-msg" *ngIf="notificationMsg[0]">{{notificationMsg[0]["summary"]}}</div>
         <md-card-content>
             <div>
               <md-input flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (keypress)="hideNotification()">

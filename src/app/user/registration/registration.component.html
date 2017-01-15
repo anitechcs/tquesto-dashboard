@@ -4,29 +4,30 @@
   </a>
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
+      <template tdLoading="register" loadingType="linear" loadingMode="indeterminate"></template>
       <form #registrationForm="ngForm" (ngSubmit)="doRegistration(registrationForm.value)">
         <md-card-title>NEW REGISTERATION</md-card-title>
         <md-card-subtitle>Create a new account to unleash the power of tQuesto!</md-card-subtitle>
         <md-card-content>
             <div>
-              <md-input flex placeholder="Email" type="email" name="userEmail" [(ngModel)]="userName" required (keypress)="hideNotification()">
+              <md-input flex placeholder="Email" type="email" name="email" [(ngModel)]="email" required (keypress)="hideNotification()">
                 <span md-prefix><md-icon>mail</md-icon></span>
               </md-input>
             </div>
             <div>
-              <md-input flex placeholder="Password" type="text" name="password" [(ngModel)]="password" required (keypress)="hideNotification()">
-                <span md-prefix><md-icon>vpn_key</md-icon></span>
+              <md-input flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (keypress)="hideNotification()">
+                <span md-prefix><md-icon>person</md-icon></span>
               </md-input>
             </div>
             <div>
-              <md-input flex placeholder="Repeat Password" type="password" name="rpassword" [(ngModel)]="rpassword" required>
+              <md-input flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
                 <span md-prefix><md-icon>lock</md-icon></span>
               </md-input>
             </div>
         </md-card-content>
         <md-card-actions align="end">
-          <md-slide-toggle color="accent" [(ngModel)]="isMale" name="gender">
-            Are you a Male?
+          <md-slide-toggle color="accent" [(ngModel)]="tnc" name="tnc">
+            Accept <a routerLink="/tnc">Terms and Conditions</a>?
           </md-slide-toggle>
           <span class="fill-remaining-space"></span>
           <button align="end" md-raised-button color="accent" type="submit" [disabled]="registrationForm.form.invalid">REGISTER</button>
