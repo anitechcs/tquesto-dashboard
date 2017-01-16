@@ -8,6 +8,8 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
 import { HomeComponent } from './home/home.component';
 import { MyappsComponent } from './home/myapps/myapps.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
@@ -24,7 +26,8 @@ const routes: Routes = [
   {path: '', component: LandingComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
-  {path: 'resetpassword', component: RegistrationComponent},
+  {path: 'forgotpassword', component: ForgotPasswordComponent},
+  {path: 'resetpassword', component: ResetPasswordComponent},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuardService], 
     children: [
       {path: '', component: DashboardComponent},

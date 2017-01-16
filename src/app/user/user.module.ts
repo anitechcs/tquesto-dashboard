@@ -22,6 +22,8 @@ import { CovalentSearchModule } from '@covalent/core';
 import { CovalentPagingModule } from '@covalent/core';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   imports: [
@@ -47,7 +49,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RegistrationComponent,
     UserListComponent,
     UserDetailComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    ResetPasswordComponent,
+    ForgotPasswordComponent
   ]
 })
 export class UserModule { }
