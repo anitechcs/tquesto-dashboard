@@ -17,14 +17,25 @@ export class ResetPasswordComponent implements OnInit {
 
   password: string;
   rpassword: string;
+  notificationMsg: any[] = [];
 
-  constructor() { }
+  constructor() {
+    this.resetNotification();
+  }
 
   ngOnInit() {
   }
 
   doPasswordReset(formval) {
+    this.notificationMsg.push(
+      {severity:'error', message:'Oops! Something went wrong'}
+    );
+  }
 
+  resetNotification() {
+    this.notificationMsg.push(
+      {severity:'info', message:'Set a rememberable password for your account!'}
+    );
   }
 
 }

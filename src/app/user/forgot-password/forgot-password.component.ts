@@ -16,14 +16,25 @@ import { Component, OnInit, trigger, style, transition, animate } from '@angular
 export class ForgotPasswordComponent implements OnInit {
 
   email: string;
+  notificationMsg: any[] = [];
 
-  constructor() { }
+  constructor() { 
+    this.resetNotification();
+  }
 
   ngOnInit() {
   }
 
   sendPasswordResetMail(formval) {
+    this.notificationMsg.push(
+      {severity:'error', message:'Oops! Something went wrong'}
+    );
+  }
 
+  resetNotification() {
+    this.notificationMsg.push(
+      {severity:'info', message:'Provide registered email to reset your password!'}
+    );
   }
 
 }

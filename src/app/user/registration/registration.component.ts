@@ -22,10 +22,10 @@ export class RegistrationComponent implements OnInit {
   userName: string;
   password: string;
   tnc: boolean = true;
-  notificationMsg: any[];
+  notificationMsg: any[] = [];
 
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute, private loadingService: TdLoadingService) { 
-    this.notificationMsg = [];
+    this.resetNotification();
   }
 
   ngOnInit() {
@@ -39,25 +39,23 @@ export class RegistrationComponent implements OnInit {
         // Registration succeded, navigating to Login screen
         this.router.navigate(['/login', {isAccountCreated: true}]);
       }else{
-        if(this.notificationMsg.length == 0){
-          this.notificationMsg.push(
-              {severity:'error', summary:'Oops! Registration Request Failed', detail:'', sticky:'true'}
-          );
-        }
+        this.notificationMsg.push(
+            {severity:'error', summary:'Oops! Registration Request Failed'}
+        );
       }
       this.loadingService.resolve('register');
     }, err => {
-      if(this.notificationMsg.length == 0){
-        this.notificationMsg.push(
-          {severity:'error', summary:'Oops! Something went wrong', detail:'', sticky:'true'}
-        );
-      }
+      this.notificationMsg.push(
+        {severity:'error', message:'Oops! Something went wrong'}
+      );
       this.loadingService.resolve('register');
     });
   }
 
-  hideNotification() {
-    this.notificationMsg = [];
+  resetNotification() {
+    this.notificationMsg.push(
+      {severity:'info', message:'Create a new account to unleash the tQuesto!'}
+    );
   }
 
 }
