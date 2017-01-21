@@ -42,9 +42,7 @@ export class LoginComponent implements OnInit {
     } 
     let isAccountActivated = this.route.snapshot.params['isAccountActivated'];
     if(isAccountActivated) {
-      this.notificationMsg.push(
-        {severity:'success', message:'Account activated successfully! Please Login'}
-      );
+      this.activateUser(this.route.snapshot.params['key']); 
     }
   }
 
@@ -74,6 +72,28 @@ export class LoginComponent implements OnInit {
       }
       this.loadingService.resolve('login');
     });
+  }
+
+  activateUser(key) {
+    this.loadingService.register('login');
+    this.authService.activateUser(key).subscribe(res => {
+      let statusCode = res.statusCode;
+      if(statusCode && statusCode == 0) {
+        this.notificationMsg.push(
+          {severity:'success', message:'Account activated successfully! Please Login'}
+        );
+      } else {
+        this.notificationMsg.push(
+          {severity:'error', message:'Oops! Your account activation failed'}
+        );
+      }
+      this.loadingService.resolve('login');
+    }, err => {
+      this.notificationMsg.push(
+        {severity:'error', message:'Oops! Your account activation failed'}
+      );
+      this.loadingService.resolve('login');
+    });      
   }
 
   resetNotification() {
