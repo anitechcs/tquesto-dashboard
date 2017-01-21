@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -42,6 +43,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     CovalentMarkdownModule,
     CovalentSearchModule,
     CovalentPagingModule,
+    SharedModule,
     FlexLayoutModule.forRoot()
   ],
   declarations: [

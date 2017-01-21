@@ -2,6 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './static/landing/landing.component';
+import { TncComponent } from './static/tnc/tnc.component';
 import { ReportViewComponent } from './report/report-view/report-view.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'registration', component: RegistrationComponent},
   {path: 'forgotpassword', component: ForgotPasswordComponent},
   {path: 'resetpassword', component: ResetPasswordComponent},
+  {path: 'tnc', component: TncComponent},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuardService], 
     children: [
       {path: '', component: DashboardComponent},

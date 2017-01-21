@@ -19,6 +19,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FullscreenDirective } from './directives/fullscreen.directive';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { ToolboxComponent } from './components/toolbox/toolbox.component';
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
   imports: [
@@ -41,12 +43,16 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     SidebarComponent,
     FullscreenDirective,
     NotificationsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ToolboxComponent,
+    MessageComponent
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
+    ToolboxComponent,
+    MessageComponent,
     FullscreenDirective
   ]
 })

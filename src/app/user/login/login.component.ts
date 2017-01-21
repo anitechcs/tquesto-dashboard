@@ -21,29 +21,29 @@ export class LoginComponent implements OnInit {
   userName: string;
   password: string;
   rememberMe: boolean;
-  notificationMsg: any[];
+  notificationMsg: any[] = [];
 
   constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute, private loadingService: TdLoadingService) { 
-    this.notificationMsg = [];
+    this.resetNotification();
   }
 
   ngOnInit() { 
     let isLoginRequired = this.route.snapshot.params['loginRequired'];
     if(isLoginRequired) {
       this.notificationMsg.push(
-        {severity:'info', summary:'No Session!', detail:'Please Login', sticky:'false'}
+        {severity:'warn', message:'No session found! Please Login'}
       );
     }
     let isAccountCreated = this.route.snapshot.params['isAccountCreated'];
     if(isAccountCreated) {
       this.notificationMsg.push(
-        {severity:'info', summary:'Account created! Please check mail to activate', detail:'Please Login', sticky:'false'}
+        {severity:'success', message:'Account created! Please check mail to activate'}
       );
     } 
     let isAccountActivated = this.route.snapshot.params['isAccountActivated'];
     if(isAccountActivated) {
       this.notificationMsg.push(
-        {severity:'info', summary:'Account activated successfully! Please Login', detail:'Please Login', sticky:'false'}
+        {severity:'success', message:'Account activated successfully! Please Login'}
       );
     }
   }
@@ -57,33 +57,29 @@ export class LoginComponent implements OnInit {
         this.authService.isLoggedIn = true;
         this.router.navigate(['/home']);
       }else{
-        if(this.notificationMsg.length == 0){
-          this.notificationMsg.push(
-              {severity:'error', summary:'Oops! Login Request Failed', detail:'', sticky:'true'}
-          );
-        }
+        this.notificationMsg.push(
+          {severity:'error', message:'Oops! Login Request Failed'}
+        );
       }
       this.loadingService.resolve('login');
     }, err => {
       if(err.status === 401) {
-        if(this.notificationMsg.length == 0){
-            this.notificationMsg.push(
-              {severity:'error', summary:'Invalid Credentials!', detail:'', sticky:'true'}
-            );
-          }
+        this.notificationMsg.push(
+          {severity:'error', message:'Invalid Credentials!'}
+        );
       } else {
-        if(this.notificationMsg.length == 0){
-          this.notificationMsg.push(
-            {severity:'error', summary:'Oops! Something went wrong', detail:'', sticky:'true'}
-          );
-        }
+        this.notificationMsg.push(
+          {severity:'error', message:'Oops! Something went wrong'}
+        );
       }
       this.loadingService.resolve('login');
     });
   }
 
-  hideNotification() {
-    this.notificationMsg = [];
+  resetNotification() {
+    this.notificationMsg.push(
+      {severity:'info', message:'Sign In via your username and password!'}
+    );
   }
 
 }

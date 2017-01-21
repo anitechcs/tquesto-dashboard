@@ -7,22 +7,21 @@
       <template tdLoading="login" loadingType="linear" loadingMode="indeterminate"></template>
       <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm.value)">
         <md-card-title>LOGIN HERE</md-card-title>
-        <md-card-subtitle>Sign In via your username and password!</md-card-subtitle>
-        <div class="notif-msg" *ngIf="notificationMsg[0]">{{notificationMsg[0]["summary"]}}</div>
+        <tq-message [value]="notificationMsg"></tq-message>
         <md-card-content>
             <div>
-              <md-input flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (keypress)="hideNotification()">
+              <md-input flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
                 <span md-prefix><md-icon>person</md-icon></span>
               </md-input>
             </div>
             <div>
-              <md-input flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+              <md-input flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
                 <span md-prefix><md-icon>lock</md-icon></span>
               </md-input>
             </div>
         </md-card-content>
         <md-card-actions align="end">
-          <md-checkbox indeterminate="true" name="rememberMe" [(ngModel)]="rememberMe">Remember Me</md-checkbox>
+          <md-checkbox indeterminate="true" name="rememberMe" [(ngModel)]="rememberMe"> Remember Me</md-checkbox>
           <span class="fill-remaining-space"></span>
           <button align="end" md-raised-button color="accent" type="submit" [disabled]="loginForm.form.invalid">SIGN IN</button>
         </md-card-actions>

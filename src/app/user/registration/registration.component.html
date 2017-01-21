@@ -7,20 +7,20 @@
       <template tdLoading="register" loadingType="linear" loadingMode="indeterminate"></template>
       <form #registrationForm="ngForm" (ngSubmit)="doRegistration(registrationForm.value)">
         <md-card-title>NEW REGISTERATION</md-card-title>
-        <md-card-subtitle>Create a new account to unleash the power of tQuesto!</md-card-subtitle>
+        <tq-message [value]="notificationMsg"></tq-message>
         <md-card-content>
             <div>
-              <md-input flex placeholder="Email" type="email" name="email" [(ngModel)]="email" required (keypress)="hideNotification()">
+              <md-input flex placeholder="Email" type="email" name="email" [(ngModel)]="email" required (focus)="resetNotification()">
                 <span md-prefix><md-icon>mail</md-icon></span>
               </md-input>
             </div>
             <div>
-              <md-input flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (keypress)="hideNotification()">
+              <md-input flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
                 <span md-prefix><md-icon>person</md-icon></span>
               </md-input>
             </div>
             <div>
-              <md-input flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+              <md-input flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
                 <span md-prefix><md-icon>lock</md-icon></span>
               </md-input>
             </div>
