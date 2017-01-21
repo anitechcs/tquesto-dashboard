@@ -1,5 +1,5 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { ToolboxService } from '../../shared/services/toolbox.service';
 import { TdLoadingService } from '@covalent/core';
 import { TdDialogService } from '@covalent/core';
 import { ConfigurationService, IConfiguration } from '../../shared/services/configuration.service';
@@ -14,12 +14,30 @@ export class ConfigurationComponent implements AfterViewInit {
   features: IConfiguration[];
   filteredFeatures: IConfiguration[];
 
-  constructor(private _titleService: Title,
+  constructor(private toolbox: ToolboxService,
               private _dialogService: TdDialogService,
               private _featuresService: ConfigurationService,
               private _loadingService: TdLoadingService) {
 
+      toolbox.setToolBox({
+        title: "Configurations", 
+        actions: [
+          {icon: 'add', tooltip: 'Add', callback: this.callBack},
+          {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}
+        ],
+        more: [
+          {text: 'View All', tooltip: 'View All', callback: this.callBack},
+          {text: 'Edit', tooltip: 'Edit', callback: this.callBack},
+          {text: 'Delete', tooltip: 'Delete', callback: this.callBack}
+        ]
+    });
+
   }
+
+  callBack() {
+
+  }
+
   openConfirm(id: string): void {
     this._dialogService.openConfirm({
       message: 'Are you sure you want to delete this feature? It\'s being used!',
@@ -35,7 +53,6 @@ export class ConfigurationComponent implements AfterViewInit {
     });
   }
   ngAfterViewInit(): void {
-    this._titleService.setTitle( 'Product Features' );
     this.loadFeatures();
   }
   filterFeatures(filterTitle: string = ''): void {

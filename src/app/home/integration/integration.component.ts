@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { ToolboxService } from '../../shared/services/toolbox.service';
 
 @Component({
   selector: 'tq-integration',
@@ -8,13 +8,21 @@ import { Title } from '@angular/platform-browser';
 })
 export class IntegrationComponent implements OnInit {
 
-  constructor(private titleService: Title) { }
+  constructor(private toobox: ToolboxService) { 
+    this.toobox.setToolBox({
+        title: "Integration", 
+        actions: [
+          {icon: 'add', tooltip: 'Add', callback: this.callBack},
+          {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}
+        ]
+    });
+  }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit(): void {
-    this.titleService.setTitle('Integration');
+  callBack() {
+    console.log('Integration callback');
   }
 
 }
