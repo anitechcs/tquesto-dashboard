@@ -21,7 +21,7 @@ export class UserService extends RESTService<IUser> {
   constructor(private _http: HttpInterceptorService) {
     super(_http, {
       baseUrl: environment.baseServiceURL,
-      path: '/api/users',
+      path: 'api/users',
       //headers: new Headers({'Content-Type': 'application/json', 'Authorization': `Bearer ${sessionStorage.getItem('auth_token')}`})
     });
   }

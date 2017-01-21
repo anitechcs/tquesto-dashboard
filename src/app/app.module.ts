@@ -26,6 +26,7 @@ import { SpinnerService } from './shared/services/spinner.service';
 import { ItemService } from './shared/services/item.service';
 import { UserService } from './shared/services/user.service';
 import { ToolboxService } from './shared/services/toolbox.service';
+import { AppsService } from './shared/services/apps.service';
 import { ConfigurationService } from './shared/services/configuration.service';
 
 import { appRoutes, appRoutingProviders } from './app.routes';
@@ -73,6 +74,7 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     ItemService,
     UserService,
     ToolboxService,
+    AppsService,
     ConfigurationService
   ],
   entryComponents: [ ],
