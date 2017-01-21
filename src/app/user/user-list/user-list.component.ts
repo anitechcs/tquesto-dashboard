@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { ToolboxService } from '../../shared/services/toolbox.service';
 import { MdSnackBar } from '@angular/material';
 import { TdLoadingService, TdDialogService } from '@covalent/core';
 import { UserService, IUser } from '../../shared/services/user.service';
@@ -15,12 +15,28 @@ export class UserListComponent implements AfterViewInit {
   users: IUser[];
   filteredUsers: IUser[];
 
-  constructor(private _titleService: Title,
+  constructor(private toolbox: ToolboxService,
               private _router: Router,
               private _loadingService: TdLoadingService,
               private _dialogService: TdDialogService,
               private _snackBarService: MdSnackBar,
               private _userService: UserService) {
+    toolbox.setToolBox({
+        title: "User Management", 
+        actions: [
+          {icon: 'add', tooltip: 'Add', callback: this.callBack},
+          {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}
+        ],
+        more: [
+          {text: 'View All', tooltip: 'View All', callback: this.callBack},
+          {text: 'Edit', tooltip: 'Edit', callback: this.callBack},
+          {text: 'Delete', tooltip: 'Delete', callback: this.callBack}
+        ]
+    });
+  }
+
+  callBack() {
+
   }
 
   goBack(route: string): void {
@@ -28,7 +44,6 @@ export class UserListComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this._titleService.setTitle( 'TQuesto Users' );
     this.loadUsers();
   }
 
