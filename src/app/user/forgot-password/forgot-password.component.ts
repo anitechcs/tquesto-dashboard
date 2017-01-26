@@ -1,4 +1,6 @@
 import { Component, OnInit, trigger, style, transition, animate } from '@angular/core';
+import { TdLoadingService } from '@covalent/core';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'tq-forgot-password',
@@ -18,17 +20,33 @@ export class ForgotPasswordComponent implements OnInit {
   email: string;
   notificationMsg: any[] = [];
 
-  constructor() { 
+  constructor(private authService: AuthService, private loadingService: TdLoadingService) { 
     this.resetNotification();
   }
 
   ngOnInit() {
   }
 
-  sendPasswordResetMail(formval) {
-    this.notificationMsg.push(
-      {severity:'error', message:'Oops! Something went wrong'}
-    );
+  sendPasswordResetMail() {
+    this.loadingService.register('forgotpass');
+    this.authService.sendPasswordResetMail(this.email).subscribe(res => {
+      let statusCode = res.statusCode;
+      if(statusCode && statusCode == 0) {
+        this.notificationMsg.push(
+          {severity:'success', message:'Password reset email send successfully!'}
+        );
+      } else {
+        this.notificationMsg.push(
+          {severity:'error', message:'Oops! No matching user found for provided email'}
+        );
+      }
+      this.loadingService.resolve('forgotpass');
+    }, err => {
+      this.notificationMsg.push(
+        {severity:'error', message:'Oops! No matching user found for provided email'}
+      );
+      this.loadingService.resolve('forgotpass');
+    });  
   }
 
   resetNotification() {

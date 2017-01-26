@@ -1,4 +1,7 @@
 import { Component, OnInit, trigger, style, transition, animate } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { TdLoadingService } from '@covalent/core';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'tq-reset-password',
@@ -15,21 +18,39 @@ import { Component, OnInit, trigger, style, transition, animate } from '@angular
 })
 export class ResetPasswordComponent implements OnInit {
 
-  password: string;
-  rpassword: string;
+  newPassword: string;
+  repeatpassword: string;
   notificationMsg: any[] = [];
+  resetKey: string;
 
-  constructor() {
+  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute, private loadingService: TdLoadingService) {
     this.resetNotification();
   }
 
   ngOnInit() {
+    this.resetKey = this.route.snapshot.params['key'];
   }
 
   doPasswordReset(formval) {
-    this.notificationMsg.push(
-      {severity:'error', message:'Oops! Something went wrong'}
-    );
+    this.loadingService.register('resetpass');
+    this.authService.resetPassword({"newPassword": this.newPassword, "key": this.resetKey}).subscribe(res => {
+      let statusCode = res.statusCode;
+      if(statusCode && statusCode == 0) {
+        this.notificationMsg.push(
+          {severity:'success', message:'Password reset completed successfully!'}
+        );
+      } else {
+        this.notificationMsg.push(
+          {severity:'error', message:'Oops! Your password reset request failed'}
+        );
+      }
+      this.loadingService.resolve('resetpass');
+    }, err => {
+      this.notificationMsg.push(
+        {severity:'error', message:'Oops! Your password reset request failed'}
+      );
+      this.loadingService.resolve('resetpass');
+    });     
   }
 
   resetNotification() {
