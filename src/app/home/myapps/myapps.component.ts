@@ -10,7 +10,7 @@ export class MyappsComponent implements OnInit {
 
   constructor(private toolbox: ToolboxService) { 
     toolbox.setToolBox({
-        title: "Apps", 
+        title: "My Apps", 
         actions: [
           {icon: 'add', tooltip: 'Add', callback: this.callBack},
           {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}

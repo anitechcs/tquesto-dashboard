@@ -35,6 +35,11 @@ md-toolbar {
     height: 40px!important;
 }
 
+/* Hack for Bootstrap.css presence*/
+a, a:hover, a:active {
+    text-decoration: none;
+}
+
 /* Sidenav expand/collapse */
 .collapse {
     md-sidenav {
@@ -45,6 +50,11 @@ md-toolbar {
     .md-list-item {
         padding: 0 15px!important;
     }
+}
+
+/* min container card height */
+.container-card {
+    min-height: 500px;
 }
 
 // Custom style for loading elements without height

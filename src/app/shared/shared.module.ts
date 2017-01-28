@@ -48,12 +48,23 @@ import { MessageComponent } from './components/message/message.component';
     MessageComponent
   ],
   exports: [
+    CovalentCoreModule,
+    CovalentChartsModule,
+    CovalentChipsModule,
+    CovalentDataTableModule,
+    CovalentFileModule,
+    CovalentHttpModule,
+    CovalentHighlightModule,
+    CovalentJsonFormatterModule,
+    CovalentMarkdownModule,
+    CovalentSearchModule,
+    CovalentPagingModule,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
     ToolboxComponent,
     MessageComponent,
-    FullscreenDirective
+    FullscreenDirective,
   ]
 })
 export class SharedModule { }

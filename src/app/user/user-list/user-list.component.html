@@ -1,5 +1,5 @@
 <div class="md-content" flex md-scroll-y>
-  <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+  <md-card tdMediaToggle="gt-xs" class="container-card">
       <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true" (searchDebounce)="filterUsers($event)"></td-search-box>
       <md-divider></md-divider>
       <template tdLoading="users.list">
@@ -23,6 +23,7 @@
                   <md-icon>more_vert</md-icon>
                   </button>
                   <md-menu x-position="before" #menu="mdMenu">
+                      <a [routerLink]="[user.id + '/detail']" md-menu-item>View Detail</a>
                       <a [routerLink]="[user.id + '/edit']" md-menu-item>Edit</a>
                       <button (click)="deleteUser(user.id)" md-menu-item>Delete</button>
                   </md-menu>
