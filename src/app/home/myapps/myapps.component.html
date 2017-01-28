@@ -1,8 +1,8 @@
 <div class="md-content" flex md-scroll-y>
-
+<md-card tdMediaToggle="gt-xs" class="container-card">
   <td-search-box class="push-left push-right" placeholder="search" [alwaysVisible]="true"></td-search-box>
-
-  <div layout="row">
+  <md-divider></md-divider>
+  <div layout="row" class="my-apps">
     <div flex="33" layout="column">
       <md-card class="md-card-colored" flex>
         <md-card-content class="text-center">
@@ -13,6 +13,11 @@
             <div class="md-caption tc-grey-600">updated {{ '2016-06-17 12:59:59' | timeAgo }}</div>
           </div>
         </md-card-content>
+        <br />
+        <md-card-footer>
+          <button md-icon-button><md-icon>check_box_outline_blank</md-icon></button>
+          MAKE DEFAULT
+        </md-card-footer>
       </md-card>
     </div>
     <div flex="33" layout="column">
@@ -25,6 +30,11 @@
             <div class="md-caption tc-grey-600">updated {{ '2016-07-18 11:02:59' | timeAgo }}</div>
           </div>
         </md-card-content>
+        <br />
+        <md-card-footer>
+            <button md-icon-button color="primary"><md-icon>check_circle</md-icon></button>
+            DEFAULT
+        </md-card-footer>
       </md-card>
     </div>
     <div flex="33" layout="column">
@@ -37,11 +47,47 @@
             <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
           </div>
         </md-card-content>
+        <br />
+        <md-card-footer>
+          <button md-icon-button><md-icon>check_box_outline_blank</md-icon></button>
+          MAKE DEFAULT
+        </md-card-footer>
+      </md-card>
+    </div>
+    <div flex="33" layout="column">
+      <md-card class="md-card-colored" flex>
+        <md-card-content class="text-center">
+          <div class="md-headline">{{ '324523' | digits}} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
+          <md-icon class="icon tc-cyan-700">receipt</md-icon>
+          <div layout="column">
+            <div class="md-subhead">MyApp</div>
+            <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
+          </div>
+        </md-card-content>
+        <br />
+        <md-card-footer>
+          <button md-icon-button><md-icon>check_box_outline_blank</md-icon></button>
+          MAKE DEFAULT
+        </md-card-footer>
+      </md-card>
+    </div>
+    <div flex="33" layout="column">
+      <md-card class="md-card-colored" flex>
+        <md-card-content class="text-center">
+          <div class="md-headline">{{ '324523' | digits}} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
+          <md-icon class="icon tc-cyan-700">receipt</md-icon>
+          <div layout="column">
+            <div class="md-subhead">TestApp</div>
+            <div class="md-caption tc-grey-600">updated {{ '2016-07-13 09:59:59' | timeAgo }}</div>
+          </div>
+        </md-card-content>
+        <br />
+        <md-card-footer>
+          <button md-icon-button><md-icon>check_box_outline_blank</md-icon></button>
+          MAKE DEFAULT
+        </md-card-footer>
       </md-card>
     </div>
   </div>
-
-  <button md-fab color="accent" class="md-fab-position-bottom-right" [routerLink]="['add']"> 
-    <md-icon>add</md-icon>
-  </button>
+</md-card>
 </div>

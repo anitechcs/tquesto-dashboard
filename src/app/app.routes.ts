@@ -41,8 +41,9 @@ const routes: Routes = [
       {path: 'users', children: [
         {path: '', component: UserListComponent},
         {path: 'list', component: UserListComponent},
-        {path: 'detail', component: UserDetailComponent},
-        {path: 'create', component: CreateUserComponent},
+        {path: ':id/detail', component: UserDetailComponent},
+        {path: ':id/edit', component: CreateUserComponent},
+        {path: 'add', component: CreateUserComponent},
       ]},
       {path: 'events', children: [
         {path: 'analytics', component: AnalyticsComponent},

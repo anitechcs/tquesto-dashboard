@@ -1,4 +1,11 @@
-.md-fab-position-bottom-right {
-    bottom: 80px;
-    position: fixed;
+.my-apps {
+    margin: 20px 30px;
+    flex-flow: row wrap;
+}
+
+md-card-footer {
+    color: white;
+    background: orange;
+    opacity: 50%;
+    text-align: center;
 }

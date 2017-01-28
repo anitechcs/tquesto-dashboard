@@ -1,5 +1,53 @@
 <div class="md-content" flex md-scroll-y>
-  <p>
-    create-user works!
-  </p>
+  <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
+      <md-card-title>User Form</md-card-title>
+      <md-divider></md-divider>
+      <md-card-content class="push-bottom-none">
+        <form #userForm="ngForm">
+          <div layout="row">
+            <md-input-container flex> 
+              <input md-input
+                      #displayNameElement
+                      #displayNameControl="ngModel"
+                      type="text" 
+                      placeholder="Display Name" 
+                      [(ngModel)]="display_name" 
+                      name="display_name" 
+                      maxlength="20" 
+                      required>
+              <md-hint align="start">
+                <span [hidden]="displayNameControl.pristine || !displayNameControl.errors?.required" class="tc-red-600">Display Name is required!</span>
+              </md-hint>
+              <md-hint align="end">{{displayNameElement.value.length}} / 20</md-hint>
+            </md-input-container>
+          </div>
+          <div layout="row" class="push-top">
+            <md-input-container flex> 
+              <input md-input
+                      #emailElement
+                      #emailControl="ngModel"
+                      type="text" 
+                      placeholder="Email" 
+                      [(ngModel)]="email" 
+                      name="email"
+                      maxlength="30"
+                      pattern="^\w+@\w+$"
+                      required>
+              <md-hint align="start">
+                <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">That's not an email!</span>
+              </md-hint>
+              <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
+            </md-input-container>
+          </div>
+          <div layout="row">
+            <md-slide-toggle [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>
+          </div>
+        </form>
+      </md-card-content>
+      <md-divider></md-divider>
+      <md-card-actions>
+        <button md-button [disabled]="!userForm.form.valid" color="primary" (click)="save()">SAVE</button>
+        <button md-button (click)="goBack()">CANCEL</button>
+      </md-card-actions>
+    </md-card>
 </div>
