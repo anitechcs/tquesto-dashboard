@@ -48,11 +48,11 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     CovalentChipsModule.forRoot(),
     CovalentDataTableModule.forRoot(),
     CovalentFileModule.forRoot(),
-    CovalentHttpModule.forRoot(/*{
-      inteceptors: [{
+    CovalentHttpModule.forRoot({
+      interceptors: [{
         interceptor: RequestInterceptor, paths: ['**']
       }]
-    }*/),
+    }),
     CovalentHighlightModule.forRoot(),
     CovalentJsonFormatterModule.forRoot(),
     CovalentMarkdownModule.forRoot(),

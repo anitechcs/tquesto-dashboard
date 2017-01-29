@@ -9,10 +9,13 @@ import { UserService, IUser } from '../../shared/services/user.service';
 })
 export class CreateUserComponent implements OnInit {
 
-  display_name: string;
-  email: string;
   id: string;
-  admin: boolean;
+  userName: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  activated: boolean;
   user: IUser;
   action: string;
 
@@ -26,27 +29,29 @@ export class CreateUserComponent implements OnInit {
     this.route.url.subscribe(url => {
       this.action = (url.length > 1 ? url[1].path : 'add');
     });
-    this.route.params.subscribe((params: {id: string}) => {
-      let userId: string = params.id;
-      this.usersService.get(userId).subscribe((user: any) => {
-        this.display_name = user.display_name;
+    this.route.params.subscribe((params: {userName: string}) => {
+      let userName: string = params.userName;
+      this.usersService.get(userName).subscribe((user: any) => {
+        this.userName = user.userName;
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
         this.email = user.email;
-        this.admin = (user.site_admin === 1 ? true : false);
+        this.phone = user.phone;
+        this.activated = user.activated;
         this.id = user.id;
       });
     });
   }
 
   save(): void {
-    let site_admin: number = (this.admin ? 1 : 0);
-    let now: Date = new Date();
     this.user = {
-      display_name: this.display_name,
+      userName: this.userName,
+      firstName: this.firstName,
+      lastName: this.lastName,
       email: this.email,
-      site_admin: site_admin,
-      id: this.id || this.display_name.replace(/\s+/g, '.'),
-      created: now,
-      last_access: now,
+      phone: this.phone,
+      activated: this.activated,
+      id: this.id
     };
     if (this.action === 'add') {
       this.usersService.create(this.user).subscribe(() => {

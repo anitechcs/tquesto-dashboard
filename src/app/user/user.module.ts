@@ -7,7 +7,6 @@ import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserListComponent } from './user-list/user-list.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -27,7 +26,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     LoginComponent,
     RegistrationComponent,
     UserListComponent,
-    UserDetailComponent,
     CreateUserComponent,
     ResetPasswordComponent,
     ForgotPasswordComponent

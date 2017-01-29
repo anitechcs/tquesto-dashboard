@@ -10,22 +10,25 @@
           <template let-user let-last="last" ngFor [ngForOf]="filteredUsers">
             <md-list-item>
               <md-icon md-list-avatar>person</md-icon>
-              <h3 md-line> {{user.display_name}} </h3>
+              <h3 md-line> {{user.userName}} </h3>
               <p md-line> {{user.email}} </p>
-              <p md-line hide-gt-md class="md-caption"> last login: {{ user.last_access | timeAgo }} </p>
-              <span flex></span>
+              <p md-line hide-gt-md class="md-caption"> {{ user.phone }} </p>
               <span hide-xs hide-sm hide-md flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
-                  <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.created | date }} </div>
-                  <div class="md-caption tc-grey-500" flex-gt-xs="50"> {{ user.last_access | timeAgo }} </div>
+                  <div class="md-caption tc-grey-500">{{ user.firstName }} {{ user.lastName }}</div>
+              </span>
+              <span hide-xs hide-sm hide-md flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
+                  <div class="md-caption tc-grey-500">{{ user.phone }} </div>
+              </span>
+              <span hide-xs hide-sm hide-md flex-gt-xs="60" flex-xs="40" layout-gt-xs="row">
+                  <div class="md-caption tc-grey-500">Activated: {{ user.activated }} </div>
               </span>
               <span>
                   <button md-icon-button [md-menu-trigger-for]="menu">
                   <md-icon>more_vert</md-icon>
                   </button>
                   <md-menu x-position="before" #menu="mdMenu">
-                      <a [routerLink]="[user.id + '/detail']" md-menu-item>View Detail</a>
-                      <a [routerLink]="[user.id + '/edit']" md-menu-item>Edit</a>
-                      <button (click)="deleteUser(user.id)" md-menu-item>Delete</button>
+                      <a [routerLink]="[user.userName + '/edit']" md-menu-item>Edit</a>
+                      <button (click)="deleteUser(user.userName)" md-menu-item>Delete</button>
                   </md-menu>
               </span>
             </md-list-item>
@@ -34,8 +37,8 @@
         </md-list>
       </template>
       <md-divider></md-divider>
-      <md-card-actions>
-        <button md-button class="md-primary" (click)="goBack()">BACK</button>
+      <md-card-actions align="end">
+        <span class="count-msg"> {{(filteredUsers)?filteredUsers.length:0}} records found! </span>
       </md-card-actions>
     </md-card>
 

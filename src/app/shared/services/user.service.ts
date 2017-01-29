@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
+import { Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { environment } from '../../../environments/environment';
-import { MOCK_API } from '../utils/constants';
 
 export interface IUser {
-  display_name: string;
   id: string;
+  userName: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  created: Date;
-  last_access: Date;
-  site_admin: number;
+  phone: string;
+  activated: boolean;
 }
 
 @Injectable()
@@ -22,8 +22,7 @@ export class UserService extends RESTService<IUser> {
     super(_http, {
       baseUrl: environment.baseServiceURL,
       path: 'api/users',
-      //headers: new Headers({'Content-Type': 'application/json', 'Authorization': `Bearer ${sessionStorage.getItem('auth_token')}`})
-    });
+     });
   }
 
   staticQuery(): Observable<IUser[]> {

@@ -1,11 +1,19 @@
 .my-apps {
-    margin: 20px 30px;
+    margin: 30px 30px;
     flex-flow: row wrap;
+}
+
+.my-apps md-card {
+    margin: 10px 15px;
 }
 
 md-card-footer {
     color: white;
     background: orange;
-    opacity: 50%;
+    opacity: .7;
+}
+
+.default-app {
     text-align: center;
+    background: #1080f2;
 }

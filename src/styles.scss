@@ -57,6 +57,16 @@ a, a:hover, a:active {
     min-height: 500px;
 }
 
+.count-msg {
+    padding: 10px 20px;
+    color: gray;
+    font-weight: bold;
+}
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
 // Custom style for loading elements without height
 .will-load {
     min-height: 80px;
