@@ -5,7 +5,6 @@ import { LandingComponent } from './static/landing/landing.component';
 import { TncComponent } from './static/tnc/tnc.component';
 import { ReportViewComponent } from './report/report-view/report-view.component';
 import { UserListComponent } from './user/user-list/user-list.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { CreateUserComponent } from './user/create-user/create-user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
@@ -41,8 +40,7 @@ const routes: Routes = [
       {path: 'users', children: [
         {path: '', component: UserListComponent},
         {path: 'list', component: UserListComponent},
-        {path: ':id/detail', component: UserDetailComponent},
-        {path: ':id/edit', component: CreateUserComponent},
+        {path: ':userName/edit', component: CreateUserComponent},
         {path: 'add', component: CreateUserComponent},
       ]},
       {path: 'events', children: [

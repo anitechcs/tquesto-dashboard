@@ -1,24 +1,56 @@
 <div class="md-content" flex md-scroll-y>
-  <md-card tdMediaToggle="gt-xs" [mediaClasses]="['push']">
-      <md-card-title>User Form</md-card-title>
+  <md-card tdMediaToggle="gt-xs" class="container-card">
+      <md-card-title>User Creation Form</md-card-title>
       <md-divider></md-divider>
       <md-card-content class="push-bottom-none">
         <form #userForm="ngForm">
           <div layout="row">
             <md-input-container flex> 
               <input md-input
-                      #displayNameElement
-                      #displayNameControl="ngModel"
+                      #userNameElement
+                      #userNameControl="ngModel"
                       type="text" 
-                      placeholder="Display Name" 
-                      [(ngModel)]="display_name" 
-                      name="display_name" 
+                      placeholder="User Name" 
+                      [(ngModel)]="userName" 
+                      name="userName" 
                       maxlength="20" 
                       required>
               <md-hint align="start">
-                <span [hidden]="displayNameControl.pristine || !displayNameControl.errors?.required" class="tc-red-600">Display Name is required!</span>
+                <span [hidden]="userNameControl.pristine || !userNameControl.errors?.required" class="tc-red-600">User Name is required!</span>
               </md-hint>
-              <md-hint align="end">{{displayNameElement.value.length}} / 20</md-hint>
+              <md-hint align="end">{{userNameElement.value.length}} / 20</md-hint>
+            </md-input-container>
+          </div>
+          <div layout="row" class="push-top">
+            <md-input-container flex> 
+              <input md-input
+                      #firstNameElement
+                      #firstNameControl="ngModel"
+                      type="text" 
+                      placeholder="First Name" 
+                      [(ngModel)]="firstName" 
+                      name="firstName" 
+                      maxlength="20">
+              <md-hint align="start">
+                <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.required" class="tc-red-600">First Name is required!</span>
+              </md-hint>
+              <md-hint align="end">{{firstNameElement.value.length}} / 20</md-hint>
+            </md-input-container>
+          </div>
+          <div layout="row" class="push-top">
+            <md-input-container flex> 
+              <input md-input
+                      #lastNameElement
+                      #lastNameControl="ngModel"
+                      type="text" 
+                      placeholder="Last Name" 
+                      [(ngModel)]="lastName" 
+                      name="lastName" 
+                      maxlength="20">
+              <md-hint align="start">
+                <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.required" class="tc-red-600">Last Name is required!</span>
+              </md-hint>
+              <md-hint align="end">{{lastNameElement.value.length}} / 20</md-hint>
             </md-input-container>
           </div>
           <div layout="row" class="push-top">
@@ -31,7 +63,6 @@
                       [(ngModel)]="email" 
                       name="email"
                       maxlength="30"
-                      pattern="^\w+@\w+$"
                       required>
               <md-hint align="start">
                 <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">That's not an email!</span>
@@ -39,8 +70,24 @@
               <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
             </md-input-container>
           </div>
+          <div layout="row" class="push-top">
+            <md-input-container flex> 
+              <input md-input
+                      #phoneElement
+                      #phoneControl="ngModel"
+                      type="text" 
+                      placeholder="Phone" 
+                      [(ngModel)]="phone" 
+                      name="phone"
+                      maxlength="20">
+              <md-hint align="start">
+                <span [hidden]="phoneControl.pristine || !phoneControl.errors?.pattern" class="tc-red-600">That's not a phone number!</span>
+              </md-hint>
+              <md-hint align="end">{{phoneElement.value.length}} / 20</md-hint>
+            </md-input-container>
+          </div>
           <div layout="row">
-            <md-slide-toggle [(ngModel)]="admin" name="admin">Admin</md-slide-toggle>
+            <md-slide-toggle [(ngModel)]="activated" name="activated">Activate</md-slide-toggle>
           </div>
         </form>
       </md-card-content>

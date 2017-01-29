@@ -1,5 +1,18 @@
 import { Component, Input } from '@angular/core';
 
+export interface Tool {
+  text?: string;
+  tooltip?: string;
+  icon: string;
+  callback?: Function;
+}
+
+export interface Toolbox {
+  title?: string;
+  actions: Tool[];
+  more?: Tool[];
+}
+
 @Component({
   selector: 'tq-toolbox',
   templateUrl: './toolbox.component.html',
@@ -12,21 +25,4 @@ export class ToolboxComponent {
   constructor() {  
   }
 
-  callHandler(tool) {
-    tool.callback();
-  }
-
-}
-
-export interface Tool {
-  text?: string;
-  tooltip?: string;
-  icon: string;
-  callback?: Function;
-}
-
-export interface Toolbox {
-  title?: string;
-  actions: Tool[];
-  more?: Tool[];
 }

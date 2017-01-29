@@ -1,7 +1,7 @@
 <div layout="row" layout-align="start center">
   <span>{{tools.title}}</span>
   <span flex></span>
-  <button md-button class="md-icon-button" *ngFor="let tool of tools.actions" md-tooltip="{{tool.tooltip}}" (click)="callHandler(tool)">
+  <button md-button class="md-icon-button" *ngFor="let tool of tools.actions" md-tooltip="{{tool.tooltip}}" (click)="tool.callback.call()">
     <md-icon class="md-24">{{tool.icon}}</md-icon>
   </button>
   <button md-button class="md-icon-button" [md-menu-trigger-for]="posXMenu" *ngIf="tools.more">
@@ -10,7 +10,7 @@
 </div>
 
 <md-menu x-position="before" #posXMenu="mdMenu">
-  <button md-menu-item *ngFor="let tool of tools.more" md-tooltip="{{tool.tooltip}}" (click)="callHandler(tool)">
+  <button md-menu-item *ngFor="let tool of tools.more" md-tooltip="{{tool.tooltip}}" (click)="tool.callback.call()">
     {{tool.text}}
   </button>
 </md-menu>
