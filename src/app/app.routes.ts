@@ -10,6 +10,8 @@ import { LoginComponent } from './user/login/login.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { ForgotPasswordComponent } from './user/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './user/reset-password/reset-password.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { PreferenceComponent } from './user/preference/preference.component';
 import { HomeComponent } from './home/home.component';
 import { MyappsComponent } from './home/myapps/myapps.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
@@ -19,6 +21,7 @@ import { AnalyticsComponent } from './event/analytics/analytics.component';
 import { EngagementComponent } from './event/engagement/engagement.component';
 import { CompagionComponent } from './event/compagion/compagion.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { NotificationsComponent } from './shared/components/notifications/notifications.component';
 
 import { AuthGuardService } from './shared/services/auth-guard.service';
 
@@ -37,11 +40,14 @@ const routes: Routes = [
       {path: 'integration', component: IntegrationComponent},
       {path: 'reports', component: ReportViewComponent},
       {path: 'myapps', component: MyappsComponent},
+      {path: 'notifications', component: NotificationsComponent},
       {path: 'users', children: [
         {path: '', component: UserListComponent},
         {path: 'list', component: UserListComponent},
         {path: ':userName/edit', component: CreateUserComponent},
         {path: 'add', component: CreateUserComponent},
+        {path: 'profile', component: ProfileComponent},
+        {path: 'preference', component: PreferenceComponent},
       ]},
       {path: 'events', children: [
         {path: 'analytics', component: AnalyticsComponent},
