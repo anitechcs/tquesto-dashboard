@@ -1,29 +1,31 @@
 <td-layout-nav [class.collapse]="!sideNavOpened" logo="assets:logo" (openMenu)="toggleSidebar()" [tdFade]="fadeDiv">
-  <div toolbar-content layout="row" layout-align="center center" flex>
+  <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span flex></span>
-    <button md-button class="md-icon-button" md-tooltip="Notifications" [mdMenuTriggerFor]="notificationsMenu">
+    <button md-icon-button md-tooltip="Notifications" [mdMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="6">
          <md-icon>notifications</md-icon>
       </td-notification-count>
     </button>
-    <button md-button class="md-icon-button" md-tooltip="Full Screen" (click)="toggleFullscreen()" tqFullscreen>
+    <button md-icon-button md-tooltip="Full Screen" (click)="toggleFullscreen()" tqFullscreen>
       <md-icon>{{(!isFullscreen)?'fullscreen':'fullscreen_exit'}}</md-icon>
     </button>
-    <button md-button class="md-icon-button" md-tooltip="Tapas" [md-menu-trigger-for]="menu">
+    <button md-icon-button md-tooltip="Tapas" [md-menu-trigger-for]="menu">
       <img src="assets/imgs/avtar.jpg" class="avatar"/>
     </button>
   </div>
-  <td-layout-manage-list #list >
-    <md-toolbar list-items>   
+  <td-layout-manage-list #manageList [opened]="media.registerQuery('gt-sm') | async" 
+            [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'" 
+            [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
+    <md-toolbar td-sidenav-content>   
       <span flex *ngIf="sideNavOpened">TestDataGen</span>
-      <button md-button class="md-icon-button" color="accent" [routerLink]="['/home/myapps']">
+      <button md-icon-button color="accent" [routerLink]="['/home/myapps']">
           <md-icon>apps</md-icon>
       </button>
     </md-toolbar>
-    <md-nav-list list-items>
+    <md-nav-list td-sidenav-content>
       <a md-list-item 
         md-ripple class="block relative"
-        (click)="list.toggle()"
+        (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/dashboard']">
@@ -33,7 +35,7 @@
       <md-divider></md-divider>
       <a md-list-item 
         md-ripple class="block relative"
-        (click)="list.toggle()"
+        (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/events/analytics']">
@@ -43,7 +45,7 @@
       <md-divider></md-divider>
       <a md-list-item 
         md-ripple class="block relative"
-        (click)="list.toggle()"
+        (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/reports']">
@@ -53,7 +55,7 @@
       <md-divider></md-divider>
       <a md-list-item 
         md-ripple class="block relative"
-        (click)="list.toggle()"
+        (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/events/engagement']">
@@ -63,7 +65,7 @@
       <md-divider></md-divider>
       <a md-list-item 
         md-ripple class="block relative"
-        (click)="list.toggle()"
+        (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/events/compagion']">
@@ -73,7 +75,7 @@
       <span md-subheader class="menuHeader">{{(sideNavOpened)?"Administration":"Adm"}}</span>
       <a md-list-item 
         md-ripple class="block relative"
-        (click)="list.toggle()"
+        (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/users']">
@@ -83,7 +85,7 @@
       <md-divider></md-divider>
       <a md-list-item 
         md-ripple class="block relative"
-        (click)="list.toggle()"
+        (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/integration']">
@@ -93,7 +95,7 @@
       <md-divider></md-divider>
       <a md-list-item 
         md-ripple class="block relative"
-        (click)="list.toggle()"
+        (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/configuration']">
@@ -102,7 +104,7 @@
       </a>
     </md-nav-list>
 
-    <tq-toolbox toolbar-buttons flex [tools]="getTools()"></tq-toolbox>
+    <tq-toolbox td-toolbar-content flex [tools]="getTools()"></tq-toolbox>
 
     <router-outlet></router-outlet>  
 
@@ -113,8 +115,8 @@
 </td-layout-nav>
 
 <md-menu x-position="before" y-position="below" #menu="mdMenu">
-  <a md-menu-item><md-icon md-list-icon>person</md-icon>Profile</a>
-  <a md-menu-item><md-icon md-list-icon>settings</md-icon>Preferences</a>
+  <a md-menu-item [routerLink]="['/home/users/profile']"><md-icon md-list-icon>person</md-icon>Profile</a>
+  <a md-menu-item (click)="showPreferences()"><md-icon md-list-icon>settings</md-icon>Preferences</a>
   <a md-menu-item href="http://docs.tquesto.com" target="_blank"><md-icon md-list-icon>help</md-icon>Help</a>
   <a md-menu-item (click)="doLogout()"><md-icon md-list-icon>power_settings_new</md-icon>Sign Out</a>
 </md-menu>
@@ -159,7 +161,7 @@
         <p md-line>Dependencies updated</p>
       </a>
     </md-nav-list>
-    <button md-button color="accent" td-menu-footer>
+    <button md-button color="accent" td-menu-footer [routerLink]="['/home/notifications']">
       View More
     </button>
   </td-menu>

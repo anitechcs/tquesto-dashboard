@@ -4,7 +4,7 @@
   </a>
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
-      <template tdLoading="login" loadingType="linear" loadingMode="indeterminate"></template>
+      <template tdLoading="login" tdLoadingType="linear" tdLoadingMode="indeterminate" tdLoadingColor="accent"></template>
       <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm.value)">
         <md-card-title>LOGIN HERE</md-card-title>
         <tq-message [value]="notificationMsg"></tq-message>

@@ -12,6 +12,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ProfileComponent } from './profile/profile.component';
+import { PreferenceComponent } from './preference/preference.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     UserListComponent,
     CreateUserComponent,
     ResetPasswordComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ProfileComponent,
+    PreferenceComponent
   ]
 })
 export class UserModule { }

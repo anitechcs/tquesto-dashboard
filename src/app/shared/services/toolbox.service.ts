@@ -8,7 +8,8 @@ export class ToolboxService {
   constructor() {
     this.tools = {
       title: '',
-      actions: []
+      actions: [],
+      more: []
     };
   }
 

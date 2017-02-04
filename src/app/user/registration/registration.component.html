@@ -4,7 +4,7 @@
   </a>
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
-      <template tdLoading="register" loadingType="linear" loadingMode="indeterminate"></template>
+      <template tdLoading="register" tdLoadingType="linear" tdLoadingMode="indeterminate" tdLoadingColor="accent"></template>
       <form #registrationForm="ngForm" (ngSubmit)="doRegistration(registrationForm.value)">
         <md-card-title>NEW REGISTERATION</md-card-title>
         <tq-message [value]="notificationMsg"></tq-message>
