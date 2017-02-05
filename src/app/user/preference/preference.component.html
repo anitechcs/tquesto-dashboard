@@ -1,3 +1,46 @@
-<p>
-  preference works!
-</p>
+<md-card>
+<md-card-title>PREFERENCES</md-card-title>
+<md-card-subtitle>Customize your preferences here as you like</md-card-subtitle>
+<md-divider></md-divider>
+<md-card-content>
+  <br />
+  <form>
+    <div>
+      <md-select placeholder="Prefered Language" [(ngModel)]="prefLang" name="food">
+        <md-option *ngFor="let lang of languages" [value]="lang.value">
+          {{lang.viewValue}}
+        </md-option>
+      </md-select>
+    </div>
+
+    <div>
+      <md-slide-toggle [checked]="enableDarkTheme" color="primary">
+          Enable Dark Theme
+      </md-slide-toggle>
+    </div>
+
+    <div>
+      <span class="themesTxt">Themes</span>
+      <md-button-toggle-group #group="mdButtonToggleGroup">
+        <md-button-toggle value="blue-orange" mdToolTip="Blue Orange" class="blue">
+          <div class="orange"><md-icon>star</md-icon></div>
+        </md-button-toggle>
+        <md-button-toggle value="indigo-pink" mdToolTip="Indigo Pink" class="indigo">
+          <div class="pink"><md-icon>star_border</md-icon></div>
+        </md-button-toggle>
+        <md-button-toggle value="purple-amber" mdToolTip="Purple Amber" class="purple">
+          <div class="amber"><md-icon>star_border</md-icon></div>
+        </md-button-toggle>
+        <md-button-toggle value="blue-grey-deep-orange" mdToolTip="Grey Orange" class="grey">
+          <div class="deep-orange"><md-icon>star_border</md-icon></div>
+        </md-button-toggle>
+      </md-button-toggle-group>
+    </div>
+  </form>
+
+</md-card-content>
+<md-card-actions align="end">
+  <button md-raised-button color="accent" (click)="close()" class="margin-right10">Cancel</button>
+  <button md-raised-button color="primary" (click)="savePreferences(group)" class="margin-right10">Save</button>
+</md-card-actions>
+</md-card>

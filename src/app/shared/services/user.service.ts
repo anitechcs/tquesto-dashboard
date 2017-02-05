@@ -18,6 +18,8 @@ export interface IUser {
 @Injectable()
 export class UserService extends RESTService<IUser> {
 
+  theme: string = '';
+
   constructor(private _http: HttpInterceptorService) {
     super(_http, {
       baseUrl: environment.baseServiceURL,
@@ -28,6 +30,14 @@ export class UserService extends RESTService<IUser> {
   staticQuery(): Observable<IUser[]> {
     return this._http.get('data/users.json')
     .map((res: Response) =>  res.json());
+  }
+
+  getTheme() {
+    return this.theme;
+  }
+
+  setTheme(theme: string) {
+    this.theme = theme;
   }
 
 }

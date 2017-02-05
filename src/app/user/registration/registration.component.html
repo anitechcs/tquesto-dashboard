@@ -27,8 +27,8 @@
         </md-card-content>
         <md-card-actions align="end">
           <md-slide-toggle color="accent" [(ngModel)]="tnc" name="tnc">
-            Accept <a routerLink="/tnc">Terms and Conditions</a>?
-          </md-slide-toggle>
+            Accept <a (click)="showTnc($event)">Terms and Conditions?</a>
+          </md-slide-toggle>        
           <span class="fill-remaining-space"></span>
           <button align="end" md-raised-button color="accent" type="submit" [disabled]="registrationForm.form.invalid">REGISTER</button>
         </md-card-actions>

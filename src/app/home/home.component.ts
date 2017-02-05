@@ -3,8 +3,11 @@ import { Router } from '@angular/router';
 import { MdIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AuthService } from '../shared/services/auth.service';
+import { UserService } from '../shared/services/user.service';
 import { ToolboxService } from '../shared/services/toolbox.service';
 import { TdMediaService } from '@covalent/core';
+import { MdDialog, MdDialogRef } from '@angular/material';
+import { PreferenceComponent } from '../user/preference/preference.component';
 
 @Component({
   selector: 'tq-home',
@@ -13,12 +16,14 @@ import { TdMediaService } from '@covalent/core';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
   
+  selectedTheme: string;
   sideNavOpened: boolean = true;
   isFullscreen: boolean = false;
   fadeDiv: boolean = false;
-  constructor(private router: Router, private authService: AuthService, private toolbox: ToolboxService, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer, public media: TdMediaService) { 
+  constructor(private userService: UserService, private router: Router, private authService: AuthService, private toolbox: ToolboxService, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer, public media: TdMediaService, public dialog: MdDialog) { 
     iconRegistry.addSvgIconInNamespace('assets', 'logo', domSanitizer.bypassSecurityTrustResourceUrl('/assets/imgs/logo.svg'));
-  }
+    this.selectedTheme = userService.getTheme();
+}
 
   getTools() {
     return this.toolbox.getToolBox();
@@ -26,6 +31,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
+  }
+
+  getSelectedTheme() {
+    return this.userService.getTheme();
   }
 
   ngAfterViewInit(): void {
@@ -48,7 +57,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   showPreferences() {
-
+    this.dialog.open(PreferenceComponent, {"disableClose": true});
   }
 
 }
