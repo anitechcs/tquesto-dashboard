@@ -1,0 +1,74 @@
+
+md-card {
+    margin: 0;
+    width: 400px;
+    height: 500px;
+}
+
+md-card-content {
+    min-height: 350px;
+}
+
+md-card-title, md-card-subtitle {
+  text-align: center;
+  background: whitesmoke;
+  margin: 0!important;
+}
+
+.margin-right10 {
+    margin-right: 10px!important;
+}
+
+.form {
+  display: flex;
+}
+
+.themesTxt {
+    padding-left: 20px;
+}
+
+md-select, md-slide-toggle, md-button-toggle-group {
+  margin: 20px;
+  width: 90%;
+}
+
+md-button-toggle {
+  margin: 0 3px;
+  height: 60px;
+}
+
+.blue {
+    background: blue;
+}
+
+.indigo {
+    background: indigo;
+}
+
+.purple {
+    background: purple;
+}
+
+.grey {
+    background: grey;
+}
+
+.orange {
+    background: orange;
+    padding: 11px;
+}
+
+.pink {
+    background: pink;
+    padding: 11px;
+}
+
+.amber {
+    background: yellow;
+    padding: 11px;
+}
+
+.deep-orange {
+    background: orange;
+    padding: 11px;
+}

@@ -30,6 +30,82 @@ $theme: md-light-theme($primary, $accent, $warn);
 @include covalent-charts-theme($theme);
 @include covalent-highlight-theme();
 
+.blue-orange {
+    $primary2: md-palette($md-blue, 700);
+    $accent2:  md-palette($md-orange, 800);
+    $warn2:    md-palette($md-red, 600);
+
+    $blue-orange: md-light-theme($primary2, $accent2, $warn2);
+
+    @include angular-material-theme($blue-orange);
+    @include covalent-theme($blue-orange);
+
+    md-nav-list {
+        [md-list-item].active {
+            md-icon[md-list-icon] {
+                color: md-color($accent2);
+            }
+        }
+    }
+}
+
+.blue-grey-deep-orange {
+    $primary3: md-palette($md-blue-grey);
+    $accent3:  md-palette($md-deep-orange);
+    $warn3:    md-palette($md-red, 600);
+
+    $blue-grey-deep-orange: md-light-theme($primary3, $accent3, $warn3);
+
+    @include angular-material-theme($blue-grey-deep-orange);
+    @include covalent-theme($blue-grey-deep-orange);
+
+    md-nav-list {
+        [md-list-item].active {
+            md-icon[md-list-icon] {
+                color: md-color($accent3);
+            }
+        }
+    }
+}
+
+.indigo-pink {
+    $primary4: md-palette($md-indigo);
+    $accent4:  md-palette($md-pink, A200, A100, A400);
+    $warn4:    md-palette($md-red);
+
+    $indigo-pink: md-light-theme($primary4, $accent4, $warn4);
+
+    @include angular-material-theme($indigo-pink);
+    @include covalent-theme($indigo-pink);
+
+    md-nav-list {
+        [md-list-item].active {
+            md-icon[md-list-icon] {
+                color: md-color($accent4);
+            }
+        }
+    }
+}
+
+.purple-amber {
+    $primary5: md-palette($md-deep-purple);
+    $accent5:  md-palette($md-amber, A200, A100, A400);
+    $warn5:    md-palette($md-red);
+
+    $purple-amber: md-light-theme($primary5, $accent5, $warn5);
+
+    @include angular-material-theme($purple-amber);
+    @include covalent-theme($purple-amber);
+
+    md-nav-list {
+        [md-list-item].active {
+            md-icon[md-list-icon] {
+                color: md-color($accent5);
+            }
+        }
+    }
+}
+
 // Active icon color in list nav
 md-nav-list {
     [md-list-item].active {

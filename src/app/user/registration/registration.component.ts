@@ -2,6 +2,8 @@ import { Component, OnInit, trigger, style, transition, animate } from '@angular
 import { Router, ActivatedRoute } from '@angular/router';
 import { TdLoadingService } from '@covalent/core';
 import { AuthService } from '../../shared/services/auth.service';
+import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
+import { TncComponent } from '../../static/tnc/tnc.component';
 
 @Component({
   selector: 'tq-registration',
@@ -24,7 +26,7 @@ export class RegistrationComponent implements OnInit {
   tnc: boolean = true;
   notificationMsg: any[] = [];
 
-  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute, private loadingService: TdLoadingService) { 
+  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute, private loadingService: TdLoadingService, public dialog: MdDialog) { 
     this.resetNotification();
   }
 
@@ -50,6 +52,11 @@ export class RegistrationComponent implements OnInit {
       );
       this.loadingService.resolve('register');
     });
+  }
+
+  showTnc(event) {
+    event.preventDefault();
+    this.dialog.open(TncComponent, {"width":"500px", "height":"600px"});
   }
 
   resetNotification() {
