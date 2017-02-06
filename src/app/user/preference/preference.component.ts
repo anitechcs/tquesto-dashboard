@@ -25,6 +25,9 @@ export class PreferenceComponent implements OnInit {
 
   savePreferences(group) {
     let selTheme = (group)?group.value:this.userService.getTheme();
+    if(this.enableDarkTheme) {
+      selTheme = 'dark-'+selTheme;
+    }
     this.userService.setTheme(selTheme);
     this.dialog.closeAll();
   }
