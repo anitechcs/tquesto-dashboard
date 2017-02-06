@@ -18,7 +18,7 @@ export interface IUser {
 @Injectable()
 export class UserService extends RESTService<IUser> {
 
-  theme: string = '';
+  theme: string = 'blue-orange';
 
   constructor(private _http: HttpInterceptorService) {
     super(_http, {
