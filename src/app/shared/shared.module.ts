@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CovalentCoreModule } from '@covalent/core';
 import { CovalentChipsModule } from '@covalent/core';
@@ -25,6 +26,7 @@ import { MessageComponent } from './components/message/message.component';
 @NgModule({
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     CovalentCoreModule,
     CovalentChartsModule,
     CovalentChipsModule,
@@ -48,6 +50,8 @@ import { MessageComponent } from './components/message/message.component';
     MessageComponent
   ],
   exports: [
+    CommonModule,
+    BrowserAnimationsModule,
     CovalentCoreModule,
     CovalentChartsModule,
     CovalentChipsModule,

@@ -1,4 +1,4 @@
-@import '~@angular/material/core/theming/all-theme';
+@import '~@angular/material/_theming';
 @import '~@covalent/core/theming/all-theme';
 @import '~@covalent/markdown/markdown-theme';
 @import '~@covalent/charts/charts-theme';
@@ -7,19 +7,19 @@
 
 // Include the base styles for Angular Material core. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
-@include md-core();
+@include mat-core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$primary: md-palette($md-blue, 700);
-$accent:  md-palette($md-orange, 800, A100, A400);
+$primary: mat-palette($mat-blue, 700);
+$accent:  mat-palette($mat-orange, 800, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$warn:    md-palette($md-red, 600);
+$warn:    mat-palette($mat-red, 600);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$theme: md-light-theme($primary, $accent, $warn);
+$theme: mat-light-theme($primary, $accent, $warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -31,11 +31,11 @@ $theme: md-light-theme($primary, $accent, $warn);
 @include covalent-highlight-theme();
 
 .blue-orange {
-    $primary2: md-palette($md-blue, 700);
-    $accent2:  md-palette($md-orange, 800);
-    $warn2:    md-palette($md-red, 600);
+    $primary2: mat-palette($mat-blue, 700);
+    $accent2:  mat-palette($mat-orange, 800);
+    $warn2:    mat-palette($mat-red, 600);
 
-    $blue-orange: md-light-theme($primary2, $accent2, $warn2);
+    $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
 
     @include angular-material-theme($blue-orange);
     @include covalent-theme($blue-orange);
@@ -43,18 +43,18 @@ $theme: md-light-theme($primary, $accent, $warn);
     md-nav-list {
         [md-list-item].active {
             md-icon[md-list-icon] {
-                color: md-color($accent2);
+                color: mat-color($accent2);
             }
         }
     }
 }
 
 .blue-grey-deep-orange {
-    $primary3: md-palette($md-blue-grey);
-    $accent3:  md-palette($md-deep-orange);
-    $warn3:    md-palette($md-red, 600);
+    $primary3: mat-palette($mat-blue-grey);
+    $accent3:  mat-palette($mat-deep-orange);
+    $warn3:    mat-palette($mat-red, 600);
 
-    $blue-grey-deep-orange: md-light-theme($primary3, $accent3, $warn3);
+    $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
 
     @include angular-material-theme($blue-grey-deep-orange);
     @include covalent-theme($blue-grey-deep-orange);
@@ -62,18 +62,18 @@ $theme: md-light-theme($primary, $accent, $warn);
     md-nav-list {
         [md-list-item].active {
             md-icon[md-list-icon] {
-                color: md-color($accent3);
+                color: mat-color($accent3);
             }
         }
     }
 }
 
 .indigo-pink {
-    $primary4: md-palette($md-indigo);
-    $accent4:  md-palette($md-pink, A200, A100, A400);
-    $warn4:    md-palette($md-red);
+    $primary4: mat-palette($mat-indigo);
+    $accent4:  mat-palette($mat-pink, A200, A100, A400);
+    $warn4:    mat-palette($mat-red);
 
-    $indigo-pink: md-light-theme($primary4, $accent4, $warn4);
+    $indigo-pink: mat-light-theme($primary4, $accent4, $warn4);
 
     @include angular-material-theme($indigo-pink);
     @include covalent-theme($indigo-pink);
@@ -81,18 +81,18 @@ $theme: md-light-theme($primary, $accent, $warn);
     md-nav-list {
         [md-list-item].active {
             md-icon[md-list-icon] {
-                color: md-color($accent4);
+                color: mat-color($accent4);
             }
         }
     }
 }
 
 .purple-amber {
-    $primary5: md-palette($md-deep-purple);
-    $accent5:  md-palette($md-amber, A200, A100, A400);
-    $warn5:    md-palette($md-red);
+    $primary5: mat-palette($mat-deep-purple);
+    $accent5:  mat-palette($mat-amber, A200, A100, A400);
+    $warn5:    mat-palette($mat-red);
 
-    $purple-amber: md-light-theme($primary5, $accent5, $warn5);
+    $purple-amber: mat-light-theme($primary5, $accent5, $warn5);
 
     @include angular-material-theme($purple-amber);
     @include covalent-theme($purple-amber);
@@ -100,18 +100,18 @@ $theme: md-light-theme($primary, $accent, $warn);
     md-nav-list {
         [md-list-item].active {
             md-icon[md-list-icon] {
-                color: md-color($accent5);
+                color: mat-color($accent5);
             }
         }
     }
 }
 
 .dark-blue-orange {
-    $primary2: md-palette($md-blue, 700);
-    $accent2:  md-palette($md-orange, 800);
-    $warn2:    md-palette($md-red, 600);
+    $primary2: mat-palette($mat-blue, 700);
+    $accent2:  mat-palette($mat-orange, 800);
+    $warn2:    mat-palette($mat-red, 600);
 
-    $blue-orange: md-dark-theme($primary2, $accent2, $warn2);
+    $blue-orange: mat-dark-theme($primary2, $accent2, $warn2);
 
     @include angular-material-theme($blue-orange);
     @include covalent-theme($blue-orange);
@@ -119,18 +119,18 @@ $theme: md-light-theme($primary, $accent, $warn);
     md-nav-list {
         [md-list-item].active {
             md-icon[md-list-icon] {
-                color: md-color($accent2);
+                color: mat-color($accent2);
             }
         }
     }
 }
 
 .dark-blue-grey-deep-orange {
-    $primary3: md-palette($md-blue-grey);
-    $accent3:  md-palette($md-deep-orange);
-    $warn3:    md-palette($md-red, 600);
+    $primary3: mat-palette($mat-blue-grey);
+    $accent3:  mat-palette($mat-deep-orange);
+    $warn3:    mat-palette($mat-red, 600);
 
-    $blue-grey-deep-orange: md-dark-theme($primary3, $accent3, $warn3);
+    $blue-grey-deep-orange: mat-dark-theme($primary3, $accent3, $warn3);
 
     @include angular-material-theme($blue-grey-deep-orange);
     @include covalent-theme($blue-grey-deep-orange);
@@ -138,18 +138,18 @@ $theme: md-light-theme($primary, $accent, $warn);
     md-nav-list {
         [md-list-item].active {
             md-icon[md-list-icon] {
-                color: md-color($accent3);
+                color: mat-color($accent3);
             }
         }
     }
 }
 
 .dark-indigo-pink {
-    $primary4: md-palette($md-indigo);
-    $accent4:  md-palette($md-pink, A200, A100, A400);
-    $warn4:    md-palette($md-red);
+    $primary4: mat-palette($mat-indigo);
+    $accent4:  mat-palette($mat-pink, A200, A100, A400);
+    $warn4:    mat-palette($mat-red);
 
-    $indigo-pink: md-dark-theme($primary4, $accent4, $warn4);
+    $indigo-pink: mat-dark-theme($primary4, $accent4, $warn4);
 
     @include angular-material-theme($indigo-pink);
     @include covalent-theme($indigo-pink);
@@ -157,18 +157,18 @@ $theme: md-light-theme($primary, $accent, $warn);
     md-nav-list {
         [md-list-item].active {
             md-icon[md-list-icon] {
-                color: md-color($accent4);
+                color: mat-color($accent4);
             }
         }
     }
 }
 
 .dark-purple-amber {
-    $primary5: md-palette($md-deep-purple);
-    $accent5:  md-palette($md-amber, A200, A100, A400);
-    $warn5:    md-palette($md-red);
+    $primary5: mat-palette($mat-deep-purple);
+    $accent5:  mat-palette($mat-amber, A200, A100, A400);
+    $warn5:    mat-palette($mat-red);
 
-    $purple-amber: md-dark-theme($primary5, $accent5, $warn5);
+    $purple-amber: mat-dark-theme($primary5, $accent5, $warn5);
 
     @include angular-material-theme($purple-amber);
     @include covalent-theme($purple-amber);
@@ -176,21 +176,21 @@ $theme: md-light-theme($primary, $accent, $warn);
     md-nav-list {
         [md-list-item].active {
             md-icon[md-list-icon] {
-                color: md-color($accent5);
+                color: mat-color($accent5);
             }
         }
     }
 }
 
 // Active icon color in list nav
-md-nav-list {
+mat-nav-list {
     [md-list-item].active {
         md-icon[md-list-avatar] {
-            background-color: md-color($accent);
-            color: md-color($accent, default-contrast)
+            background-color: mat-color($accent);
+            color: mat-color($accent, default-contrast)
         }
         md-icon[md-list-icon] {
-            color: md-color($accent);
+            color: mat-color($accent);
         }
     }
 }

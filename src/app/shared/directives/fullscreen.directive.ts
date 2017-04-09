@@ -1,5 +1,6 @@
 import { Directive, HostListener } from '@angular/core';
-const screenfull = require('screenfull');
+import { screenfull } from 'screenfull';
+//const screenfull = require('screenfull');
 
 @Directive({
   selector: '[tqFullscreen]'

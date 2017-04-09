@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private userService: UserService, private router: Router, private authService: AuthService, private toolbox: ToolboxService, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer, public media: TdMediaService, public dialog: MdDialog) { 
     iconRegistry.addSvgIconInNamespace('assets', 'logo', domSanitizer.bypassSecurityTrustResourceUrl('/assets/imgs/logo.svg'));
     this.selectedTheme = userService.getTheme();
-}
+  }
 
   getTools() {
     return this.toolbox.getToolBox();

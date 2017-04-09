@@ -1,10 +1,10 @@
-import { TquestoDashboardPage } from './app.po';
+import { TestAppPage } from './app.po';
 
-describe('tquesto-dashboard App', function() {
-  let page: TquestoDashboardPage;
+describe('test-app App', () => {
+  let page: TestAppPage;
 
   beforeEach(() => {
-    page = new TquestoDashboardPage();
+    page = new TestAppPage();
   });
 
   it('should display message saying app works', () => {

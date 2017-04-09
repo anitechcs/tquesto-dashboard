@@ -4,20 +4,22 @@
   </a>
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
-      <template tdLoading="login" tdLoadingType="linear" tdLoadingMode="indeterminate" tdLoadingColor="accent"></template>
+      <ng-template tdLoading="login" tdLoadingType="linear" tdLoadingMode="indeterminate" tdLoadingColor="accent"></ng-template>
       <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm.value)">
         <md-card-title>LOGIN HERE</md-card-title>
         <tq-message [value]="notificationMsg"></tq-message>
         <md-card-content>
             <div>
-              <md-input flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
+              <md-input-container>
                 <span md-prefix><md-icon>person</md-icon></span>
-              </md-input>
+                <input mdInput flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
+              </md-input-container>
             </div>
             <div>
-              <md-input flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
+              <md-input-container>
                 <span md-prefix><md-icon>lock</md-icon></span>
-              </md-input>
+                <input mdInput flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
+              </md-input-container>
             </div>
         </md-card-content>
         <md-card-actions align="end">
