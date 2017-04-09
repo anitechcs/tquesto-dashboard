@@ -22,7 +22,7 @@ import { PreferenceComponent } from './preference/preference.component';
     MaterialModule,
     RouterModule,
     SharedModule,
-    FlexLayoutModule.forRoot()
+    FlexLayoutModule
   ],
   declarations: [
     LoginComponent,

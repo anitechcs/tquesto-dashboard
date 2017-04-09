@@ -4,7 +4,7 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { CovalentCoreModule } from '@covalent/core';
 import { CovalentChipsModule } from '@covalent/core';
 import { CovalentFileModule } from '@covalent/core';
-import { CovalentHttpModule, IHttpInterceptor,HttpConfig } from '@covalent/http';
+import { CovalentHttpModule, IHttpInterceptor, HttpConfig } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentJsonFormatterModule } from '@covalent/core';
 import { CovalentMarkdownModule } from '@covalent/markdown';
@@ -43,19 +43,19 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
   ],
   imports: [
     BrowserModule,
-    CovalentCoreModule.forRoot(),
-    CovalentChartsModule.forRoot(),
-    CovalentChipsModule.forRoot(),
-    CovalentDataTableModule.forRoot(),
-    CovalentFileModule.forRoot(),
+    CovalentCoreModule,
+    CovalentChartsModule,
+    CovalentChipsModule,
+    CovalentDataTableModule,
+    CovalentFileModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
         interceptor: RequestInterceptor, paths: ['**']
       }]
     }),
-    CovalentHighlightModule.forRoot(),
-    CovalentJsonFormatterModule.forRoot(),
-    CovalentMarkdownModule.forRoot(),
+    CovalentHighlightModule,
+    CovalentJsonFormatterModule,
+    CovalentMarkdownModule,
     appRoutes,
     UserModule,
     HomeModule,

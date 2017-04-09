@@ -1,4 +1,5 @@
-import { Component, OnInit, trigger, style, transition, animate } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { trigger, style, transition, animate } from '@angular/animations';
 import { TdLoadingService } from '@covalent/core';
 import { AuthService } from '../../shared/services/auth.service';
 

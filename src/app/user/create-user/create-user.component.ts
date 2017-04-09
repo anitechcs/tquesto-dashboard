@@ -53,7 +53,8 @@ export class CreateUserComponent implements OnInit {
       activated: this.activated,
       id: this.id
     };
-    if (this.action === 'add') {
+    console.log(this.action);
+    if (this.action == 'add') {
       this.usersService.create(this.user).subscribe(() => {
         this.goBack();
       });

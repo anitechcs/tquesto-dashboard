@@ -1,5 +1,5 @@
 import { Component, ViewContainerRef, OnInit } from '@angular/core';
-import { TdLoadingService, LoadingType, ILoadingOptions } from '@covalent/core';
+import { TdLoadingService, LoadingType, ITdLoadingConfig } from '@covalent/core';
 import { SpinnerService } from './shared/services/spinner.service';
 
 @Component({
@@ -10,11 +10,11 @@ import { SpinnerService } from './shared/services/spinner.service';
 export class AppComponent implements OnInit {
 
   constructor(private spinner: SpinnerService, private _loadingService: TdLoadingService, viewContainerRef: ViewContainerRef) {
-    let options: ILoadingOptions = {
+    let options: ITdLoadingConfig = {
       name: 'main',
       type: LoadingType.Circular,
     };
-    this._loadingService.createOverlayComponent(options, viewContainerRef);
+    this._loadingService.create(options);
   }
 
   ngOnInit() {
