@@ -1,17 +1,5 @@
-import { NgModule, Type } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
-
-import { CovalentCoreModule } from '@covalent/core';
-import { CovalentChipsModule } from '@covalent/core';
-import { CovalentFileModule } from '@covalent/core';
-import { CovalentHttpModule, IHttpInterceptor, HttpConfig } from '@covalent/http';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentJsonFormatterModule } from '@covalent/core';
-import { CovalentMarkdownModule } from '@covalent/markdown';
-import { CovalentChartsModule } from '@covalent/charts';
-import { CovalentDataTableModule } from '@covalent/core';
-import { CovalentSearchModule } from '@covalent/core';
-import { CovalentPagingModule } from '@covalent/core';
 
 import { UserModule } from './user/user.module';
 import { HomeModule } from './home/home.module';
@@ -30,12 +18,8 @@ import { AppsService } from './shared/services/apps.service';
 import { ConfigurationService } from './shared/services/configuration.service';
 
 import { appRoutes, appRoutingProviders } from './app.routes';
-import { RequestInterceptor } from './shared/utils/request.interceptor';
 import { AppComponent } from './app.component';
 
-const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
-  RequestInterceptor,
-];
 
 @NgModule({
   declarations: [
@@ -43,19 +27,6 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
   ],
   imports: [
     BrowserModule,
-    CovalentCoreModule,
-    CovalentChartsModule,
-    CovalentChipsModule,
-    CovalentDataTableModule,
-    CovalentFileModule,
-    CovalentHttpModule.forRoot({
-      interceptors: [{
-        interceptor: RequestInterceptor, paths: ['**']
-      }]
-    }),
-    CovalentHighlightModule,
-    CovalentJsonFormatterModule,
-    CovalentMarkdownModule,
     appRoutes,
     UserModule,
     HomeModule,
@@ -66,7 +37,6 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
   ],
   providers: [
     appRoutingProviders,
-    httpInterceptorProviders,
     Title,
     AuthService,
     AuthGuardService,
