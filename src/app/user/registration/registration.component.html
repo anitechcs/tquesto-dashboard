@@ -5,7 +5,7 @@
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
       <ng-template tdLoading="register" tdLoadingType="linear" tdLoadingMode="indeterminate" tdLoadingColor="accent"></ng-template>
-      <form #registrationForm="ngForm" (ngSubmit)="doRegistration(registrationForm.value)">
+      <form #registrationForm="ngForm" (ngSubmit)="doRegistration(registrationForm)">
         <md-card-title>NEW REGISTERATION</md-card-title>
         <tq-message [value]="notificationMsg"></tq-message>
         <md-card-content>
@@ -18,13 +18,13 @@
             <div>
               <md-input-container>
                 <span md-prefix><md-icon>person</md-icon></span>
-                <input mdInput flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
+                <input mdInput placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
               </md-input-container>
             </div>
             <div>
               <md-input-container>
                 <span md-prefix><md-icon>lock</md-icon></span>
-                <input mdInput flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
+                <input mdInput placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
               </md-input-container>
             </div>
         </md-card-content>
@@ -33,7 +33,7 @@
             Accept <a (click)="showTnc($event)">Terms and Conditions?</a>
           </md-slide-toggle>        
           <span class="fill-remaining-space"></span>
-          <button align="end" md-raised-button color="accent" type="submit" [disabled]="registrationForm.form.invalid">REGISTER</button>
+          <button align="end" md-raised-button color="accent" type="submit" [disabled]="!registrationForm.valid">REGISTER</button>
         </md-card-actions>
         <br />
         <md-card-actions align="center">

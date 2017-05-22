@@ -10,7 +10,7 @@ export class CompagionComponent implements OnInit {
 
   constructor(private toolbox: ToolboxService) { 
     toolbox.setToolBox({
-        title: "Compagion Management", 
+        title: "Compagions", 
         actions: [
           {icon: 'add', tooltip: 'Add', callback: this.callBack},
           {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}

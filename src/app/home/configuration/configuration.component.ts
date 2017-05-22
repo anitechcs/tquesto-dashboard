@@ -20,7 +20,7 @@ export class ConfigurationComponent implements AfterViewInit {
               private _loadingService: TdLoadingService) {
 
       toolbox.setToolBox({
-        title: "Configurations", 
+        title: "Settings", 
         actions: [
           {icon: 'add', tooltip: 'Add', callback: this.callBack},
           {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}

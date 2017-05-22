@@ -34,7 +34,8 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
-  doRegistration(userParams){
+  doRegistration(registrationForm){
+    let userParams = registrationForm.value;
     this.loadingService.register('register');
     this.authService.register(userParams).subscribe(res => {
       let statusCode = res.statusCode;
