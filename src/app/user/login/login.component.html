@@ -5,27 +5,27 @@
   <div class="auth-block" @flyInFromTopAndScale>
     <md-card>
       <ng-template tdLoading="login" tdLoadingType="linear" tdLoadingMode="indeterminate" tdLoadingColor="accent"></ng-template>
-      <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm.value)">
+      <form #loginForm="ngForm" (ngSubmit)="doLogin(loginForm)">
         <md-card-title>LOGIN HERE</md-card-title>
         <tq-message [value]="notificationMsg"></tq-message>
         <md-card-content>
             <div>
               <md-input-container>
                 <span md-prefix><md-icon>person</md-icon></span>
-                <input mdInput flex placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
+                <input mdInput placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
               </md-input-container>
             </div>
             <div>
               <md-input-container>
                 <span md-prefix><md-icon>lock</md-icon></span>
-                <input mdInput flex placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
+                <input mdInput placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
               </md-input-container>
             </div>
         </md-card-content>
         <md-card-actions align="end">
           <md-checkbox indeterminate="true" name="rememberMe" [(ngModel)]="rememberMe"> Remember Me</md-checkbox>
           <span class="fill-remaining-space"></span>
-          <button align="end" md-raised-button color="accent" type="submit" [disabled]="loginForm.form.invalid">SIGN IN</button>
+          <button align="end" md-raised-button color="accent" type="submit" [disabled]="!loginForm.valid">SIGN IN</button>
         </md-card-actions>
         <br />
         <md-card-actions align="center">

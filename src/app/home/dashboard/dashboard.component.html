@@ -1,4 +1,13 @@
 <div class="md-content" flex md-scroll-y>
+
+  <div layout="row" class="pull-bottom-md pull-right-md">
+      <ngx-charts-number-card
+          [scheme]="colorScheme"
+          [results]="single">
+      </ngx-charts-number-card>
+    </div>
+
+    
   <div layout="row">
     <div flex="33" layout="column">
       <md-card class="md-card-colored" flex>
@@ -38,13 +47,6 @@
     </div>
   </div>
 
-
-    <div layout="row" class="pull-bottom-md pull-right-md">
-      <ngx-charts-number-card
-          [scheme]="colorScheme"
-          [results]="single">
-        </ngx-charts-number-card>
-    </div>
     <div layout-gt-xs="row">
       <div flex-gt-xs="50">
         <md-card>

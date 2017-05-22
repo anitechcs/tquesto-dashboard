@@ -8,12 +8,25 @@ body {
     font-weight: normal;
 }
 
+.mat-input-placeholder-wrapper {
+    font-size: 13px;
+    font-family: RobotoDraft, Roboto, "Helvetica Neue";
+}
+
+.mat-primary.mat-toolbar {
+    min-height: 54px!important;
+
+    md-toolbar-row {
+        height: 54px!important;
+    }
+}
+
 .md-content md-toolbar {
-  min-height: 50px!important;
+  min-height: 46px!important;
 }
 
 .md-content md-toolbar md-toolbar-row {
-  height: 50px!important;
+  height: 46px!important;
 
   .md-icon-button:not(.md-icon-button-mini) {
     height: 38px;

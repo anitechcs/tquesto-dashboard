@@ -47,7 +47,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  doLogin(userParams){
+  doLogin(loginForm){
+    let userParams = loginForm.value;
     this.loadingService.register('login');
     this.authService.authenticate(userParams).subscribe(res => {
       if(res && res.auth_token) {
