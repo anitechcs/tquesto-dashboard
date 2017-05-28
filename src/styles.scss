@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-// You can add global styles to this file that will cascade like normal CSS
+@import './assets/styles/theme.scss';
+@import './assets/styles/preloader.scss';
 
 body {
     margin: 0;

@@ -41,8 +41,8 @@
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
-        [routerLink]="['/home/events/analytics']">
-        <md-icon md-list-icon>insert_chart</md-icon>
+        [routerLink]="['/home/analytics']">
+        <md-icon md-list-icon>visibility</md-icon>
         Analytics
       </a>
       <md-divider></md-divider>
@@ -51,9 +51,9 @@
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
-        [routerLink]="['/home/reports']">
+        [routerLink]="['/home/events']">
         <md-icon md-list-icon>donut_small</md-icon>
-        Reports
+        Events
       </a>
       <md-divider></md-divider>
       <a md-list-item 
@@ -61,8 +61,18 @@
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
-        [routerLink]="['/home/events/engagement']">
-        <md-icon md-list-icon>broken_image</md-icon>
+        [routerLink]="['/home/performance']">
+        <md-icon md-list-icon>network_check</md-icon>
+        Performance
+      </a>
+      <md-divider></md-divider>
+      <a md-list-item 
+        md-ripple class="block relative"
+        (click)="!media.query('gt-sm') && manageList.close()"
+        [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{exact:true}"
+        [routerLink]="['/home/engagement']">
+        <md-icon md-list-icon>blur_linear</md-icon>
         Engagement
       </a>
       <md-divider></md-divider>
@@ -71,8 +81,8 @@
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
-        [routerLink]="['/home/events/compagion']">
-        <md-icon md-list-icon>gradient</md-icon>
+        [routerLink]="['/home/compagion']">
+        <md-icon md-list-icon>broken_image</md-icon>
         Compagions
       </a>
       <md-divider></md-divider>

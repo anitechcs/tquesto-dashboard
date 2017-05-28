@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolboxService } from '../../shared/services/toolbox.service';
+import { ToolboxService } from '../shared/services/toolbox.service';
 
 @Component({
-  selector: 'tq-report-view',
-  templateUrl: './report-view.component.html',
-  styleUrls: ['./report-view.component.scss']
+  selector: 'tq-compagion',
+  templateUrl: './compagion.component.html',
+  styleUrls: ['./compagion.component.scss']
 })
-export class ReportViewComponent implements OnInit {
+export class CompagionComponent implements OnInit {
 
   constructor(private toolbox: ToolboxService) { 
     toolbox.setToolBox({
-        title: "Reports", 
+        title: "Compagions", 
         actions: [
           {icon: 'add', tooltip: 'Add', callback: this.callBack},
           {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}

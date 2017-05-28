@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { EventComponent } from './event.component';
+import { EngagementComponent } from './engagement.component';
 
 @NgModule({
   imports: [
     SharedModule
   ],
   declarations: [
-    EventComponent
+    EngagementComponent
   ]
 })
-export class EventModule { }
+export class EngagementModule { }
