@@ -4,9 +4,12 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { UserModule } from './user/user.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
+import { AnalyticsModule } from './analytics/analytics.module';
+import { CompagionModule } from './compagion/compagion.module';
+import { EngagementModule } from './engagement/engagement.module';
 import { EventModule } from './event/event.module';
-import { ReportModule } from './report/report.module';
 import { StaticModule } from './static/static.module';
+import { PerformanceModule } from './performance/performance.module';
 
 import { AuthService } from './shared/services/auth.service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
@@ -31,9 +34,12 @@ import { AppComponent } from './app.component';
     UserModule,
     HomeModule,
     SharedModule,
+    AnalyticsModule,
+    CompagionModule,
+    EngagementModule,
     EventModule,
-    ReportModule,
-    StaticModule
+    StaticModule,
+    PerformanceModule
   ],
   providers: [
     appRoutingProviders,

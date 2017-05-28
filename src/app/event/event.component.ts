@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolboxService } from '../../shared/services/toolbox.service';
+import { ToolboxService } from '../shared/services/toolbox.service';
 
 @Component({
-  selector: 'tq-analytics',
-  templateUrl: './analytics.component.html',
-  styleUrls: ['./analytics.component.scss']
+  selector: 'tq-event',
+  templateUrl: './event.component.html',
+  styleUrls: ['./event.component.scss']
 })
-export class AnalyticsComponent implements OnInit {
+export class EventComponent implements OnInit {
 
   constructor(private toolbox: ToolboxService) { 
     toolbox.setToolBox({
-        title: "Analytics", 
+        title: "Events", 
         actions: [
           {icon: 'add', tooltip: 'Add', callback: this.callBack},
           {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}
@@ -28,6 +28,7 @@ export class AnalyticsComponent implements OnInit {
   }
 
   ngOnInit() {
+    
   }
 
 }

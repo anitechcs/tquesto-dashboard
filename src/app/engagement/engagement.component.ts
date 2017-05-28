@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolboxService } from '../../shared/services/toolbox.service';
+import { ToolboxService } from '../shared/services/toolbox.service';
 
 @Component({
   selector: 'tq-engagement',
