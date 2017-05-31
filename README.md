@@ -2,7 +2,7 @@
 
 > TQuesto Dashboard Application
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0.
+![](https://github.com/anitechcs/tquesto-dashboard/blob/master/src/assets/imgs/dark-1.png)
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
