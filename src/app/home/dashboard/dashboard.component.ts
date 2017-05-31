@@ -98,15 +98,15 @@ export class DashboardComponent implements OnInit {
 
 let single: any = [
   {
-    'name': 'Databases',
-    'value': 382941,
+    'name': 'Transactions',
+    'value': 382954.41,
   },
   {
-    'name': 'Containers',
+    'name': 'Logins',
     'value': 152294,
   },
   {
-    'name': 'Streams',
+    'name': 'Registrations',
     'value': 283000,
   },
   {
@@ -117,7 +117,7 @@ let single: any = [
 
 let multi: any = [
   {
-    'name': 'Databases',
+    'name': 'Transactions',
     'series': [
       {
         'value': 2469,
@@ -142,7 +142,7 @@ let multi: any = [
     ],
   },
   {
-    'name': 'Containers',
+    'name': 'Logins',
     'series': [
       {
         'value': 2452,
@@ -167,7 +167,7 @@ let multi: any = [
     ],
   },
   {
-    'name': 'Streams',
+    'name': 'Registrations',
     'series': [
       {
         'value': 4022,
