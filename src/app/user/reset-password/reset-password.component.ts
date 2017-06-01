@@ -32,7 +32,7 @@ export class ResetPasswordComponent implements OnInit {
     this.resetKey = this.route.snapshot.params['key'];
   }
 
-  doPasswordReset(formval) {
+  doPasswordReset() {
     this.loadingService.register('resetpass');
     this.authService.resetPassword({"newPassword": this.newPassword, "key": this.resetKey}).subscribe(res => {
       let statusCode = res.statusCode;
