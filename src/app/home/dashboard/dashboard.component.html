@@ -3,13 +3,14 @@
   <div layout="row" class="pull-bottom-md pull-right-md">
       <ngx-charts-number-card
           [scheme]="colorScheme"
-          [results]="single">
+          [results]="single"
+          [@flyInOutFromTop]>
       </ngx-charts-number-card>
     </div>
 
-    
+
   <div layout="row">
-    <div flex="33" layout="column">
+    <div flex="33" layout="column" [@flyInOutFromBottom]>
       <md-card class="md-card-colored" flex>
         <md-card-content class="text-center">
           <div class="md-headline">{{ '2341'| digits }} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
@@ -21,7 +22,7 @@
         </md-card-content>
       </md-card>
     </div>
-    <div flex="33" layout="column">
+    <div flex="33" layout="column" [@flyInOutFromBottom]>
       <md-card class="md-card-colored" flex>
         <md-card-content class="text-center">
           <div class="md-headline">{{ '72452903343' | bytes }} <md-icon class="tc-red-500 text-sm">arrow_downward</md-icon></div>
@@ -33,7 +34,7 @@
         </md-card-content>
       </md-card>
     </div>
-    <div flex="33" layout="column">
+    <div flex="33" layout="column" [@flyInOutFromBottom]>
       <md-card class="md-card-colored" flex>
         <md-card-content class="text-center">
           <div class="md-headline">{{ '324523' | digits}} <md-icon class="tc-green-500 text-sm">arrow_upward</md-icon></div>
@@ -134,7 +135,7 @@
         </md-card>
       </div>
     </div>
- 
+
 
   <div layout="row">
     <md-card>

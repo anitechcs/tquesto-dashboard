@@ -11,19 +11,16 @@
         <md-card-content>
             <div>
               <md-input-container>
-                <span md-prefix><md-icon>mail</md-icon></span>
                 <input mdInput flex placeholder="Email" type="email" name="email" [(ngModel)]="email" required (focus)="resetNotification()">
               </md-input-container>
             </div>
             <div>
               <md-input-container>
-                <span md-prefix><md-icon>person</md-icon></span>
                 <input mdInput placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
               </md-input-container>
             </div>
             <div>
               <md-input-container>
-                <span md-prefix><md-icon>lock</md-icon></span>
                 <input mdInput placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
               </md-input-container>
             </div>
@@ -31,11 +28,10 @@
         <md-card-actions align="end">
           <md-slide-toggle color="accent" [(ngModel)]="tnc" name="tnc">
             Accept <a (click)="showTnc($event)">Terms and Conditions?</a>
-          </md-slide-toggle>        
+          </md-slide-toggle>
           <span class="fill-remaining-space"></span>
           <button align="end" md-raised-button color="accent" type="submit" [disabled]="!registrationForm.valid">REGISTER</button>
         </md-card-actions>
-        <br />
         <md-card-actions align="center">
           Already have an account? <a routerLink="/login">Login Now</a>
         </md-card-actions>

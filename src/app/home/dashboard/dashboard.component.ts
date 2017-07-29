@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ToolboxService } from '../../shared/services/toolbox.service';
 import { TdLoadingService } from '@covalent/core';
 import { ItemService } from '../../shared/services/item.service';
-
+import { flyInOutFromTop, flyInOutFromBottom } from '../../app.animations';
 import { TdDigitsPipe } from '@covalent/core';
 
 @Component({
   selector: 'tq-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
+  animations: [ flyInOutFromTop, flyInOutFromBottom ]
 })
 export class DashboardComponent implements OnInit {
 
@@ -37,9 +38,9 @@ export class DashboardComponent implements OnInit {
 
 
   items: Object[];
-  constructor(private toolbox: ToolboxService, private _itemsService: ItemService, private _loadingService: TdLoadingService) { 
+  constructor(private toolbox: ToolboxService, private _itemsService: ItemService, private _loadingService: TdLoadingService) {
     toolbox.setToolBox({
-        title: "Dashboard", 
+        title: "Dashboard",
         actions: [
           {icon: 'add', tooltip: 'Add', callback: this.callBack},
           {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}
