@@ -15,12 +15,13 @@ import { PreferenceComponent } from '../user/preference/preference.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  
+
   selectedTheme: string;
-  sideNavOpened: boolean = true;
-  isFullscreen: boolean = false;
-  fadeDiv: boolean = false;
-  constructor(private userService: UserService, private router: Router, private authService: AuthService, private toolbox: ToolboxService, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer, public media: TdMediaService, public dialog: MdDialog) { 
+  sideNavOpened = true;
+  isFullscreen = false;
+  fadeDiv = false;
+  // tslint:disable-next-line:max-line-length
+  constructor(private userService: UserService, private router: Router, private authService: AuthService, private toolbox: ToolboxService, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer, public media: TdMediaService, public dialog: MdDialog) {
     iconRegistry.addSvgIconInNamespace('assets', 'logo', domSanitizer.bypassSecurityTrustResourceUrl('/assets/imgs/logo.svg'));
     this.selectedTheme = userService.getTheme();
   }
@@ -57,7 +58,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   showPreferences() {
-    this.dialog.open(PreferenceComponent, {"disableClose": true});
+    this.dialog.open(PreferenceComponent, {'disableClose': true});
   }
 
 }

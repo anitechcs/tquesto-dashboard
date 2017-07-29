@@ -13,20 +13,18 @@
       <img src="assets/imgs/avtar.jpg" class="avatar"/>
     </button>
   </div>
-  <td-layout-manage-list #manageList [opened]="media.registerQuery('gt-sm') | async" 
-            [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'" 
-            [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '257px' : '100%'">
-    <md-toolbar td-sidenav-content class="pad0">   
-      <button md-icon-button mdTooltip="Expand/Collapse" mdTooltipPosition="after" (click)="toggleSidebar()">
+  <td-layout-manage-list #manageList >
+    <md-toolbar td-sidenav-content class="pad0">
+      <button md-icon-button td-menu-button mdTooltip="Expand/Collapse" mdTooltipPosition="after" (click)="toggleSidebar()">
         <md-icon class="md-24">{{(sideNavOpened)?'chevron_left':'chevron_right'}}</md-icon>
       </button>
       <span flex *ngIf="sideNavOpened">TestDataGen</span>
-      <button md-icon-button color="accent" [routerLink]="['/home/myapps']">
+      <button md-icon-button color="accent" mdTooltip="My Apps" [routerLink]="['/home/myapps']">
           <md-icon>apps</md-icon>
       </button>
     </md-toolbar>
     <md-nav-list td-sidenav-content>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -36,7 +34,7 @@
         Dashboard
       </a>
       <md-divider></md-divider>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -46,7 +44,7 @@
         Analytics
       </a>
       <md-divider></md-divider>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -56,7 +54,7 @@
         Events
       </a>
       <md-divider></md-divider>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -66,7 +64,7 @@
         Performance
       </a>
       <md-divider></md-divider>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -76,7 +74,7 @@
         Engagement
       </a>
       <md-divider></md-divider>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -87,7 +85,7 @@
       </a>
       <md-divider></md-divider>
       <span md-subheader class="menuHeader">{{(sideNavOpened)?"Administration":"Adm"}}</span>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -97,7 +95,7 @@
         User Management
       </a>
       <md-divider></md-divider>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -107,7 +105,7 @@
         Integration
       </a>
       <md-divider></md-divider>
-      <a md-list-item 
+      <a md-list-item
         md-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
@@ -117,15 +115,16 @@
         Settings
       </a>
     </md-nav-list>
-    <tq-toolbox td-toolbar-content flex [tools]="getTools()"></tq-toolbox>
+    <tq-toolbox [tools]="getTools()"></tq-toolbox>
 
-    <router-outlet></router-outlet>  
+    <router-outlet></router-outlet>
 
-    <tq-footer></tq-footer> 
+    <tq-footer></tq-footer>
 
   </td-layout-manage-list>
 
 </td-layout-nav>
+
 
 <md-menu x-position="before" y-position="below" #menu="mdMenu">
   <a md-menu-item [routerLink]="['/home/users/profile']"><md-icon md-list-icon>person</md-icon>Profile</a>

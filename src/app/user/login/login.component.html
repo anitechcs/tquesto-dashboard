@@ -11,13 +11,11 @@
         <md-card-content>
             <div>
               <md-input-container>
-                <span md-prefix><md-icon>person</md-icon></span>
                 <input mdInput placeholder="Username" type="text" name="userName" [(ngModel)]="userName" required (focus)="resetNotification()">
               </md-input-container>
             </div>
             <div>
               <md-input-container>
-                <span md-prefix><md-icon>lock</md-icon></span>
                 <input mdInput placeholder="Password" type="password" name="password" [(ngModel)]="password" required (focus)="resetNotification()">
               </md-input-container>
             </div>
@@ -27,7 +25,6 @@
           <span class="fill-remaining-space"></span>
           <button align="end" md-raised-button color="accent" type="submit" [disabled]="!loginForm.valid">SIGN IN</button>
         </md-card-actions>
-        <br />
         <md-card-actions align="center">
           <div>Don't have an account? <a routerLink="/registration">Create a New One</a></div>
           <br/>
