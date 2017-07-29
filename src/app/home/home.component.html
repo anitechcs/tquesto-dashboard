@@ -16,7 +16,7 @@
   <td-layout-manage-list #manageList >
     <md-toolbar td-sidenav-content class="pad0">
       <button md-icon-button td-menu-button mdTooltip="Expand/Collapse" mdTooltipPosition="after" (click)="toggleSidebar()">
-        <md-icon class="md-24">menu</md-icon>
+        <md-icon class="md-24">{{(sideNavOpened)?'chevron_left':'chevron_right'}}</md-icon>
       </button>
       <span flex *ngIf="sideNavOpened">TestDataGen</span>
       <button md-icon-button color="accent" mdTooltip="My Apps" [routerLink]="['/home/myapps']">
