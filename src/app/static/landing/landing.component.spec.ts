@@ -2,7 +2,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { APP_BASE_HREF } from '@angular/common';
+import { AppModule } from '../../app.module';
 import { LandingComponent } from './landing.component';
 
 describe('LandingComponent', () => {
@@ -11,7 +12,8 @@ describe('LandingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LandingComponent ]
+      imports: [ AppModule ],
+      providers: [{provide: APP_BASE_HREF, useValue: '/'}]
     })
     .compileComponents();
   }));

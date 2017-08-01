@@ -2,7 +2,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { APP_BASE_HREF } from '@angular/common';
+import { AppModule } from '../../app.module';
 import { PreferenceComponent } from './preference.component';
 
 describe('PreferenceComponent', () => {
@@ -11,7 +12,8 @@ describe('PreferenceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PreferenceComponent ]
+      imports: [ AppModule ],
+      providers: [{provide: APP_BASE_HREF, useValue: '/'}]
     })
     .compileComponents();
   }));

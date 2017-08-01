@@ -6,6 +6,6 @@ export class TestAppPage {
   }
 
   getParagraphText() {
-    return element(by.css('tq-root h1')).getText();
+    return element(by.className('intro-lead-in')).getText();
   }
 }

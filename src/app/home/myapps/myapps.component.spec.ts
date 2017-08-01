@@ -1,8 +1,9 @@
 /* tslint:disable:no-unused-variable */
+import { APP_BASE_HREF } from '@angular/common';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { AppModule } from '../../app.module';
 import { MyappsComponent } from './myapps.component';
 
 describe('MyappsComponent', () => {
@@ -11,7 +12,8 @@ describe('MyappsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyappsComponent ]
+      imports: [ AppModule ],
+      providers: [{provide: APP_BASE_HREF, useValue: '/'}]
     })
     .compileComponents();
   }));

@@ -1,10 +1,8 @@
 {
   "name": "tquesto-dashboard",
   "version": "0.0.1",
-  "license": "MIT",
-  "private": true,
+  "license": "Apache-2.0",
   "author": "Anitech Consulting Services Pvt Ltd.",
-  "angular-cli": {},
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -63,25 +61,26 @@
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
-    "@angular/cli": "1.2.3",
+    "@angular/cli": "^1.2.6",
     "@angular/compiler-cli": "4.3.1",
     "@types/d3": "^4.10.0",
     "@types/hammerjs": "^2.0.33",
-    "@types/jasmine": "2.5.38",
-    "@types/node": "^6.0.85",
+    "@types/jasmine": "2.5.53",
+    "@types/jasminewd2": "^2.0.2",
+    "@types/node": "^8.0.17",
     "codelyzer": "~3.1.2",
-    "jasmine-core": "~2.5.2",
-    "jasmine-spec-reporter": "~3.2.0",
-    "karma": "~1.4.1",
-    "karma-chrome-launcher": "~2.0.0",
+    "jasmine-core": "~2.7.0",
+    "jasmine-spec-reporter": "~4.1.1",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.2.0",
     "karma-cli": "~1.0.1",
     "karma-coverage-istanbul-reporter": "^0.2.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
-    "ts-node": "~2.0.0",
-    "tslint": "~5.2.0",
+    "ts-node": "~3.3.0",
+    "tslint": "~5.5.0",
     "typescript": "~2.4.2",
-    "webdriver-manager": "10.2.5"
+    "webdriver-manager": "12.0.6"
   }
 }

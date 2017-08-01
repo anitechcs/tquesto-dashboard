@@ -1,14 +1,14 @@
 import { TestAppPage } from './app.po';
 
-describe('test-app App', () => {
+describe('Tquesto App', () => {
   let page: TestAppPage;
 
   beforeEach(() => {
     page = new TestAppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message TQUESTO', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('tq works!');
+    // expect(page.getParagraphText()).toEqual('TQUESTO');
   });
 });

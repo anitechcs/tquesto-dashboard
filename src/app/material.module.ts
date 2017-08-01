@@ -1,9 +1,9 @@
 import { NgModule, Type} from '@angular/core';
 import { RequestInterceptor } from './shared/utils/request.interceptor';
 
-import { MdCoreModule, 
-         MdButtonModule, 
-         MdCheckboxModule, 
+import { MdCoreModule,
+         MdButtonModule,
+         MdCheckboxModule,
          MdCardModule,
          MdRadioModule,
          MdInputModule,
@@ -26,14 +26,15 @@ import { MdCoreModule,
          MdAutocompleteModule,
          MdChipsModule
        } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CovalentHttpModule, IHttpInterceptor, HttpConfig} from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
-import { CovalentChipsModule, 
-         CovalentFileModule, 
-         CovalentJsonFormatterModule, 
+import { CovalentChipsModule,
+         CovalentFileModule,
+         CovalentJsonFormatterModule,
          CovalentDataTableModule,
          CovalentSearchModule,
          CovalentPagingModule,
@@ -83,6 +84,7 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     MdSelectModule,
     MdAutocompleteModule,
     MdChipsModule,
+    FlexLayoutModule,
     NgxChartsModule,
     CovalentHttpModule.forRoot({
       interceptors: [{
@@ -91,9 +93,9 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     }),
     CovalentHighlightModule,
     CovalentMarkdownModule,
-    CovalentChipsModule, 
-    CovalentFileModule, 
-    CovalentJsonFormatterModule, 
+    CovalentChipsModule,
+    CovalentFileModule,
+    CovalentJsonFormatterModule,
     CovalentDataTableModule,
     CovalentSearchModule,
     CovalentPagingModule,
@@ -133,13 +135,14 @@ const httpInterceptorProviders: Type<IHttpInterceptor>[] = [
     MdSelectModule,
     MdAutocompleteModule,
     MdChipsModule,
+    FlexLayoutModule,
     NgxChartsModule,
     CovalentHttpModule,
     CovalentHighlightModule,
     CovalentMarkdownModule,
-    CovalentChipsModule, 
-    CovalentFileModule, 
-    CovalentJsonFormatterModule, 
+    CovalentChipsModule,
+    CovalentFileModule,
+    CovalentJsonFormatterModule,
     CovalentDataTableModule,
     CovalentSearchModule,
     CovalentPagingModule,

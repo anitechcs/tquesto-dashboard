@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { MOCK_API } from '../utils/constants';
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export class ItemService extends RESTService<any> {
@@ -10,14 +11,14 @@ export class ItemService extends RESTService<any> {
     super(_http, {
       baseUrl: MOCK_API,
       path: '/items',
-    }); 
+    });
   }
 
   staticQuery(): any {
     return this._http.get('data/items.json')
     .map((res: Response) => {
       return res.json();
-    }); 
+    });
   }
 
   staticGet(id: string): any {

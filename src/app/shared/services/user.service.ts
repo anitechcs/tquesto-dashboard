@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-
+import 'rxjs/add/operator/map'
 import { HttpInterceptorService, RESTService } from '@covalent/http';
 import { environment } from '../../../environments/environment';
 
