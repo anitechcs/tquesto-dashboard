@@ -8,9 +8,9 @@ import { ToolboxService } from '../shared/services/toolbox.service';
 })
 export class AnalyticsComponent implements OnInit {
 
-  constructor(private toolbox: ToolboxService) { 
+  constructor(private toolbox: ToolboxService) {
     toolbox.setToolBox({
-        title: "Analytics", 
+        title: 'Analytics',
         actions: [
           {icon: 'add', tooltip: 'Add', callback: this.callBack},
           {icon: 'refresh', tooltip: 'Refresh', callback: this.callBack}
