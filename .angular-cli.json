@@ -30,8 +30,6 @@
         "../node_modules/bootstrap/dist/js/bootstrap.js",
         "../node_modules/particlesjs/dist/particles.js",
         "../node_modules/smoothscroll/smoothscroll.js",
-        "assets/js/jquery.easytabs.min.js",
-        "../node_modules/web-animations-js/web-animations-next-lite.min.js",
         "../node_modules/hammerjs/hammer.min.js",
         "../node_modules/showdown/dist/showdown.js"
       ],

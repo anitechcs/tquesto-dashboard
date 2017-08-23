@@ -19,7 +19,6 @@ export class LandingComponent implements OnInit {
     minDistance: '100',
     connectParticles: 'true'
   };
-  @ViewChild('tabElem') el:ElementRef;
 
   header = document.querySelector('.navbar-default');
   didScroll = false;
@@ -29,14 +28,6 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
     Particles.init(this.particleOptions);
-  }
-
-  ngAfterViewInit() {
-    // ABOUT SECTION TABS
-    $(this.el.nativeElement).easytabs({
-      animationSpeed: 'normal',
-      updateHash: false
-    });
   }
 
   @HostListener('document:scroll', ['$event'])

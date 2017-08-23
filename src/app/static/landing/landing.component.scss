@@ -292,9 +292,6 @@ body.modal-open {
     border-color: transparent;
     background-color: #273140;
     width: inherit;
-    /*-webkit-box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.2);*/
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus,
@@ -371,7 +368,10 @@ body.modal-open {
     }
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #273140;
+        background-color: #1080e2; //#273140;
+        -webkit-box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 6px 4px -5px rgba(0, 0, 0, 0.2);
     }
 }
 /* --------------------------------------
@@ -782,11 +782,11 @@ header .container {
 footer {
     padding: 50px 0 10px 0;
     text-align: center;
-    background-color: #273140;
+    background-color: #1080e2; //#273140;
 }
 .lower-footer span,
 .lower-footer a {
-    opacity: 0.2;
+    opacity: 0.7;
     color: white;
     font-family: PTSans;
     font-size: 12px;
@@ -832,7 +832,7 @@ footer {
     width: 570px;
 }
 .upper-footer .pull-left p {
-    opacity: 0.2;
+    opacity: 0.7;
     max-width: 250px;
     margin-top: 30px;
     color: white;
@@ -856,6 +856,7 @@ footer {
     margin-bottom: 30px;
 }
 .footer-nav a {
+    opacity: 0.7;
     color: white;
     font-family: PTSans;
     font-size: 14px;
@@ -872,7 +873,8 @@ footer {
 }
 .footer-nav a:hover {
     text-decoration: none;
-    color: #1080f2
+    color: white;
+    opacity: 1;
 }
 .footer-secondary-nav {
     float: left;
@@ -980,7 +982,7 @@ footer {
     speak: none;
     text-transform: none;
     /* Better Font Rendering */
-    
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
