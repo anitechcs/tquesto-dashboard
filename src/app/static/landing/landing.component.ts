@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
 declare var Particles: any;
 declare var classie: any;
-declare var $: any;
 
 @Component({
   selector: 'tq-landing',
@@ -22,7 +21,6 @@ export class LandingComponent implements OnInit {
 
   header = document.querySelector('.navbar-default');
   didScroll = false;
-  changeHeaderOn = 50;
 
   constructor() { }
 
@@ -32,7 +30,7 @@ export class LandingComponent implements OnInit {
 
   @HostListener('document:scroll', ['$event'])
   onPageScroll(ev: UIEvent) {
-    if ((window.pageYOffset || document.documentElement.scrollTop) >= this.changeHeaderOn) {
+    if ((window.pageYOffset || document.documentElement.scrollTop) >= 50) {
       this.didScroll = true;
     } else {
       this.didScroll = false;
