@@ -30,9 +30,21 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
-## Deploying to Github Pages
+## Build docker image
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+```
+$ docker build -t tquesto-dashboard . 
+```
+
+## Run the container
+
+```
+$ docker run -d -p 8080:80 tquesto-dashboard
+```
+
+The app will be available at http://localhost:8080
+
+You can easily tweak the nginx config in ```nginx/default.conf```
 
 ## Further help
 
