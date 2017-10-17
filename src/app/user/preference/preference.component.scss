@@ -1,15 +1,15 @@
 
-md-card {
+mat-card {
     margin: 0;
     width: 400px;
     height: 500px;
 }
 
-md-card-content {
+mat-card-content {
     min-height: 350px;
 }
 
-md-card-title, md-card-subtitle {
+mat-card-title, mat-card-subtitle {
   text-align: center;
   background: whitesmoke;
   margin: 0!important;
@@ -27,12 +27,12 @@ md-card-title, md-card-subtitle {
     padding-left: 20px;
 }
 
-md-select, md-slide-toggle, md-button-toggle-group {
+mat-select, mat-slide-toggle, mat-button-toggle-group {
   margin: 20px;
   width: 90%;
 }
 
-md-button-toggle {
+mat-button-toggle {
   margin: 0 3px;
   height: 60px;
 }

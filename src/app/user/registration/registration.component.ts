@@ -3,7 +3,7 @@ import { trigger, style, transition, animate } from '@angular/animations';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TdLoadingService } from '@covalent/core';
 import { AuthService } from '../../shared/services/auth.service';
-import { MdDialog, MdDialogRef, MdDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material';
 import { TncComponent } from '../../static/tnc/tnc.component';
 
 @Component({
@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit {
   tnc: boolean = true;
   notificationMsg: any[] = [];
 
-  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute, private loadingService: TdLoadingService, public dialog: MdDialog) { 
+  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute, private loadingService: TdLoadingService, public dialog: MatDialog) { 
     this.resetNotification();
   }
 

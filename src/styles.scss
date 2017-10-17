@@ -17,19 +17,19 @@ body {
 .mat-primary.mat-toolbar {
     min-height: 54px!important;
 
-    md-toolbar-row {
+    mat-toolbar-row {
         height: 54px!important;
     }
 }
 
-.md-content md-toolbar {
+.mat-content mat-toolbar {
   min-height: 46px!important;
 }
 
-.md-content md-toolbar md-toolbar-row {
+.mat-content mat-toolbar mat-toolbar-row {
   height: 46px!important;
 
-  .md-icon-button:not(.md-icon-button-mini) {
+  .mat-icon-button:not(.mat-icon-button-mini) {
     height: 38px;
     line-height: 38px;
     width: 38px;
@@ -37,14 +37,14 @@ body {
 
 }
 
-md-toolbar {
+mat-toolbar {
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
         0px 1px 1px 0px rgba(0, 0, 0, 0.14),
         0px 1px 3px 0px rgba(0, 0, 0, 0.12);
     z-index: 1;
 }
 
-.md-icon-logo {
+.mat-icon-logo {
     width: 180px!important;
     height: 40px!important;
 }
@@ -56,7 +56,7 @@ a, a:hover, a:active {
 
 /* Sidenav expand/collapse */
 .collapse {
-    md-sidenav {
+    mat-sidenav {
         min-width: 4%!important;
         width: 55px!important;
         overflow-x: hidden;
@@ -97,13 +97,13 @@ a, a:hover, a:active {
   padding: 0!important;
 }
 
-// Href line height wasn't right for md-icon-button
-a[md-icon-button] {
+// Href line height wasn't right for mat-icon-button
+a[mat-icon-button] {
     line-height: 36px;
 }
 
 // Stretch tab labels until there is an attribute for it
-.md-tab-label {
+.mat-tab-label {
     flex-grow: 1;
 }
 
@@ -113,7 +113,7 @@ a[md-icon-button] {
 }
 
 // dialog
-md-dialog-container {
+mat-dialog-container {
     padding: 0!important;
 }
 

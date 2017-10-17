@@ -1,18 +1,18 @@
-<md-toolbar>
+<mat-toolbar>
   <div layout="row" layout-align="start center" flex>
     <span>{{tools.title}}</span>
     <span flex></span>
-    <button md-icon-button *ngFor="let tool of tools.actions" mdTooltip="{{tool.tooltip}}" (click)="tool.callback.call()">
-      <md-icon class="md-24">{{tool.icon}}</md-icon>
+    <button mat-icon-button *ngFor="let tool of tools.actions" matTooltip="{{tool.tooltip}}" (click)="tool.callback.call()">
+      <mat-icon class="mat-24">{{tool.icon}}</mat-icon>
     </button>
-    <button md-icon-button [md-menu-trigger-for]="posXMenu" *ngIf="tools.more">
-      <md-icon class="md-24">more_vert</md-icon>
+    <button mat-icon-button [mat-menu-trigger-for]="posXMenu" *ngIf="tools.more">
+      <mat-icon class="mat-24">more_vert</mat-icon>
     </button>
   </div>
-</md-toolbar>
+</mat-toolbar>
 
-<md-menu x-position="before" #posXMenu="mdMenu">
-  <button md-menu-item *ngFor="let tool of tools.more" mdTooltip="{{tool.tooltip}}" (click)="tool.callback.call()">
+<mat-menu x-position="before" #posXMenu="matMenu">
+  <button mat-menu-item *ngFor="let tool of tools.more" matTooltip="{{tool.tooltip}}" (click)="tool.callback.call()">
     {{tool.text}}
   </button>
-</md-menu>
+</mat-menu>

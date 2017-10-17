@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToolboxService } from '../../shared/services/toolbox.service';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import { TdLoadingService, TdDialogService } from '@covalent/core';
 import { UserService, IUser } from '../../shared/services/user.service';
 
@@ -19,7 +19,7 @@ export class UserListComponent implements AfterViewInit {
               private router: Router,
               private loadingService: TdLoadingService,
               private dialogService: TdDialogService,
-              private snackBarService: MdSnackBar,
+              private snackBarService: MatSnackBar,
               private userService: UserService) {
     toolbox.setToolBox({
         title: "User Management", 

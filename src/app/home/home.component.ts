@@ -1,12 +1,12 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MdIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AuthService } from '../shared/services/auth.service';
 import { UserService } from '../shared/services/user.service';
 import { ToolboxService } from '../shared/services/toolbox.service';
 import { TdMediaService } from '@covalent/core';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { PreferenceComponent } from '../user/preference/preference.component';
 
 @Component({
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   isFullscreen = false;
   fadeDiv = false;
   // tslint:disable-next-line:max-line-length
-  constructor(private userService: UserService, private router: Router, private authService: AuthService, private toolbox: ToolboxService, iconRegistry: MdIconRegistry, domSanitizer: DomSanitizer, public media: TdMediaService, public dialog: MdDialog) {
+  constructor(private userService: UserService, private router: Router, private authService: AuthService, private toolbox: ToolboxService, iconRegistry: MatIconRegistry, domSanitizer: DomSanitizer, public media: TdMediaService, public dialog: MatDialog) {
     iconRegistry.addSvgIconInNamespace('assets', 'logo', domSanitizer.bypassSecurityTrustResourceUrl('/assets/imgs/logo.svg'));
     this.selectedTheme = userService.getTheme();
   }
