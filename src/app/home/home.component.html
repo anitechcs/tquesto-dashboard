@@ -1,120 +1,120 @@
 <td-layout-nav [class.collapse]="!sideNavOpened" logo="assets:logo" [class]="getSelectedTheme()">
   <div td-toolbar-content layout="row" layout-align="center center" flex>
     <span flex></span>
-    <button md-icon-button mdTooltip="Notifications" [mdMenuTriggerFor]="notificationsMenu">
+    <button mat-icon-button matTooltip="Notifications" [matMenuTriggerFor]="notificationsMenu">
       <td-notification-count color="accent" [notifications]="6">
-         <md-icon>notifications</md-icon>
+         <mat-icon>notifications</mat-icon>
       </td-notification-count>
     </button>
-    <button md-icon-button mdTooltip="Full Screen" (click)="toggleFullscreen()" tqFullscreen>
-      <md-icon>{{(!isFullscreen)?'fullscreen':'fullscreen_exit'}}</md-icon>
+    <button mat-icon-button matTooltip="Full Screen" (click)="toggleFullscreen()" tqFullscreen>
+      <mat-icon>{{(!isFullscreen)?'fullscreen':'fullscreen_exit'}}</mat-icon>
     </button>
-    <button md-icon-button mdTooltip="Tapas" [md-menu-trigger-for]="menu">
+    <button mat-icon-button matTooltip="Tapas" [mat-menu-trigger-for]="menu">
       <img src="assets/imgs/avtar.jpg" class="avatar"/>
     </button>
   </div>
   <td-layout-manage-list #manageList >
-    <md-toolbar td-sidenav-content class="pad0">
-      <button md-icon-button td-menu-button mdTooltip="Expand/Collapse" mdTooltipPosition="after" (click)="toggleSidebar()">
-        <md-icon class="md-24">{{(sideNavOpened)?'chevron_left':'chevron_right'}}</md-icon>
+    <mat-toolbar td-sidenav-content class="pad0">
+      <button mat-icon-button td-menu-button matTooltip="Expand/Collapse" matTooltipPosition="after" (click)="toggleSidebar()">
+        <mat-icon class="mat-24">{{(sideNavOpened)?'chevron_left':'chevron_right'}}</mat-icon>
       </button>
       <span flex *ngIf="sideNavOpened">TestDataGen</span>
-      <button md-icon-button color="accent" mdTooltip="My Apps" [routerLink]="['/home/myapps']">
-          <md-icon>apps</md-icon>
+      <button mat-icon-button color="accent" matTooltip="My Apps" [routerLink]="['/home/myapps']">
+          <mat-icon>apps</mat-icon>
       </button>
-    </md-toolbar>
-    <md-nav-list td-sidenav-content>
-      <a md-list-item
-        md-ripple class="block relative"
+    </mat-toolbar>
+    <mat-nav-list td-sidenav-content>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/dashboard']">
-        <md-icon md-list-icon>dashboard</md-icon>
+        <mat-icon mat-list-icon>dashboard</mat-icon>
         Dashboard
       </a>
-      <md-divider></md-divider>
-      <a md-list-item
-        md-ripple class="block relative"
+      <mat-divider></mat-divider>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/analytics']">
-        <md-icon md-list-icon>visibility</md-icon>
+        <mat-icon mat-list-icon>visibility</mat-icon>
         Analytics
       </a>
-      <md-divider></md-divider>
-      <a md-list-item
-        md-ripple class="block relative"
+      <mat-divider></mat-divider>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/events']">
-        <md-icon md-list-icon>donut_small</md-icon>
+        <mat-icon mat-list-icon>donut_small</mat-icon>
         Events
       </a>
-      <md-divider></md-divider>
-      <a md-list-item
-        md-ripple class="block relative"
+      <mat-divider></mat-divider>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/performance']">
-        <md-icon md-list-icon>network_check</md-icon>
+        <mat-icon mat-list-icon>network_check</mat-icon>
         Performance
       </a>
-      <md-divider></md-divider>
-      <a md-list-item
-        md-ripple class="block relative"
+      <mat-divider></mat-divider>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/engagement']">
-        <md-icon md-list-icon>blur_linear</md-icon>
+        <mat-icon mat-list-icon>blur_linear</mat-icon>
         Engagement
       </a>
-      <md-divider></md-divider>
-      <a md-list-item
-        md-ripple class="block relative"
+      <mat-divider></mat-divider>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/compagion']">
-        <md-icon md-list-icon>broken_image</md-icon>
+        <mat-icon mat-list-icon>broken_image</mat-icon>
         Compagions
       </a>
-      <md-divider></md-divider>
-      <span md-subheader class="menuHeader">{{(sideNavOpened)?"Administration":"Adm"}}</span>
-      <a md-list-item
-        md-ripple class="block relative"
+      <mat-divider></mat-divider>
+      <span mat-subheader class="menuHeader">{{(sideNavOpened)?"Administration":"Adm"}}</span>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/users']">
-        <md-icon md-list-icon>people</md-icon>
+        <mat-icon mat-list-icon>people</mat-icon>
         User Management
       </a>
-      <md-divider></md-divider>
-      <a md-list-item
-        md-ripple class="block relative"
+      <mat-divider></mat-divider>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/integration']">
-        <md-icon md-list-icon>receipt</md-icon>
+        <mat-icon mat-list-icon>receipt</mat-icon>
         Integration
       </a>
-      <md-divider></md-divider>
-      <a md-list-item
-        md-ripple class="block relative"
+      <mat-divider></mat-divider>
+      <a mat-list-item
+        mat-ripple class="block relative"
         (click)="!media.query('gt-sm') && manageList.close()"
         [routerLinkActive]="['active']"
         [routerLinkActiveOptions]="{exact:true}"
         [routerLink]="['/home/configuration']">
-        <md-icon md-list-icon>settings_applications</md-icon>
+        <mat-icon mat-list-icon>settings_applications</mat-icon>
         Settings
       </a>
-    </md-nav-list>
+    </mat-nav-list>
     <tq-toolbox [tools]="getTools()"></tq-toolbox>
 
     <router-outlet></router-outlet>
@@ -126,55 +126,55 @@
 </td-layout-nav>
 
 
-<md-menu x-position="before" y-position="below" #menu="mdMenu">
-  <a md-menu-item [routerLink]="['/home/users/profile']"><md-icon md-list-icon>person</md-icon>Profile</a>
-  <a md-menu-item (click)="showPreferences()"><md-icon md-list-icon>settings</md-icon>Preferences</a>
-  <a md-menu-item href="http://docs.tquesto.com" target="_blank"><md-icon md-list-icon>help</md-icon>Help</a>
-  <a md-menu-item (click)="doLogout()"><md-icon md-list-icon>power_settings_new</md-icon>Sign Out</a>
-</md-menu>
+<mat-menu x-position="before" y-position="below" #menu="matMenu">
+  <a mat-menu-item [routerLink]="['/home/users/profile']"><mat-icon mat-list-icon>person</mat-icon>Profile</a>
+  <a mat-menu-item (click)="showPreferences()"><mat-icon mat-list-icon>settings</mat-icon>Preferences</a>
+  <a mat-menu-item href="http://docs.tquesto.com" target="_blank"><mat-icon mat-list-icon>help</mat-icon>Help</a>
+  <a mat-menu-item (click)="doLogout()"><mat-icon mat-list-icon>power_settings_new</mat-icon>Sign Out</a>
+</mat-menu>
 
-<md-menu x-position="before" y-position="below" #notificationsMenu="mdMenu">
+<mat-menu x-position="before" y-position="below" #notificationsMenu="matMenu">
   <td-menu>
-    <div td-menu-header class="md-subhead">Recent Notifications</div>
-    <md-nav-list dense>
-      <a md-list-item [routerLink]="['/components/notifications']">
-        <md-icon md-list-avatar>notifications</md-icon>
-        <h4 md-line><span class="text-wrap">Notifications component added</span></h4>
-        <p md-line>New component</p>
+    <div td-menu-header class="mat-subhead">Recent Notifications</div>
+    <mat-nav-list dense>
+      <a mat-list-item [routerLink]="['/components/notifications']">
+        <mat-icon mat-list-avatar>notifications</mat-icon>
+        <h4 mat-line><span class="text-wrap">Notifications component added</span></h4>
+        <p mat-line>New component</p>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item [routerLink]="['/components/dynamic-forms']">
-        <md-icon md-list-avatar>format_align_center</md-icon>
-        <h4 md-line><span class="text-wrap">JSON driven dynamic forms</span></h4>
-        <p md-line>New component</p>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/components/dynamic-forms']">
+        <mat-icon mat-list-avatar>format_align_center</mat-icon>
+        <h4 mat-line><span class="text-wrap">JSON driven dynamic forms</span></h4>
+        <p mat-line>New component</p>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item [routerLink]="['/layouts']">
-        <md-icon md-list-avatar>call_to_action</md-icon>
-        <h4 md-line><span class="text-wrap">Sticky footer added to layouts</span></h4>
-        <p md-line>Component updated</p>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/layouts']">
+        <mat-icon mat-list-avatar>call_to_action</mat-icon>
+        <h4 mat-line><span class="text-wrap">Sticky footer added to layouts</span></h4>
+        <p mat-line>Component updated</p>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item [routerLink]="['/components/data-table']">
-        <md-icon md-list-avatar>grid_on</md-icon>
-        <h4 md-line><span class="text-wrap">Nested object support for data-table</span></h4>
-        <p md-line>Component updated</p>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/components/data-table']">
+        <mat-icon mat-list-avatar>grid_on</mat-icon>
+        <h4 mat-line><span class="text-wrap">Nested object support for data-table</span></h4>
+        <p mat-line>Component updated</p>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item [routerLink]="['/components/http']">
-        <md-icon md-list-avatar>http</md-icon>
-        <h4 md-line><span class="text-wrap">HTTP path interceptors &amp; transform support</span></h4>
-        <p md-line>Service updated</p>
+      <mat-divider></mat-divider>
+      <a mat-list-item [routerLink]="['/components/http']">
+        <mat-icon mat-list-avatar>http</mat-icon>
+        <h4 mat-line><span class="text-wrap">HTTP path interceptors &amp; transform support</span></h4>
+        <p mat-line>Service updated</p>
       </a>
-      <md-divider></md-divider>
-      <a md-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L53-L58" target="_blank">
-        <md-icon md-list-avatar>notifications</md-icon>
-        <h4 md-line><span class="text-wrap">Angular 2.4.1 &amp; Material2 Beta1</span></h4>
-        <p md-line>Dependencies updated</p>
+      <mat-divider></mat-divider>
+      <a mat-list-item href="https://github.com/Teradata/covalent/blob/develop/package.json#L53-L58" target="_blank">
+        <mat-icon mat-list-avatar>notifications</mat-icon>
+        <h4 mat-line><span class="text-wrap">Angular 2.4.1 &amp; Material2 Beta1</span></h4>
+        <p mat-line>Dependencies updated</p>
       </a>
-    </md-nav-list>
-    <button md-button color="accent" td-menu-footer [routerLink]="['/home/notifications']">
+    </mat-nav-list>
+    <button mat-button color="accent" td-menu-footer [routerLink]="['/home/notifications']">
       View More
     </button>
   </td-menu>
-</md-menu>
+</mat-menu>

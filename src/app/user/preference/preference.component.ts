@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/services/user.service';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'tq-preference',
@@ -16,7 +16,7 @@ export class PreferenceComponent implements OnInit {
     {value: 'hi', viewValue: 'Hindi'},
     {value: 'fr', viewValue: 'French'}
   ];
-  constructor(public dialog: MdDialog, private userService: UserService) {
+  constructor(public dialog: MatDialog, private userService: UserService) {
   
   }
 

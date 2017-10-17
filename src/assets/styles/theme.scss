@@ -38,9 +38,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($blue-orange);
     @include covalent-theme($blue-orange);
 
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-icon] {
+    mat-nav-list {
+        [mat-list-item].active {
+            mat-icon[mat-list-icon] {
                 color: mat-color($accent2);
             }
         }
@@ -57,9 +57,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($blue-grey-deep-orange);
     @include covalent-theme($blue-grey-deep-orange);
 
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-icon] {
+    mat-nav-list {
+        [mat-list-item].active {
+            mat-icon[mat-list-icon] {
                 color: mat-color($accent3);
             }
         }
@@ -76,9 +76,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($indigo-pink);
     @include covalent-theme($indigo-pink);
 
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-icon] {
+    mat-nav-list {
+        [mat-list-item].active {
+            mat-icon[mat-list-icon] {
                 color: mat-color($accent4);
             }
         }
@@ -95,9 +95,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($purple-amber);
     @include covalent-theme($purple-amber);
 
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-icon] {
+    mat-nav-list {
+        [mat-list-item].active {
+            mat-icon[mat-list-icon] {
                 color: mat-color($accent5);
             }
         }
@@ -114,9 +114,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($blue-orange);
     @include covalent-theme($blue-orange);
 
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-icon] {
+    mat-nav-list {
+        [mat-list-item].active {
+            mat-icon[mat-list-icon] {
                 color: mat-color($accent2);
             }
         }
@@ -133,9 +133,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($blue-grey-deep-orange);
     @include covalent-theme($blue-grey-deep-orange);
 
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-icon] {
+    mat-nav-list {
+        [mat-list-item].active {
+            mat-icon[mat-list-icon] {
                 color: mat-color($accent3);
             }
         }
@@ -152,9 +152,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($indigo-pink);
     @include covalent-theme($indigo-pink);
 
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-icon] {
+    mat-nav-list {
+        [mat-list-item].active {
+            mat-icon[mat-list-icon] {
                 color: mat-color($accent4);
             }
         }
@@ -171,9 +171,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
     @include angular-material-theme($purple-amber);
     @include covalent-theme($purple-amber);
 
-    md-nav-list {
-        [md-list-item].active {
-            md-icon[md-list-icon] {
+    mat-nav-list {
+        [mat-list-item].active {
+            mat-icon[mat-list-icon] {
                 color: mat-color($accent5);
             }
         }
@@ -182,12 +182,12 @@ $theme: mat-light-theme($primary, $accent, $warn);
 
 // Active icon color in list nav
 mat-nav-list {
-    [md-list-item].active {
-        md-icon[md-list-avatar] {
+    [mat-list-item].active {
+        mat-icon[mat-list-avatar] {
             background-color: mat-color($accent);
             color: mat-color($accent, default-contrast)
         }
-        md-icon[md-list-icon] {
+        mat-icon[mat-list-icon] {
             color: mat-color($accent);
         }
     }

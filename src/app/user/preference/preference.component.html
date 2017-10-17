@@ -1,46 +1,46 @@
-<md-card>
-<md-card-title>PREFERENCES</md-card-title>
-<md-card-subtitle>Customize your preferences here as you like</md-card-subtitle>
-<md-divider></md-divider>
-<md-card-content>
+<mat-card>
+<mat-card-title>PREFERENCES</mat-card-title>
+<mat-card-subtitle>Customize your preferences here as you like</mat-card-subtitle>
+<mat-divider></mat-divider>
+<mat-card-content>
   <br />
   <form>
     <div>
-      <md-select placeholder="Prefered Language" [(ngModel)]="prefLang" name="food">
-        <md-option *ngFor="let lang of languages" [value]="lang.value">
+      <mat-select placeholder="Prefered Language" [(ngModel)]="prefLang" name="food">
+        <mat-option *ngFor="let lang of languages" [value]="lang.value">
           {{lang.viewValue}}
-        </md-option>
-      </md-select>
+        </mat-option>
+      </mat-select>
     </div>
 
     <div>
-      <md-slide-toggle [checked]="enableDarkTheme" [(ngModel)]="enableDarkTheme" name="darkTheme" color="primary">
+      <mat-slide-toggle [checked]="enableDarkTheme" [(ngModel)]="enableDarkTheme" name="darkTheme" color="primary">
           Enable Dark Theme
-      </md-slide-toggle>
+      </mat-slide-toggle>
     </div>
 
     <div>
       <span class="themesTxt">Themes</span>
-      <md-button-toggle-group #group="mdButtonToggleGroup">
-        <md-button-toggle value="blue-orange" mdToolTip="Blue Orange" class="blue">
-          <div class="orange"><md-icon>star</md-icon></div>
-        </md-button-toggle>
-        <md-button-toggle value="indigo-pink" mdToolTip="Indigo Pink" class="indigo">
-          <div class="pink"><md-icon>star_border</md-icon></div>
-        </md-button-toggle>
-        <md-button-toggle value="purple-amber" mdToolTip="Purple Amber" class="purple">
-          <div class="amber"><md-icon>star_border</md-icon></div>
-        </md-button-toggle>
-        <md-button-toggle value="blue-grey-deep-orange" mdToolTip="Grey Orange" class="grey">
-          <div class="deep-orange"><md-icon>star_border</md-icon></div>
-        </md-button-toggle>
-      </md-button-toggle-group>
+      <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle value="blue-orange" matToolTip="Blue Orange" class="blue">
+          <div class="orange"><mat-icon>star</mat-icon></div>
+        </mat-button-toggle>
+        <mat-button-toggle value="indigo-pink" matToolTip="Indigo Pink" class="indigo">
+          <div class="pink"><mat-icon>star_border</mat-icon></div>
+        </mat-button-toggle>
+        <mat-button-toggle value="purple-amber" matToolTip="Purple Amber" class="purple">
+          <div class="amber"><mat-icon>star_border</mat-icon></div>
+        </mat-button-toggle>
+        <mat-button-toggle value="blue-grey-deep-orange" matToolTip="Grey Orange" class="grey">
+          <div class="deep-orange"><mat-icon>star_border</mat-icon></div>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
     </div>
   </form>
 
-</md-card-content>
-<md-card-actions align="end">
-  <button md-raised-button color="accent" (click)="close()" class="margin-right10">Cancel</button>
-  <button md-raised-button color="primary" (click)="savePreferences(group)" class="margin-right10">Save</button>
-</md-card-actions>
-</md-card>
+</mat-card-content>
+<mat-card-actions align="end">
+  <button mat-raised-button color="accent" (click)="close()" class="margin-right10">Cancel</button>
+  <button mat-raised-button color="primary" (click)="savePreferences(group)" class="margin-right10">Save</button>
+</mat-card-actions>
+</mat-card>

@@ -1,12 +1,12 @@
-<div class="md-content" flex md-scroll-y>
-  <md-card tdMediaToggle="gt-xs" class="container-card">
-      <md-card-title>Profile</md-card-title>
-      <md-divider></md-divider>
-      <md-card-content class="push-bottom-none">
+<div class="mat-content" flex mat-scroll-y>
+  <mat-card tdMediaToggle="gt-xs" class="container-card">
+      <mat-card-title>Profile</mat-card-title>
+      <mat-divider></mat-divider>
+      <mat-card-content class="push-bottom-none">
         <form #userForm="ngForm">
           <div layout="row">
-            <md-input-container flex> 
-              <input mdInput
+            <mat-input-container flex> 
+              <input matInput
                       #userNameElement
                       #userNameControl="ngModel"
                       type="text" 
@@ -15,15 +15,15 @@
                       name="userName" 
                       maxlength="20" 
                       required>
-              <md-hint align="start">
+              <mat-hint align="start">
                 <span [hidden]="userNameControl.pristine || !userNameControl.errors?.required" class="tc-red-600">User Name is required!</span>
-              </md-hint>
-              <md-hint align="end">{{userNameElement.value.length}} / 20</md-hint>
-            </md-input-container>
+              </mat-hint>
+              <mat-hint align="end">{{userNameElement.value.length}} / 20</mat-hint>
+            </mat-input-container>
           </div>
           <div layout="row" class="push-top">
-            <md-input-container flex> 
-              <input mdInput
+            <mat-input-container flex> 
+              <input matInput
                       #firstNameElement
                       #firstNameControl="ngModel"
                       type="text" 
@@ -31,15 +31,15 @@
                       [(ngModel)]="firstName" 
                       name="firstName" 
                       maxlength="20">
-              <md-hint align="start">
+              <mat-hint align="start">
                 <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.required" class="tc-red-600">First Name is required!</span>
-              </md-hint>
-              <md-hint align="end">{{firstNameElement.value.length}} / 20</md-hint>
-            </md-input-container>
+              </mat-hint>
+              <mat-hint align="end">{{firstNameElement.value.length}} / 20</mat-hint>
+            </mat-input-container>
           </div>
           <div layout="row" class="push-top">
-            <md-input-container flex> 
-              <input mdInput
+            <mat-input-container flex> 
+              <input matInput
                       #lastNameElement
                       #lastNameControl="ngModel"
                       type="text" 
@@ -47,15 +47,15 @@
                       [(ngModel)]="lastName" 
                       name="lastName" 
                       maxlength="20">
-              <md-hint align="start">
+              <mat-hint align="start">
                 <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.required" class="tc-red-600">Last Name is required!</span>
-              </md-hint>
-              <md-hint align="end">{{lastNameElement.value.length}} / 20</md-hint>
-            </md-input-container>
+              </mat-hint>
+              <mat-hint align="end">{{lastNameElement.value.length}} / 20</mat-hint>
+            </mat-input-container>
           </div>
           <div layout="row" class="push-top">
-            <md-input-container flex> 
-              <input mdInput
+            <mat-input-container flex> 
+              <input matInput
                       #emailElement
                       #emailControl="ngModel"
                       type="text" 
@@ -64,15 +64,15 @@
                       name="email"
                       maxlength="30"
                       required>
-              <md-hint align="start">
+              <mat-hint align="start">
                 <span [hidden]="emailControl.pristine || !emailControl.errors?.pattern" class="tc-red-600">That's not an email!</span>
-              </md-hint>
-              <md-hint align="end">{{emailElement.value.length}} / 30</md-hint>
-            </md-input-container>
+              </mat-hint>
+              <mat-hint align="end">{{emailElement.value.length}} / 30</mat-hint>
+            </mat-input-container>
           </div>
           <div layout="row" class="push-top">
-            <md-input-container flex> 
-              <input mdInput
+            <mat-input-container flex> 
+              <input matInput
                       #phoneElement
                       #phoneControl="ngModel"
                       type="text" 
@@ -80,22 +80,22 @@
                       [(ngModel)]="phone" 
                       name="phone"
                       maxlength="20">
-              <md-hint align="start">
+              <mat-hint align="start">
                 <span [hidden]="phoneControl.pristine || !phoneControl.errors?.pattern" class="tc-red-600">That's not a phone number!</span>
-              </md-hint>
-              <md-hint align="end">{{phoneElement.value.length}} / 20</md-hint>
-            </md-input-container>
+              </mat-hint>
+              <mat-hint align="end">{{phoneElement.value.length}} / 20</mat-hint>
+            </mat-input-container>
           </div>
           <div layout="row">
-            <md-slide-toggle [(ngModel)]="activated" name="activated">Activate</md-slide-toggle>
+            <mat-slide-toggle [(ngModel)]="activated" name="activated">Activate</mat-slide-toggle>
           </div>
         </form>
-      </md-card-content>
-      <md-divider></md-divider>
-      <md-card-actions>
-        <button md-button [disabled]="!userForm.form.valid" color="primary" (click)="save()">SAVE</button>
-        <button md-button (click)="goBack()">CANCEL</button>
-      </md-card-actions>
-    </md-card>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button mat-button [disabled]="!userForm.form.valid" color="primary" (click)="save()">SAVE</button>
+        <button mat-button (click)="goBack()">CANCEL</button>
+      </mat-card-actions>
+    </mat-card>
 </div>
 

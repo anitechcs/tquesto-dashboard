@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -19,7 +18,6 @@ import { PreferenceComponent } from './preference/preference.component';
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule,
     RouterModule,
     SharedModule,
     FlexLayoutModule
