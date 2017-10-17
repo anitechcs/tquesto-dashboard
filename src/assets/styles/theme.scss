@@ -1,7 +1,8 @@
 @import '~@angular/material/_theming';
-@import '~@covalent/core/theming/all-theme';
-@import '~@covalent/markdown/markdown-theme';
-@import '~@covalent/highlight/highlight-theme';
+//TODO: Covalent themes commented out to resolve segmentation fault issue in Docker build
+//@import '~@covalent/core/theming/all-theme';
+//@import '~@covalent/markdown/markdown-theme';
+//@import '~@covalent/highlight/highlight-theme';
 // Plus imports for other components in your app.
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -24,9 +25,9 @@ $theme: mat-light-theme($primary, $accent, $warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($theme);
-@include covalent-theme($theme);
-@include covalent-markdown-theme($theme);
-@include covalent-highlight-theme();
+//@include covalent-theme($theme);
+//@include covalent-markdown-theme($theme);
+//@include covalent-highlight-theme();
 
 .blue-orange {
     $primary2: mat-palette($mat-blue, 700);
@@ -36,7 +37,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $blue-orange: mat-light-theme($primary2, $accent2, $warn2);
 
     @include angular-material-theme($blue-orange);
-    @include covalent-theme($blue-orange);
+    //@include covalent-theme($blue-orange);
 
     mat-nav-list {
         [mat-list-item].active {
@@ -55,7 +56,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $blue-grey-deep-orange: mat-light-theme($primary3, $accent3, $warn3);
 
     @include angular-material-theme($blue-grey-deep-orange);
-    @include covalent-theme($blue-grey-deep-orange);
+    //@include covalent-theme($blue-grey-deep-orange);
 
     mat-nav-list {
         [mat-list-item].active {
@@ -74,7 +75,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $indigo-pink: mat-light-theme($primary4, $accent4, $warn4);
 
     @include angular-material-theme($indigo-pink);
-    @include covalent-theme($indigo-pink);
+    //@include covalent-theme($indigo-pink);
 
     mat-nav-list {
         [mat-list-item].active {
@@ -93,7 +94,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $purple-amber: mat-light-theme($primary5, $accent5, $warn5);
 
     @include angular-material-theme($purple-amber);
-    @include covalent-theme($purple-amber);
+    //@include covalent-theme($purple-amber);
 
     mat-nav-list {
         [mat-list-item].active {
@@ -112,7 +113,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $blue-orange: mat-dark-theme($primary2, $accent2, $warn2);
 
     @include angular-material-theme($blue-orange);
-    @include covalent-theme($blue-orange);
+    //@include covalent-theme($blue-orange);
 
     mat-nav-list {
         [mat-list-item].active {
@@ -131,7 +132,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $blue-grey-deep-orange: mat-dark-theme($primary3, $accent3, $warn3);
 
     @include angular-material-theme($blue-grey-deep-orange);
-    @include covalent-theme($blue-grey-deep-orange);
+    //@include covalent-theme($blue-grey-deep-orange);
 
     mat-nav-list {
         [mat-list-item].active {
@@ -150,7 +151,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $indigo-pink: mat-dark-theme($primary4, $accent4, $warn4);
 
     @include angular-material-theme($indigo-pink);
-    @include covalent-theme($indigo-pink);
+    //@include covalent-theme($indigo-pink);
 
     mat-nav-list {
         [mat-list-item].active {
@@ -169,7 +170,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $purple-amber: mat-dark-theme($primary5, $accent5, $warn5);
 
     @include angular-material-theme($purple-amber);
-    @include covalent-theme($purple-amber);
+    //@include covalent-theme($purple-amber);
 
     mat-nav-list {
         [mat-list-item].active {
