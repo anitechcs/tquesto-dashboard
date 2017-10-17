@@ -17,7 +17,7 @@ You can also use `ng generate directive/pipe/service/class`.
 
 ## Build
 
-Run `ng build --prod --aot --no-sourcemap` to build the production build. 
+Run `ng build --prod --build-optimizer` to build the production build. 
 The build artifacts will be stored in the `dist/` directory. 
 
 
