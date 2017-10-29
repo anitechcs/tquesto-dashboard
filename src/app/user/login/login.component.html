@@ -23,17 +23,21 @@
         <mat-card-actions align="end">
           <mat-checkbox indeterminate="true" name="rememberMe" [(ngModel)]="rememberMe"> Remember Me</mat-checkbox>
           <span class="fill-remaining-space"></span>
-          <button align="end" mat-raised-button color="accent" type="submit" [disabled]="!loginForm.valid">SIGN IN</button>
+          <button align="end" mat-raised-button color="accent" type="submit">SIGN IN</button>
         </mat-card-actions>
         <mat-card-actions align="center">
-          <div>Don't have an account? <a routerLink="/registration">Create a New One</a></div>
+          <div>
+            Don't have an account? <a routerLink="/registration">Create a New One</a>
+          </div>
           <br/>
-          <div><a routerLink="/forgotpassword">Forgot Password?</a></div>
+          <div>
+            <a routerLink="/forgotpassword">Forgot Password?</a>
+          </div>
         </mat-card-actions>
       </form>
     </mat-card>
   </div>
   <footer class="clearfix">
-    <span class="login-copy">Copyright &copy; 2016 Anitech Consulting Services Pvt Ltd.</span>
+    <span class="login-copy">Copyright &copy; 2017 Anitech Consulting Services Pvt Ltd.</span>
   </footer>
 </div>
