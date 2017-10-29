@@ -5,15 +5,15 @@
       <mat-card-content class="push-bottom-none">
         <form #userForm="ngForm">
           <div layout="row">
-            <mat-input-container flex> 
+            <mat-input-container flex>
               <input matInput
                       #userNameElement
                       #userNameControl="ngModel"
-                      type="text" 
-                      placeholder="User Name" 
-                      [(ngModel)]="userName" 
-                      name="userName" 
-                      maxlength="20" 
+                      type="text"
+                      placeholder="User Name"
+                      [(ngModel)]="userName"
+                      name="userName"
+                      maxlength="20"
                       required>
               <mat-hint align="start">
                 <span [hidden]="userNameControl.pristine || !userNameControl.errors?.required" class="tc-red-600">User Name is required!</span>
@@ -22,14 +22,14 @@
             </mat-input-container>
           </div>
           <div layout="row" class="push-top">
-            <mat-input-container flex> 
+            <mat-input-container flex>
               <input matInput
                       #firstNameElement
                       #firstNameControl="ngModel"
-                      type="text" 
-                      placeholder="First Name" 
-                      [(ngModel)]="firstName" 
-                      name="firstName" 
+                      type="text"
+                      placeholder="First Name"
+                      [(ngModel)]="firstName"
+                      name="firstName"
                       maxlength="20">
               <mat-hint align="start">
                 <span [hidden]="firstNameControl.pristine || !firstNameControl.errors?.required" class="tc-red-600">First Name is required!</span>
@@ -38,14 +38,14 @@
             </mat-input-container>
           </div>
           <div layout="row" class="push-top">
-            <mat-input-container flex> 
+            <mat-input-container flex>
               <input matInput
                       #lastNameElement
                       #lastNameControl="ngModel"
-                      type="text" 
-                      placeholder="Last Name" 
-                      [(ngModel)]="lastName" 
-                      name="lastName" 
+                      type="text"
+                      placeholder="Last Name"
+                      [(ngModel)]="lastName"
+                      name="lastName"
                       maxlength="20">
               <mat-hint align="start">
                 <span [hidden]="lastNameControl.pristine || !lastNameControl.errors?.required" class="tc-red-600">Last Name is required!</span>
@@ -54,13 +54,13 @@
             </mat-input-container>
           </div>
           <div layout="row" class="push-top">
-            <mat-input-container flex> 
+            <mat-input-container flex>
               <input matInput
                       #emailElement
                       #emailControl="ngModel"
-                      type="text" 
-                      placeholder="Email" 
-                      [(ngModel)]="email" 
+                      type="text"
+                      placeholder="Email"
+                      [(ngModel)]="email"
                       name="email"
                       maxlength="30"
                       required>
@@ -71,13 +71,13 @@
             </mat-input-container>
           </div>
           <div layout="row" class="push-top">
-            <mat-input-container flex> 
+            <mat-input-container flex>
               <input matInput
                       #phoneElement
                       #phoneControl="ngModel"
-                      type="text" 
-                      placeholder="Phone" 
-                      [(ngModel)]="phone" 
+                      type="text"
+                      placeholder="Phone"
+                      [(ngModel)]="phone"
                       name="phone"
                       maxlength="20">
               <mat-hint align="start">
@@ -93,7 +93,7 @@
       </mat-card-content>
       <mat-divider></mat-divider>
       <mat-card-actions>
-        <button mat-button [disabled]="!userForm.form.valid" color="primary" (click)="save()">SAVE</button>
+        <button mat-button color="primary" (click)="save()">SAVE</button>
         <button mat-button (click)="goBack()">CANCEL</button>
       </mat-card-actions>
     </mat-card>
