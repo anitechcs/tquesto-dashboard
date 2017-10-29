@@ -459,11 +459,6 @@ header .container {
 #about .container {
     position: relative;
 }
-#about img {
-    position: absolute;
-    top: 0;
-    right: 0
-}
 #about .section-subheading {
     margin-bottom: 30px;
     margin-top: 5px;
@@ -522,58 +517,12 @@ header .container {
     -moz-border-radius: 0 4px 4px 4px;
     -webkit-border-radius: 0 4px 4px 4px;
 }
-.about-tabs .tab a .triangle {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-}
-.about-tabs .tab a.active .triangle {
-    border-bottom: 0;
-    visibility: visible;
-    width: 0;
-    -webkit-transition: 0s;
-    -o-transition: 0s;
-    transition: 0s;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #d1d1d1;
-    opacity: 1;
-    position: absolute;
-    left: 50%;
-    margin-left: -5px;
-    top: -10px;
-}
-.about-tabs .tab .triangle .inner-triangle {
-    display: block;
-    -webkit-transition: 0s;
-    -o-transition: 0s;
-    transition: 0s;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid #fff;
-    top: 2px;
-    position: absolute;
-    left: -8px;
-}
-#about-tab1 img {
-    margin-right: -200px;
-}
-#about-tab2 img {
-    margin-right: 60px;
-}
-#about-tab3 img {
-    margin-top: -50px;
-    margin-right: 30px;
-}
 .about-tabs ul {
     padding-left: 0px;
     margin-bottom: 30px;
 }
 .about-tabs li {
-    background: url(/assets/imgs/checked.png) no-repeat left 20px;
+    background: url(/assets/imgs/check_icon.png) no-repeat left 20px;
     padding-left: 40px;
     list-style: none;
     margin: 0;
@@ -588,6 +537,19 @@ header .container {
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+}
+.blurred-edge {
+  background: url(/assets/imgs/analysis-small.jpg) no-repeat;
+  background-size: 100% 100%;
+  width: 55%;
+  height: 450px;
+  -moz-box-shadow: 25px 25px 50px white inset, -25px -25px 50px white inset;
+  -webkit-box-shadow: 25px 25px 50px white inset, -25px -25px 50px white inset;
+  box-shadow: 25px 25px 50px white inset, -25px -25px 50px white inset;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0
 }
 @-webkit-keyframes fadeInRight {
     from {
@@ -1135,4 +1097,164 @@ footer {
 }
 .nc-icon-outline.world:before {
     content: "\e631";
+}
+
+
+
+/** App store/Play store icons **/
+.btn {
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: left;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  margin: 5px auto;
+  border-radius: 4px;
+  color: #fff;
+  fill: #fff;
+  background: #000;
+  line-height: 1em;
+  min-width: 190px;
+  height: 45px;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  /*font-family: $btn-font;*/
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+}
+.btn:hover,
+.btn:focus {
+  background: #111;
+  color: #fff;
+  fill: #fff;
+  border-color: #fff;
+  -webkit-transform: scale(1.01) translate3d(0, -1px, 0);
+          transform: scale(1.01) translate3d(0, -1px, 0);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.btn:active {
+  outline: 0;
+  background: #353535;
+  -webkit-transition: none;
+  transition: none;
+}
+.btn__icon,
+.btn__text,
+.btn__storename {
+  display: inline-block;
+  vertical-align: top;
+}
+.btn__icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  margin-top: 2px;
+}
+.btn__icon--amazon {
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+}
+.btn__text {
+  letter-spacing: 0.08em;
+  margin-top: -0.1em;
+  font-size: 10px;
+}
+.btn__storename {
+  display: block;
+  margin-left: 38px;
+  margin-top: -17px;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+}
+.btn--small {
+  padding: 2px 8px;
+  min-width: 118.75px;
+  height: 24px;
+  border-radius: 3px;
+}
+.btn--small .btn__icon {
+  width: 16px;
+  height: 16px;
+  margin: 1px 2px 0 0;
+}
+.btn--small .btn__text {
+  display: none;
+}
+.btn--small .btn__storename {
+  font-size: 12px;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+.btn--tiny {
+  padding: 3px;
+  width: 22px;
+  height: 22px;
+  min-width: 0;
+  border-radius: 3px;
+}
+.btn--tiny .btn__icon {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
+.btn--tiny .btn__text,
+.btn--tiny .btn__storename {
+  display: none;
+}
+html,
+body {
+  background: #f4b350;
+  width: 100%;
+  height: 100%;
+}
+body {
+  box-sizing: border-box;
+  padding: 0 10%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-image: -webkit-radial-gradient(center ellipse, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 80%);
+  background-image: radial-gradient(ellipse at center, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 80%);
+}
+.stage > h1 {
+  margin-top: -5%;
+  margin-bottom: 5%;
+  font-family: Avenir, Trebuchet, 'Trebuchet MS', sans-serif;
+  font-size: 7vw;
+  font-weight: 400;
+  color: #c67d0c;
+}
+@media (min-width: 50em) {
+  .stage > h1 {
+    font-size: 5vw;
+  }
+}
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff2"), url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.woff") format('woff'), url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-semibold-webfont.ttf") format('truetype');
 }
